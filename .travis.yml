@@ -20,6 +20,9 @@ script:
   - flake8
   - py.test -vv --cov-config .coveragerc --cov geolink_formatter tests
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
 #sphinx:
 #  stage: doc
 #  script:
