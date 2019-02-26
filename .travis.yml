@@ -7,9 +7,6 @@ python:
   - "3.5"
   - "3.6"
 
-before_install:
-  - sudo apt-get update -q
-
 stages:
   - test
   - deploy
