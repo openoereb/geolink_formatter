@@ -1,24 +1,28 @@
 sudo: required
 
 language: python
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"
 
 before_install:
   - sudo apt-get update -q
 
-test:
-  stage: test
-  python:
-    - "2.7"
-    - "3.4"
-    - "3.5"
-    - "3.6"
-  install:
-    - python -V
-    - pip install -r requirements.txt
-  script:
-    - git --no-pager diff --check `git log --oneline | tail -1 | cut --fields=1 --delimiter=' '`
-    - flake8
-    - py.test -vv --cov-config .coveragerc --cov geolink_formatter tests
+stages:
+  - test
+  - build
+  - deploy
+
+install:
+  - python -V
+  - pip install -r requirements.txt
+
+script:
+  - git --no-pager diff --check `git log --oneline | tail -1 | cut --fields=1 --delimiter=' '`
+  - flake8
+  - py.test -vv --cov-config .coveragerc --cov geolink_formatter tests
 
 #test:3.4:
 #  stage: test
