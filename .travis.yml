@@ -29,45 +29,53 @@ before_deploy:
 
 jobs:
   include:
-    - provider: script
+    - python: '3.6'
       stage: deploy
-      python: '3.6'
-      script: sphinx-versioning push doc/source/ gh-pages .
-      skip_cleanup: true
-      on:
-#        branch: master
-        repo: openoereb/geolink_formatter
-    - provider: script
+      deploy:
+        - provider: script
+          script: sphinx-versioning push doc/source/ gh-pages .
+          skip_cleanup: true
+          on:
+    #        branch: master
+            repo: openoereb/geolink_formatter
+            python: '3.6'
+    - python: '3.6'
       stage: deploy
-      python: '3.6'
-      script: sphinx-versioning push doc/source/ gh-pages .
-      skip_cleanup: true
-      on:
-        tags: true
-        repo: openoereb/geolink_formatter
-    - provider: pypi
+      deploy:
+        - provider: script
+          script: sphinx-versioning push doc/source/ gh-pages .
+          skip_cleanup: true
+          on:
+            tags: true
+            repo: openoereb/geolink_formatter
+            python: '3.6'
+    - python: '3.6'
       stage: deploy
-      python: '3.6'
-      server: https://upload.pypi.org/legacy/
-      user: kdeininger
-      password:
-        secure: "DRam+gSbTi1t6oDxtEA1C6Cm1vN4dJ3uKOlepBGYmnIsx8ckjjHsza5zaRPBFuw54VjxmdT2IQ+dUD6d0PgZwRNHV/YuC73tA3n6QRPmmU4h3hDq4+ZiNMpw75Vog9kmhJOGRVZRvV/kqbpCg+4aJfPuDaFRqfjBDYY32nKBCHioxsTtZd4DXius4iBlwh0stWEYx4EMIGrGX1S0IppdIYuFdCEAK90UqASJ0cLXQd4A72j74KSAvLdY1Az1N0ciKqg4n307vwK9xg/o8xqGQtbl2PRtZ2tLM+TPLQ3RAsLtPImUHDrBOSC1U/pb8pqXZhwLjjW9uMzCBwH6asMpThJGempub2wSyc6KyT8b0p1zKYpGc9Jzghndeobv5JlmeGs56adm8thxxOM4jCdbGeLWMf/tVATxdl572nS6Tvn72aMsx0M7rLmXUDTH2rgOjf0/oJYVjAxnpGYRzfgfU7AakIpoVA1+NCp1xTEdZbOKxY4gyqoUQ/NZyyQBd6a3zoEET1isQarDAVhMIiGz7Py4iejIqsFthyKfvBikRJeZA/LhMu4p57Q6gIDndGuuX+IyJyi3yEmeBS2froqOfAjZFlqcHz2JkdJ2LATiTfZt0bWrx2Se1aiVdbHkZ75Qk546KMdKbwfjwMhX21GRjWTycsF91SBf19SDdgFrKpI="
-      distributions: sdist bdist_wheel
-      skip_upload_docs: true
-      skip_cleanup: true
-      on:
-        tags: true
-        repo: openoereb/geolink_formatter
-    - provider: pypi
+      deploy:
+        - provider: pypi
+          server: https://upload.pypi.org/legacy/
+          user: kdeininger
+          password:
+            secure: "DRam+gSbTi1t6oDxtEA1C6Cm1vN4dJ3uKOlepBGYmnIsx8ckjjHsza5zaRPBFuw54VjxmdT2IQ+dUD6d0PgZwRNHV/YuC73tA3n6QRPmmU4h3hDq4+ZiNMpw75Vog9kmhJOGRVZRvV/kqbpCg+4aJfPuDaFRqfjBDYY32nKBCHioxsTtZd4DXius4iBlwh0stWEYx4EMIGrGX1S0IppdIYuFdCEAK90UqASJ0cLXQd4A72j74KSAvLdY1Az1N0ciKqg4n307vwK9xg/o8xqGQtbl2PRtZ2tLM+TPLQ3RAsLtPImUHDrBOSC1U/pb8pqXZhwLjjW9uMzCBwH6asMpThJGempub2wSyc6KyT8b0p1zKYpGc9Jzghndeobv5JlmeGs56adm8thxxOM4jCdbGeLWMf/tVATxdl572nS6Tvn72aMsx0M7rLmXUDTH2rgOjf0/oJYVjAxnpGYRzfgfU7AakIpoVA1+NCp1xTEdZbOKxY4gyqoUQ/NZyyQBd6a3zoEET1isQarDAVhMIiGz7Py4iejIqsFthyKfvBikRJeZA/LhMu4p57Q6gIDndGuuX+IyJyi3yEmeBS2froqOfAjZFlqcHz2JkdJ2LATiTfZt0bWrx2Se1aiVdbHkZ75Qk546KMdKbwfjwMhX21GRjWTycsF91SBf19SDdgFrKpI="
+          distributions: sdist bdist_wheel
+          skip_upload_docs: true
+          skip_cleanup: true
+          on:
+            tags: true
+            repo: openoereb/geolink_formatter
+            python: '3.6'
+    - python: '3.6'
       stage: deploy
-      python: '3.6'
-      server: https://test.pypi.org/legacy/
-      user: kdeininger
-      password:
-        secure: "D5gVZYSdVYYCf0ZtbvmZHXOcdGsJog6kqm51whMyVrle/MGKFCNR/Vfo4kB6UDTItcgLZhYhUEFCxIi1E94eTgunEPj5/0ZkcLI+hO270CGTE6OaLUriyEcWVoQ9MCqZcdUV0QhsgoDRsZ/44IEDORB33hi432GmghAH1lQQ1ouZ8ZSGBivN+bGJoC7UOjXu/zzQXgjYpUlTzGDTUhuZjo4KamKxHGC5llPcnr38ZWrBwPiUZY8W7fxlOo+Ek8wlVbNQmyfuwOE3kUwAb/6QyQS3rKz+Aa7Yd5qgp1V9/9QaijwOkO8hsCeyoazJ1l4AQwuygGMVhT52Te/xM6FmSaAa2w+XFVa43gyEkbb51JCsk/eaarXBN/gHKUb7/zsOgL974fAZHu748lIlNaNrkb2COJ8DN+c7PF7RRljclWhyq3CI9+8ynz3QLCAL49pvRSySMU7ixoqVxRUtqipbF50R+KipbuT+J0q3LR0Jbc0/eaVKJ14zU80CQORy9LCw3291zhr+SmOKQH+E+RqQvYtt0eFaQC/B+bEeGWZYcS+sXodZ306pMyZPaAFMayEDT9yGhLiZNXT6lpFEgjDNaBXEj6Rzui5KfgecpPR00ACTntTdCwFqSXum7qZdGDjUMvKTSdD5i5AlBjzh76KQhCC8N72M/sxnhogayu1taHs="
-      distributions: sdist bdist_wheel
-      skip_upload_docs: true
-      skip_cleanup: true
-      on:
-#        branch: master
-        repo: openoereb/geolink_formatter
+      deploy:
+        - provider: pypi
+          server: https://test.pypi.org/legacy/
+          user: kdeininger
+          password:
+            secure: "D5gVZYSdVYYCf0ZtbvmZHXOcdGsJog6kqm51whMyVrle/MGKFCNR/Vfo4kB6UDTItcgLZhYhUEFCxIi1E94eTgunEPj5/0ZkcLI+hO270CGTE6OaLUriyEcWVoQ9MCqZcdUV0QhsgoDRsZ/44IEDORB33hi432GmghAH1lQQ1ouZ8ZSGBivN+bGJoC7UOjXu/zzQXgjYpUlTzGDTUhuZjo4KamKxHGC5llPcnr38ZWrBwPiUZY8W7fxlOo+Ek8wlVbNQmyfuwOE3kUwAb/6QyQS3rKz+Aa7Yd5qgp1V9/9QaijwOkO8hsCeyoazJ1l4AQwuygGMVhT52Te/xM6FmSaAa2w+XFVa43gyEkbb51JCsk/eaarXBN/gHKUb7/zsOgL974fAZHu748lIlNaNrkb2COJ8DN+c7PF7RRljclWhyq3CI9+8ynz3QLCAL49pvRSySMU7ixoqVxRUtqipbF50R+KipbuT+J0q3LR0Jbc0/eaVKJ14zU80CQORy9LCw3291zhr+SmOKQH+E+RqQvYtt0eFaQC/B+bEeGWZYcS+sXodZ306pMyZPaAFMayEDT9yGhLiZNXT6lpFEgjDNaBXEj6Rzui5KfgecpPR00ACTntTdCwFqSXum7qZdGDjUMvKTSdD5i5AlBjzh76KQhCC8N72M/sxnhogayu1taHs="
+          distributions: sdist bdist_wheel
+          skip_upload_docs: true
+          skip_cleanup: true
+          on:
+    #        branch: master
+            repo: openoereb/geolink_formatter
+            python: '3.6'
