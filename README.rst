@@ -10,7 +10,7 @@ presentation.
 
 For detailed information, please refer to the online documentation:
 
-https://gf-bl.gitlab.io/oereb/python-geolink-formatter/
+https://openoereb.github.io/geolink_formatter/
 
 .. |license| image:: https://img.shields.io/pypi/l/geolink_formatter.svg
    :target: https://pypi.python.org/pypi/geolink_formatter
