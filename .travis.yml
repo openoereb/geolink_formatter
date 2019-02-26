@@ -29,21 +29,24 @@ before_deploy:
 
 jobs:
   include:
-    - python: '3.6'
+    - name: "Deploy pages for master"
+      python: '3.6'
       stage: deploy
 #      if: branch = master
       deploy:
         - provider: script
           script: sphinx-versioning push doc/source/ gh-pages .
           skip_cleanup: true
-    - python: '3.6'
+    - name: "Deploy pages for tag"
+      python: '3.6'
       stage: deploy
       if: tag IS present
       deploy:
         - provider: script
           script: sphinx-versioning push doc/source/ gh-pages .
           skip_cleanup: true
-    - python: '3.6'
+    - name: "Deploy to PyPI"
+      python: '3.6'
       stage: deploy
       if: tag IS present
       deploy:
@@ -59,7 +62,8 @@ jobs:
             tags: true
             repo: openoereb/geolink_formatter
             python: '3.6'
-    - python: '3.6'
+    - name: "Deploy to PyPI Test"
+      python: '3.6'
       stage: deploy
 #      if: branch = master
       deploy:
