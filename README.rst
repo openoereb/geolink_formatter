@@ -16,8 +16,8 @@ https://gf-bl.gitlab.io/oereb/python-geolink-formatter/
    :target: https://pypi.python.org/pypi/geolink_formatter
 .. |build status| image:: https://travis-ci.org/openoereb/geolink_formatter.svg?branch=master
    :target: https://travis-ci.org/openoereb/geolink_formatter
-.. |coverage report| image:: https://gitlab.com/gf-bl/python-geolink-formatter/badges/master/coverage.svg
-   :target: https://gitlab.com/gf-bl/python-geolink-formatter/commits/master
+.. |coverage report| image:: https://codecov.io/gh/openoereb/geolink_formatter/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/openoereb/geolink_formatter
 .. |python version| image:: https://img.shields.io/pypi/pyversions/geolink_formatter.svg
    :target: https://pypi.python.org/pypi/geolink_formatter
 .. |format| image:: https://img.shields.io/pypi/format/geolink_formatter.svg
