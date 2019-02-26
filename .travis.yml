@@ -12,7 +12,6 @@ before_install:
 
 stages:
   - test
-  - build
   - deploy
 
 install:
@@ -23,39 +22,6 @@ script:
   - git --no-pager diff --check `git log --oneline | tail -1 | cut --fields=1 --delimiter=' '`
   - flake8
   - py.test -vv --cov-config .coveragerc --cov geolink_formatter tests
-
-#test:3.4:
-#  stage: test
-#  image: python:3.4
-#  allow_failure: false
-#  script:
-#  - git --no-pager diff --check `git log --oneline | tail -1 | cut --fields=1 --delimiter=' '`
-#  - python -V
-#  - pip install -r requirements.txt
-#  - flake8
-#  - py.test -vv --cov-config .coveragerc --cov geolink_formatter tests
-#
-#test:3.5:
-#  stage: test
-#  image: python:3.5
-#  allow_failure: false
-#  script:
-#  - git --no-pager diff --check `git log --oneline | tail -1 | cut --fields=1 --delimiter=' '`
-#  - python -V
-#  - pip install -r requirements.txt
-#  - flake8
-#  - py.test -vv --cov-config .coveragerc --cov geolink_formatter tests
-#
-#test:3.6:
-#  stage: test
-#  image: python:3.6
-#  allow_failure: false
-#  script:
-#  - git --no-pager diff --check `git log --oneline | tail -1 | cut --fields=1 --delimiter=' '`
-#  - python -V
-#  - pip install -r requirements.txt
-#  - flake8
-#  - py.test -vv --cov-config .coveragerc --cov geolink_formatter tests
 
 #sphinx:
 #  stage: doc
