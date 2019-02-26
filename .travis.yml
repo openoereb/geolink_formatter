@@ -31,22 +31,23 @@ jobs:
   include:
     - provider: script
       stage: deploy
+      python: '3.6'
       script: sphinx-versioning push doc/source/ gh-pages .
       skip_cleanup: true
       on:
 #        branch: master
         repo: openoereb/geolink_formatter
-        python: '3.6'
     - provider: script
       stage: deploy
+      python: '3.6'
       script: sphinx-versioning push doc/source/ gh-pages .
       skip_cleanup: true
       on:
         tags: true
         repo: openoereb/geolink_formatter
-        python: '3.6'
     - provider: pypi
       stage: deploy
+      python: '3.6'
       server: https://upload.pypi.org/legacy/
       user: kdeininger
       password:
@@ -57,9 +58,9 @@ jobs:
       on:
         tags: true
         repo: openoereb/geolink_formatter
-        python: '3.6'
     - provider: pypi
       stage: deploy
+      python: '3.6'
       server: https://test.pypi.org/legacy/
       user: kdeininger
       password:
@@ -70,4 +71,3 @@ jobs:
       on:
 #        branch: master
         repo: openoereb/geolink_formatter
-        python: '3.6'
