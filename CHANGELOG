@@ -5,6 +5,7 @@ Changelog
 -----
 
 - Move repository to GitHub openoereb
+- Use defusedxml for XML parsing
 
 
 1.3.1
