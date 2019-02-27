@@ -74,19 +74,19 @@ def test_document_empty():
 
 def test_document_invalid_decree_date():
     with pytest.raises(TypeError):
-        Document(decree_date='invalid')
+        Document([], decree_date='invalid')
 
 
 def test_document_invalid_enactment_date():
     with pytest.raises(TypeError):
-        Document(enactment_date='invalid')
+        Document([], enactment_date='invalid')
 
 
 def test_document_invalid_abrogation_date():
     with pytest.raises(TypeError):
-        Document(abrogation_date='invalid')
+        Document([], abrogation_date='invalid')
 
 
 def test_document_invalid_files():
     with pytest.raises(TypeError):
-        Document(files='invalid')
+        Document('invalid')
