@@ -4,8 +4,8 @@
    contain the root `toctree` directive.
 
 
-Python geoLink Formatter
-========================
+OEREBlex geoLink Formatter
+==========================
 
 .. toctree::
    :maxdepth: 2

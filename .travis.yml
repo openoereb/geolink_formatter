@@ -85,7 +85,7 @@ jobs:
         - python -V
         - pip install -r requirements.txt
         - sed -i "s/\(version='[0-9]*\.[0-9]*\.[0-9]*\)\('\)/\1-dev.$(date +%Y%m%d%H%M%S)\2/g" setup.py
-        - sed -i "s/Development Status :: 5 - Production\/Stable/Development Status :: 4 - Beta/g" setup.py
+        - sed -i "s/5 - Production\/Stable/4 - Beta/g" setup.py
       deploy:
         - provider: pypi
           server: https://test.pypi.org/legacy/

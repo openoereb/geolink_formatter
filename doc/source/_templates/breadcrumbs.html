@@ -1,43 +1,32 @@
 {% extends "!breadcrumbs.html" %}
 {% block breadcrumbs %}
 
-{%- if current_version %}
-    {%- set gitlab_target = current_version %}
-{%- else %}
-    {%- set gitlab_target = "master" %}
-{%- endif %}
-
-{%- if gitlab_target != "master" %}
-    {%- set pypi_target = "/" ~ gitlab_target|replace("v", "") %}
-{%- else %}
-    {%- set pypi_target = "" %}
-{%- endif %}
-
 <img src="{{ pathto('_static/BL_Logo_VGD_AGI_C_r_rgb.png', 1) }}"
      style="border: none; max-width: 250px; margin-bottom: 25px; float: right" />
 
 <div class="clearfix"></div>
 
 <p>
-    <a href="https://gitlab.com/gf-bl/python-geolink-formatter/blob/{{ gitlab_target }}/LICENSE">
+    <a href="https://github.com/openoereb/geolink_formatter/blob/master/LICENSE" target="_blank">
         <img alt="license" src="https://img.shields.io/pypi/l/geolink_formatter.svg" />
     </a>
-    <a href="https://gitlab.com/gf-bl/python-geolink-formatter/tree/{{ gitlab_target }}">
-        <img alt="build status"
-             src="https://gitlab.com/gf-bl/python-geolink-formatter/badges/{{ gitlab_target }}/build.svg" />
-    </a>
-    <a href="https://gitlab.com/gf-bl/python-geolink-formatter/tree/{{ gitlab_target }}">
-        <img alt="coverage report"
-             src="https://gitlab.com/gf-bl/python-geolink-formatter/badges/{{ gitlab_target }}/coverage.svg" />
-    </a>
-    <a href="https://pypi.python.org/pypi/geolink_formatter{{ pypi_target }}">
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
         <img alt="python version" src="https://img.shields.io/pypi/pyversions/geolink_formatter.svg" />
     </a>
-    <a href="https://pypi.python.org/pypi/geolink_formatter{{ pypi_target }}">
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
         <img alt="format" src="https://img.shields.io/pypi/format/geolink_formatter.svg" />
     </a>
-    <a href="https://pypi.python.org/pypi/geolink_formatter{{ pypi_target }}">
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
         <img alt="status" src="https://img.shields.io/pypi/status/geolink_formatter.svg" />
+    </a>
+    <a href="https://github.com/openoereb/geolink_formatter/tree/master" target="_blank">
+        <img alt="build status" src="https://travis-ci.org/openoereb/geolink_formatter.svg?branch=master" />
+    </a>
+    <a href="https://codecov.io/gh/openoereb/geolink_formatter" target="_blank">
+        <img alt="coverage report" src="https://codecov.io/gh/openoereb/geolink_formatter/branch/master/graph/badge.svg" />
+    </a>
+    <a href="https://libraries.io/github/openoereb/geolink_formatter" target="_blank">
+        <img alt="dependencies" src="https://img.shields.io/librariesio/github/openoereb/geolink_formatter.svg" />
     </a>
 </p>
 {{ super() }}

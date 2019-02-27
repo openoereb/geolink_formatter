@@ -12,16 +12,16 @@ For detailed information, please refer to the online documentation:
 https://openoereb.github.io/geolink_formatter/
 
 .. |license| image:: https://img.shields.io/pypi/l/geolink_formatter.svg
-   :target: https://pypi.python.org/pypi/geolink_formatter
+   :target: https://pypi.org/project/geolink_formatter/
+.. |python version| image:: https://img.shields.io/pypi/pyversions/geolink_formatter.svg
+   :target: https://pypi.org/project/geolink_formatter/
+.. |format| image:: https://img.shields.io/pypi/format/geolink_formatter.svg
+   :target: https://pypi.org/project/geolink_formatter/
+.. |status| image:: https://img.shields.io/pypi/status/geolink_formatter.svg
+   :target: https://pypi.org/project/geolink_formatter/
 .. |build status| image:: https://travis-ci.org/openoereb/geolink_formatter.svg?branch=master
    :target: https://travis-ci.org/openoereb/geolink_formatter
 .. |coverage report| image:: https://codecov.io/gh/openoereb/geolink_formatter/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/openoereb/geolink_formatter
-.. |python version| image:: https://img.shields.io/pypi/pyversions/geolink_formatter.svg
-   :target: https://pypi.python.org/pypi/geolink_formatter
-.. |format| image:: https://img.shields.io/pypi/format/geolink_formatter.svg
-   :target: https://pypi.python.org/pypi/geolink_formatter
-.. |status| image:: https://img.shields.io/pypi/status/geolink_formatter.svg
-   :target: https://pypi.python.org/pypi/geolink_formatter
 .. |dependencies| image:: https://img.shields.io/librariesio/github/openoereb/geolink_formatter.svg
    :target: https://libraries.io/github/openoereb/geolink_formatter
