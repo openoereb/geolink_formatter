@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
 import requests_mock
-from lxml.etree import XMLSyntaxError, _Element
+from lxml.etree import _Element, DocumentInvalid
 from requests import RequestException
 
 from geolink_formatter.parser import XML, SCHEMA
@@ -49,7 +49,7 @@ def test_xml_from_string_invalid():
     xml = """<?xml version="1.0" encoding="utf-8"?>
     <invalidTag></invalidTag>
     """
-    with pytest.raises(XMLSyntaxError):
+    with pytest.raises(DocumentInvalid):
         parser = XML()
         parser.from_string(xml)
 
@@ -150,7 +150,7 @@ def test_xml_from_url(mock_request):
 
 def test_wrong_schema_version(mock_request):
     with mock_request():
-        with pytest.raises(XMLSyntaxError):
+        with pytest.raises(DocumentInvalid):
             XML(version=SCHEMA.V1_0_0).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
 
 
@@ -182,3 +182,22 @@ def test_schema_version_1_1_1():
     assert documents[0].number == '1A'
     assert documents[0].abbreviation == 'abbr'
     assert documents[0].abrogation_date.strftime(fmt) == '2008-12-31'
+
+
+def test_dtd_validation_valid():
+    content = XML(dtd_validation=True, xsd_validation=False)._parse_xml(
+        """<?xml version="1.1" encoding="utf-8"?>
+        <!DOCTYPE root [<!ELEMENT root EMPTY>]>
+        <root></root>
+        """
+    )
+    assert content.tag == 'root'
+
+
+def test_dtd_validation_invalid():
+    with pytest.raises(DocumentInvalid):
+        XML(dtd_validation=True, xsd_validation=False)._parse_xml(
+            """<?xml version="1.1" encoding="utf-8"?>
+            <root></root>
+            """
+        )

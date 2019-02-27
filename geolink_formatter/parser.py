@@ -3,8 +3,8 @@ import datetime
 
 import pkg_resources
 import requests
-from lxml.etree import XMLParser, XMLSchema, XML as EtreeXML, fromstring
-
+from lxml.etree import XMLSchema, DTD, DocumentInvalid
+from defusedxml.lxml import fromstring
 from geolink_formatter.entity import Document, File
 
 
@@ -21,12 +21,12 @@ class SCHEMA(object):
     """str: geoLink schema version 1.1.1"""
 
 
-class XML(XMLParser):
+class XML(object):
 
     _date_format = '%Y-%m-%d'
     """str: Format of date values in XML."""
 
-    def __init__(self, host_url=None, version='1.1.1', dtd_validation=False):
+    def __init__(self, host_url=None, version='1.1.1', dtd_validation=False, xsd_validation=True):
         """Create a new XML parser instance containing the geoLink XSD for validation.
 
         Args:
@@ -35,14 +35,17 @@ class XML(XMLParser):
             version (str): The version of the geoLink schema to be used. Defaults to `1.1.1`.
             dtd_validation (bool): Enable/disable validation of document type definition (DTD).
                 Optional, defaults to False.
+            xsd_validation (bool): Enable/disable validation against XML schema (XSD).
+                Optional, defaults to True.
 
         """
         self._host_url = host_url
         self._version = version
+        self._dtd_validation = dtd_validation
+        self._xsd_validation = xsd_validation
         xsd = pkg_resources.resource_filename('geolink_formatter', 'schema/v{0}.xsd'.format(version))
         with open(xsd) as f:
-            self._schema = XMLSchema(EtreeXML(f.read()))
-        super(XML, self).__init__(dtd_validation=dtd_validation, schema=self._schema)
+            self._schema = XMLSchema(fromstring(f.read()))
 
     @property
     def host_url(self):
@@ -63,9 +66,18 @@ class XML(XMLParser):
 
         """
         if isinstance(xml, bytes):
-            return fromstring(xml, self)
+            content = fromstring(xml)
         else:
-            return fromstring(xml.encode('utf-16be'), self)
+            content = fromstring(xml.encode('utf-16be'))
+        if self._xsd_validation:
+            self._schema.assertValid(content)
+        if self._dtd_validation:
+            dtd = content.getroottree().docinfo.internalDTD
+            if isinstance(dtd, DTD):
+                dtd.assertValid(content)
+            else:
+                raise DocumentInvalid('Missing DTD in parsed content')
+        return content
 
     def from_string(self, xml):
         """Parses XML into internal structure.

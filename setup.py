@@ -11,6 +11,7 @@ with open(os.path.join(here, 'CHANGELOG')) as f:
 
 requires = [
     'lxml>=3.7.0',
+    'defusedxml',
     'requests'
 ]
 
