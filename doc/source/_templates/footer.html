@@ -2,16 +2,10 @@
 {% block extrafooter %}
     {{ super() }}
 
-    {%- if current_version %}
-        {%- set gitlab_target = current_version %}
-    {%- else %}
-        {%- set gitlab_target = "master" %}
-    {%- endif %}
     <div style="float: right">
-        <a href="https://gitlab.com/gf-bl/python-geolink-formatter/tree/{{ gitlab_target }}">
-            Fork me on <img alt="Fork me on GitLab" width="23"
-                 src="{{ pathto('_static/logo-gitlab.svg', 1) }}"
-            /> GitLab
+        <a href="https://github.com/openoereb/geolink_formatter">
+            View on GitHub
+            <img alt="View on GitHub" width="23" src="{{ pathto('_static/GitHub-Mark-32px.png', 1) }}" />
         </a>
     </div>
 {% endblock %}
