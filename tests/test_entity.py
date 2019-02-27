@@ -51,7 +51,7 @@ def test_document():
 
 
 def test_document_empty():
-    d = Document()
+    d = Document([])
     assert isinstance(d, Document)
     assert d.id is None
     assert d.title is None

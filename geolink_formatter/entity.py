@@ -9,7 +9,7 @@ class Msg(object):
 
 
 class Document(object):
-    def __init__(self, files=list(), id=None, category=None, doctype=None, federal_level=None, authority=None,
+    def __init__(self, files, id=None, category=None, doctype=None, federal_level=None, authority=None,
                  authority_url=None, title=None, number=None, abbreviation=None, instance=None, type=None,
                  subtype=None, decree_date=None, enactment_date=None, abrogation_date=None, cycle=None):
         """Creates a new document instance.

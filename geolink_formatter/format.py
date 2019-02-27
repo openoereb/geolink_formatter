@@ -6,7 +6,8 @@ class HTML(object):
         """Creates a new HTML formatter."""
         pass
 
-    def format(self, documents):
+    @classmethod
+    def format(cls, documents):
         """Formats a list of :obj:`geolink_formatter.entity.Document` instances as HTML list.
 
         Args:
@@ -17,10 +18,11 @@ class HTML(object):
 
         """
         return u'<ul class="geolink-formatter">{documents}</ul>'.format(
-            documents=u''.join([self.__format_document__(document) for document in documents])
+            documents=u''.join([cls.__format_document__(document) for document in documents])
         )
 
-    def __format_document__(self, document):
+    @classmethod
+    def __format_document__(cls, document):
         """Formats a :obj:`geolink_formatter.entity.Document` instance as HTML list item.
 
         Args:
@@ -36,10 +38,11 @@ class HTML(object):
             if document.type or document.subtype else u'',
             title=document.title,
             enactment_date=document.enactment_date.strftime('%d.%m.%Y'),
-            files=self.__format_files__(document.files)
+            files=cls.__format_files__(document.files)
         )
 
-    def __format_files__(self, files):
+    @classmethod
+    def __format_files__(cls, files):
         """Formats a list of :obj:`geolink_formatter.entity.File` instances as HTML list.
 
         Args:
@@ -51,11 +54,12 @@ class HTML(object):
         """
         if len(files) > 0:
             return u'<ul class="geolink-formatter">{files}</ul>'.format(
-                files=u''.join([self.__format_file__(file) for file in files])
+                files=u''.join([cls.__format_file__(file) for file in files])
             )
         return u''
 
-    def __format_file__(self, file):
+    @classmethod
+    def __format_file__(cls, file):
         """Formats a :obj:`geolink_formatter.entity.File` instance as HTML list item.
 
         Args:
