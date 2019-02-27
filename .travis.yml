@@ -26,6 +26,16 @@ after_success:
 jobs:
   include:
 
+    - name: "Test documentation"
+      python: '3.6'
+      stage: test
+      if: type = pull_request
+      before_script:
+        - python -V
+        - pip install -r requirements.txt
+      script:
+        - sphinx-versioning build doc/source doc/build/html
+
     - name: "Deploy pages for master"
       python: '3.6'
       stage: deploy
