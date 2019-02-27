@@ -61,7 +61,6 @@ jobs:
       before_deploy:
         - python -V
         - pip install -r requirements.txt
-        - sphinx-versioning build doc/source doc/build/html
       deploy:
         - provider: pypi
           server: https://upload.pypi.org/legacy/
@@ -83,7 +82,7 @@ jobs:
       before_deploy:
         - python -V
         - pip install -r requirements.txt
-        - sphinx-versioning build doc/source doc/build/html
+        - sed -i "s/\(version='[0-9]*\.[0-9]*\.[0-9]*\)\('\)/\1-dev.$(date +%Y%m%d%H%M%S)\2/g" setup.py
       deploy:
         - provider: pypi
           server: https://test.pypi.org/legacy/
