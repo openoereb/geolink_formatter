@@ -23,32 +23,45 @@ script:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
-before_deploy:
-  - python -V
-  - pip install -r requirements.txt
-
 jobs:
   include:
+
     - name: "Deploy pages for master"
       python: '3.6'
       stage: deploy
       if: branch = master
+      before_deploy:
+        - python -V
+        - pip install -r requirements.txt
+        - sphinx-versioning build doc/source doc/build/html
       deploy:
-        - provider: script
-          script: sphinx-versioning push doc/source/ gh-pages .
-          skip_cleanup: true
+        - provider: pages
+          skip-cleanup: true
+          github-token: $GITHUB_TOKEN
+          local-dir: doc/build/html
+
     - name: "Deploy pages for tag"
       python: '3.6'
       stage: deploy
       if: tag IS present
+      before_deploy:
+        - python -V
+        - pip install -r requirements.txt
+        - sphinx-versioning build doc/source doc/build/html
       deploy:
-        - provider: script
-          script: sphinx-versioning push doc/source/ gh-pages .
-          skip_cleanup: true
+        - provider: pages
+          skip-cleanup: true
+          github-token: $GITHUB_TOKEN
+          local-dir: doc/build/html
+
     - name: "Deploy to PyPI"
       python: '3.6'
       stage: deploy
       if: tag IS present
+      before_deploy:
+        - python -V
+        - pip install -r requirements.txt
+        - sphinx-versioning build doc/source doc/build/html
       deploy:
         - provider: pypi
           server: https://upload.pypi.org/legacy/
@@ -62,10 +75,15 @@ jobs:
             tags: true
             repo: openoereb/geolink_formatter
             python: '3.6'
+
     - name: "Deploy to PyPI Test"
       python: '3.6'
       stage: deploy
       if: branch = master
+      before_deploy:
+        - python -V
+        - pip install -r requirements.txt
+        - sphinx-versioning build doc/source doc/build/html
       deploy:
         - provider: pypi
           server: https://test.pypi.org/legacy/
