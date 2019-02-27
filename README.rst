@@ -1,8 +1,7 @@
 OEREBlex geoLink Formatter
 ==========================
 
-|license| |build status| |coverage report| |python version| |format|
-|status|
+|license| |python version| |format| |status| |build status| |coverage report| |dependencies|
 
 This is a small library, meant to be used in combination with OEREBlex. It is capable of parsing a received
 geoLink response (XML) and converting it to multiple formats, such as HTML, which can be styled for
@@ -24,3 +23,5 @@ https://openoereb.github.io/geolink_formatter/
    :target: https://pypi.python.org/pypi/geolink_formatter
 .. |status| image:: https://img.shields.io/pypi/status/geolink_formatter.svg
    :target: https://pypi.python.org/pypi/geolink_formatter
+.. |dependencies| image:: https://img.shields.io/librariesio/github/openoereb/geolink_formatter.svg
+   :target: https://libraries.io/github/openoereb/geolink_formatter
