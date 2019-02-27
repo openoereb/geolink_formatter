@@ -1,9 +1,14 @@
 Changelog
----------
+=========
+
+1.3.2
+-----
+
+- Move repository to GitHub openoereb
 
 
 1.3.1
-*****
+-----
 
 Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1 (default)
 
@@ -11,7 +16,7 @@ Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1 (default)
 
 
 1.3.0
-*****
+-----
 
 Supported geoLink schema versions: v1.0.0, v1.1.0 (default)
 
@@ -19,7 +24,7 @@ Supported geoLink schema versions: v1.0.0, v1.1.0 (default)
 
 
 1.2.0
-*****
+-----
 
 Supported geoLink schema versions: 20171108 (v1.1.0)
 
@@ -27,7 +32,7 @@ Supported geoLink schema versions: 20171108 (v1.1.0)
 
 
 1.1.2
-*****
+-----
 
 Supported geoLink schema version: 20170214 (v1.0.0)
 
@@ -35,7 +40,7 @@ Supported geoLink schema version: 20170214 (v1.0.0)
 
 
 1.1.1
-*****
+-----
 
 Supported geoLink schema version: 20170214 (v1.0.0)
 
@@ -43,7 +48,7 @@ Supported geoLink schema version: 20170214 (v1.0.0)
 
 
 1.1.0
-*****
+-----
 
 Supported geoLink schema version: 20170214 (v1.0.0)
 
@@ -51,7 +56,7 @@ Supported geoLink schema version: 20170214 (v1.0.0)
 
 
 1.0.0
-*****
+-----
 
 Supported geoLink schema version: 20170214 (v1.0.0)
 

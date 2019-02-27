@@ -1,5 +1,5 @@
-Python geoLink Formatter
-========================
+OEREBlex geoLink Formatter
+==========================
 
 |license| |build status| |coverage report| |python version| |format|
 |status|
