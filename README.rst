@@ -1,6 +1,10 @@
 OEREBlex geoLink Formatter
 ==========================
 
+.. image:: https://api.codacy.com/project/badge/Grade/5853e6b21e6f459b8f6a84af3722430b
+   :alt: Codacy Badge
+   :target: https://app.codacy.com/app/karsten.deininger/geolink_formatter?utm_source=github.com&utm_medium=referral&utm_content=openoereb/geolink_formatter&utm_campaign=Badge_Grade_Dashboard
+
 |license| |python version| |format| |status| |build status| |coverage report| |dependencies|
 
 This is a small library, meant to be used in combination with OEREBlex. It is capable of parsing a received
