@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Python geoLink Formatter documentation build configuration file, created by
+# OEREBlex geoLink Formatter documentation build configuration file, created by
 # sphinx-quickstart on Tue May 16 13:06:47 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -52,7 +52,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Python geoLink Formatter'
+project = u'OEREBlex geoLink Formatter'
 copyright = u'2017, Amt für Geoinformation, Kanton Basel-Landschaft'
 author = u'Karsten Deininger'
 
@@ -106,7 +106,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'PythongeoLinkFormatterdoc'
+htmlhelp_basename = 'OEREBlexgeoLinkFormatterdoc'
 
 # If true, links to the reST sources are added to the pages.
 html_show_sourcelink = False
@@ -136,7 +136,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PythongeoLinkFormatter.tex', u'Python geoLink Formatter Documentation',
+    (master_doc, 'OEREBlexgeoLinkFormatter.tex', u'OEREBlex geoLink Formatter Documentation',
      u'Karsten Deininger', 'manual'),
 ]
 
@@ -146,7 +146,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'pythongeolinkformatter', u'Python geoLink Formatter Documentation',
+    (master_doc, 'oereblexgeolinkformatter', u'OEREBlex geoLink Formatter Documentation',
      [author], 1)
 ]
 
@@ -157,8 +157,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PythongeoLinkFormatter', u'Python geoLink Formatter Documentation',
-     author, 'PythongeoLinkFormatter', 'One line description of project.',
+    (master_doc, 'OEREBlexgeoLinkFormatter', u'OEREBlex geoLink Formatter Documentation',
+     author, 'OEREBlexgeoLinkFormatter', 'One line description of project.',
      'Miscellaneous'),
 ]
 
