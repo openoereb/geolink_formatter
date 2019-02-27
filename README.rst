@@ -25,5 +25,5 @@ https://openoereb.github.io/geolink_formatter/
    :target: https://codecov.io/gh/openoereb/geolink_formatter
 .. |dependencies| image:: https://img.shields.io/librariesio/github/openoereb/geolink_formatter.svg
    :target: https://libraries.io/github/openoereb/geolink_formatter
-.. |code quality| image:: https://api.codacy.com/project/badge/Grade/178fc68e9fcb458fb62bc5ff496bfe59
+.. |code quality| image:: https://api.codacy.com/project/badge/Grade/d2bb03f17bf3438cb295c0b5ea131ac8
    :target: https://www.codacy.com/app/openoereb/geolink_formatter?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=openoereb/geolink_formatter&amp;utm_campaign=Badge_Grade
