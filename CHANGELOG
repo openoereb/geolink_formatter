@@ -6,8 +6,7 @@ Changelog
 
 - Move repository to GitHub openoereb
 - Use defusedxml for XML parsing
-- Drop Python 3.4 compatibility
-- Check for Python 3.7 compatibility
+- Drop support for Python 3.4
 
 
 1.3.1
