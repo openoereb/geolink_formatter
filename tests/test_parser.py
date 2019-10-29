@@ -184,6 +184,17 @@ def test_schema_version_1_1_1():
     assert documents[0].abrogation_date.strftime(fmt) == '2008-12-31'
 
 
+def test_default_version_with_locale():
+    fmt = '%Y-%m-%d'
+    with requests_mock.mock() as m:
+        with open('tests/resources/geolink_v1.1.1.xml', 'rb') as f:
+            m.get('http://oereblex.test.com/api/geolinks/1500.xml?locale=fr', content=f.read())
+        documents = XML().from_url('http://oereblex.test.com/api/geolinks/1500.xml', {'locale': 'fr'})
+    assert documents[0].number == '1A'
+    assert documents[0].abbreviation == 'abbr'
+    assert documents[0].abrogation_date.strftime(fmt) == '2008-12-31'
+
+
 def test_dtd_validation_valid():
     content = XML(dtd_validation=True, xsd_validation=False)._parse_xml(
         """<?xml version="1.1" encoding="utf-8"?>
