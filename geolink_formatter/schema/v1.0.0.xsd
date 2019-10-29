@@ -57,6 +57,7 @@
                         <xs:attribute name="subtype" type="xs:string"/>
                         <xs:attribute name="decree_date" type="xs:string"/>
                         <xs:attribute name="enactment_date" type="xs:string"/>
+                        <xs:attribute name="approval_date" type="xs:string"/>
                     </xs:complexType>
                 </xs:element>
             </xs:choice>
