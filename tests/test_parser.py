@@ -184,6 +184,18 @@ def test_schema_version_1_1_1():
     assert documents[0].abrogation_date.strftime(fmt) == '2008-12-31'
 
 
+def test_schema_version_1_1_1_with_bezirk():
+    fmt = '%Y-%m-%d'
+    with requests_mock.mock() as m:
+        with open('tests/resources/geolink_v1.1.1_bezirk.xml', 'rb') as f:
+            m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        documents = XML(version=SCHEMA.V1_1_1).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
+    assert documents[0].number == '1A'
+    assert documents[0].abbreviation == 'abbr'
+    assert documents[0].abrogation_date.strftime(fmt) == '2008-12-31'
+    assert documents[0].federal_level == 'Bezirk'
+
+
 def test_default_version_with_locale():
     fmt = '%Y-%m-%d'
     with requests_mock.mock() as m:

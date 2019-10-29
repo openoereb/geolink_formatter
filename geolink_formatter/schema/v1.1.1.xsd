@@ -40,6 +40,7 @@
                         <xs:attribute name="federal_level">
                             <xs:simpleType>
                                 <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Bezirk"/>
                                     <xs:enumeration value="Gemeinde"/>
                                     <xs:enumeration value="Kanton"/>
                                     <xs:enumeration value="Interkantonal"/>
