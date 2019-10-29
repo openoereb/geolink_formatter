@@ -26,7 +26,7 @@ def test_html_string():
     html = formatter.html(xml.encode('utf-16be'))
     assert html == u'<ul class="geolink-formatter">' \
                    u'<li class="geolink-formatter-document">' \
-                   u'Example Type (Example Subtype): Example Document (18.10.1999)' \
+                   u'Example Type (Example Subtype): Example Document (18.10.1999) ' \
                    u'<ul class="geolink-formatter">' \
                    u'<li class="geolink-formatter-file">' \
                    u'<a href="/api/attachments/1" target="_blank">example1.pdf</a>' \
@@ -41,7 +41,7 @@ def test_html_url(mock_request):
     with mock_request():
         html = formatter.html('http://oereblex.test.com/api/geolinks/1500.xml')
     assert html == u'<ul class="geolink-formatter"><li class="geolink-formatter-document">' \
-                   u'Sondernutzungsplan (Gestaltungsplan): Tiefkühllager (27.03.2001)' \
+                   u'Sondernutzungsplan (Gestaltungsplan): Tiefkühllager (27.03.2001) ' \
                    u'<ul class="geolink-formatter">' \
                    u'<li class="geolink-formatter-file">' \
                    u'<a href="/api/attachments/4735" target="_blank">2918-E-1.pdf</a>' \
@@ -61,7 +61,7 @@ def test_html_url(mock_request):
                    u'</ul>' \
                    u'</li>' \
                    u'<li class="geolink-formatter-document">' \
-                   u'Planungs- und Baugesetz (01.04.2017)' \
+                   u'Planungs- und Baugesetz (01.04.2017) ' \
                    u'<ul class="geolink-formatter">' \
                    u'<li class="geolink-formatter-file">' \
                    u'<a href="http://www.rechtsbuch.tg.ch/frontend/versions/pdf_file_with_annex/1379?' \
@@ -70,7 +70,7 @@ def test_html_url(mock_request):
                    u'</ul>' \
                    u'</li>' \
                    u'<li class="geolink-formatter-document">' \
-                   u'Bundesgesetz über die Raumplanung (01.01.2016)' \
+                   u'Bundesgesetz über die Raumplanung (01.01.2016) ' \
                    u'<ul class="geolink-formatter">' \
                    u'<li class="geolink-formatter-file">' \
                    u'<a href="http://www.lexfind.ch/dtah/136884/2" target="_blank">700.de.pdf</a>' \
@@ -79,7 +79,7 @@ def test_html_url(mock_request):
                    u'</li>' \
                    u'<li class="geolink-formatter-document">' \
                    u'Verordnung des Regierungsrates zum Planungs- und Baugesetz und zur Interkantonalen ' \
-                   u'Vereinbarung über die Harmonisierung der Baubegriffe (05.11.2016)' \
+                   u'Vereinbarung über die Harmonisierung der Baubegriffe (05.11.2016) ' \
                    u'<ul class="geolink-formatter">' \
                    u'<li class="geolink-formatter-file">' \
                    u'<a href="http://www.rechtsbuch.tg.ch/frontend/versions/pdf_file_with_annex/1319?' \

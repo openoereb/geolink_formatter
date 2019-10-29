@@ -8,6 +8,7 @@ Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1 (default)
 
 - Add test for arbitrary URL parameters
 - Add enumeration value "Bezirk" for attribute "federal_level"
+- If available, show abrogation date instead of files in HTML output
 
 
 1.3.2

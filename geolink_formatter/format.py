@@ -32,14 +32,29 @@ class HTML(object):
             str: The document formatted as HTML list item.
 
         """
+        if document.abrogation_date:
+            files = u''
+            strike_start = u'<strike>'
+            strike_end = u'</strike>'
+            abrogation_date = u'({0})'.format(document.abrogation_date.strftime('%d.%m.%Y'))
+        else:
+            files = cls.__format_files__(document.files)
+            strike_start = u''
+            strike_end = u''
+            abrogation_date = u''
         subtype = u' ({0})'.format(document.subtype) if document.subtype else u''
-        return u'<li class="geolink-formatter-document">{type}{title} ({enactment_date}){files}</li>'.format(
-            type=u'{0}{1}: '.format(document.type or u'', subtype)
-            if document.type or document.subtype else u'',
-            title=document.title,
-            enactment_date=document.enactment_date.strftime('%d.%m.%Y'),
-            files=cls.__format_files__(document.files)
-        )
+        return u'<li class="geolink-formatter-document">' \
+               u'{strike_start}{type}{title} ({enactment_date}){strike_end} {abrogation_date}{files}' \
+               u'</li>'.format(
+                   type=u'{0}{1}: '.format(document.type or u'', subtype)
+                   if document.type or document.subtype else u'',
+                   title=document.title,
+                   enactment_date=document.enactment_date.strftime('%d.%m.%Y'),
+                   files=files,
+                   strike_start=strike_start,
+                   strike_end=strike_end,
+                   abrogation_date=abrogation_date
+               )
 
     @classmethod
     def __format_files__(cls, files):
