@@ -9,3 +9,5 @@
 /dist/
 /doc/build/
 /geolink_formatter.egg-info/
+__pycache__
+*.pyc
