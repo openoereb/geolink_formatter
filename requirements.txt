@@ -1,5 +1,5 @@
 py>=1.5.0
-tox==3.14.2
+tox==3.14.3
 pluggy==0.13.1
 pytest==4.6.1
 pytest-cov==2.8.1
