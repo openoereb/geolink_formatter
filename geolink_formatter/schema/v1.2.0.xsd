@@ -42,11 +42,24 @@
                         <xs:attribute name="federal_level">
                             <xs:simpleType>
                                 <xs:restriction base="xs:string">
+                                    <xs:enumeration value="A livello intercantonale"/>
                                     <xs:enumeration value="Bezirk"/>
-                                    <xs:enumeration value="Gemeinde"/>
-                                    <xs:enumeration value="Kanton"/>
-                                    <xs:enumeration value="Interkantonal"/>
                                     <xs:enumeration value="Bund"/>
+                                    <xs:enumeration value="Canton"/>
+                                    <xs:enumeration value="Cantone"/>
+                                    <xs:enumeration value="Chantun"/>
+                                    <xs:enumeration value="Commune"/>
+                                    <xs:enumeration value="Comune"/>
+                                    <xs:enumeration value="Confédération"/>
+                                    <xs:enumeration value="Confederazione"/>
+                                    <xs:enumeration value="Confederaziun"/>
+                                    <xs:enumeration value="Fürstentum"/>
+                                    <xs:enumeration value="Gemeinde"/>
+                                    <xs:enumeration value="Intercantonal"/>
+                                    <xs:enumeration value="Interchantunal"/>
+                                    <xs:enumeration value="Interkantonal"/>
+                                    <xs:enumeration value="Kanton"/>
+                                    <xs:enumeration value="Vischnanca"/>
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:attribute>
