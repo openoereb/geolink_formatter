@@ -47,8 +47,9 @@ class XML(object):
         self._dtd_validation = dtd_validation
         self._xsd_validation = xsd_validation
         xsd = pkg_resources.resource_filename('geolink_formatter', 'schema/v{0}.xsd'.format(version))
-        with open(xsd) as f:
-            self._schema = XMLSchema(fromstring(f.read()))
+        if self._xsd_validation:
+            with open(xsd) as f:
+                self._schema = XMLSchema(fromstring(f.read()))
 
     @property
     def host_url(self):
