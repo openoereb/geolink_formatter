@@ -6,7 +6,7 @@ from geolink_formatter.format import HTML
 from geolink_formatter.parser import XML
 
 
-__version__ = '1.5.1'
+__version__ = '1.5.2'
 
 
 class GeoLinkFormatter(object):
