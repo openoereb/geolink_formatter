@@ -1,7 +1,7 @@
 py>=1.5.0
 tox==3.14.6
 pluggy==0.13.1
-pytest==4.6.1
+pytest==5.4.2
 pytest-cov==2.8.1
 flake8==3.8.2
 requests-mock==1.7.0
