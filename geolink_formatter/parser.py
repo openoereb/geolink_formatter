@@ -3,6 +3,7 @@ import datetime
 
 import pkg_resources
 import requests
+import sys
 from lxml.etree import XMLSchema, DTD, DocumentInvalid
 from defusedxml.lxml import fromstring
 from geolink_formatter.entity import Document, File
@@ -48,8 +49,12 @@ class XML(object):
         self._xsd_validation = xsd_validation
         xsd = pkg_resources.resource_filename('geolink_formatter', 'schema/v{0}.xsd'.format(version))
         if self._xsd_validation:
-            with open(xsd, encoding='utf-8') as f:
-                self._schema = XMLSchema(fromstring(f.read()))
+            if sys.version_info.major > 2:
+                with open(xsd, encoding='utf-8') as f:
+                    self._schema = XMLSchema(fromstring(f.read()))
+            else:
+                with open(xsd) as f:
+                    self._schema = XMLSchema(fromstring(f.read()))
 
     @property
     def host_url(self):
