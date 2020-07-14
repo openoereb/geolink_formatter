@@ -48,7 +48,7 @@ class XML(object):
         self._xsd_validation = xsd_validation
         xsd = pkg_resources.resource_filename('geolink_formatter', 'schema/v{0}.xsd'.format(version))
         if self._xsd_validation:
-            with open(xsd) as f:
+            with open(xsd, encoding='utf-8') as f:
                 self._schema = XMLSchema(fromstring(f.read()))
 
     @property
