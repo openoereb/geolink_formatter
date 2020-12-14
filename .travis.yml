@@ -77,9 +77,9 @@ jobs:
       deploy:
         - provider: pypi
           server: https://upload.pypi.org/legacy/
-          user: kdeininger
+          user: __token__
           password:
-            secure: "DRam+gSbTi1t6oDxtEA1C6Cm1vN4dJ3uKOlepBGYmnIsx8ckjjHsza5zaRPBFuw54VjxmdT2IQ+dUD6d0PgZwRNHV/YuC73tA3n6QRPmmU4h3hDq4+ZiNMpw75Vog9kmhJOGRVZRvV/kqbpCg+4aJfPuDaFRqfjBDYY32nKBCHioxsTtZd4DXius4iBlwh0stWEYx4EMIGrGX1S0IppdIYuFdCEAK90UqASJ0cLXQd4A72j74KSAvLdY1Az1N0ciKqg4n307vwK9xg/o8xqGQtbl2PRtZ2tLM+TPLQ3RAsLtPImUHDrBOSC1U/pb8pqXZhwLjjW9uMzCBwH6asMpThJGempub2wSyc6KyT8b0p1zKYpGc9Jzghndeobv5JlmeGs56adm8thxxOM4jCdbGeLWMf/tVATxdl572nS6Tvn72aMsx0M7rLmXUDTH2rgOjf0/oJYVjAxnpGYRzfgfU7AakIpoVA1+NCp1xTEdZbOKxY4gyqoUQ/NZyyQBd6a3zoEET1isQarDAVhMIiGz7Py4iejIqsFthyKfvBikRJeZA/LhMu4p57Q6gIDndGuuX+IyJyi3yEmeBS2froqOfAjZFlqcHz2JkdJ2LATiTfZt0bWrx2Se1aiVdbHkZ75Qk546KMdKbwfjwMhX21GRjWTycsF91SBf19SDdgFrKpI="
+            secure: "GMEYi6Hnel7JcvKBXPcAl8POV53Vu7dirbGOj3DNRRl7pqMvVSjerSeoPIw0jc69eE4FFqmhALiTlPGif2D2QRDtruB8gTHxVrUOtd+vxzNiEMBzrNMuj2LcSJiQIEAtpTKRmRNXYS09Xu+qrGBvXJyZ6ECRVSxm8hwCY8xbhdhc+astETN1w6VbefeDkPqThl0zfJHQLC/6y0BtzARom5h5aKXY5OAogmkwI5p6KW6qMjcEfCZXgXj3PgVa6fOHdO3TMCacgtkEKu7vt1XiJpGyNPBFxI6D7N60LwPck0sl5g0A7ZbmBZGVLxlh5iFRqyJtxnVV8PNFULDi9Dma4epjTZ0I2BocGyXhtKpWvPSvcT3CevetqlQKgHSoQY2qN0me3tu8aDZ2wIOcTt54zzbtaLYNF2nPSaCjfUWgsiWj6V4sXuypa4RY4UXQjn7N6PWR+Y0+b7m1HrZm6KEKfYtwFdQ/JaX2eumcHE4UAGaw0zxYKa6Bg6Gto8eQfpMhlDQ5TaP6n2KU0u/BKIKW2a+9iZK2hpaZtS64IIJIwppZjeMiHjT1VggACsdYzaZNRWpW2VBgRCPLvJ+guM4P80QCB3Ewo6In4OSHsFteQIV3RzgpgyRyaaPOSR3KEW9OJIA/QYDlYPIuClbAEWh15VTGeoMTEq6HX6b6zuff8pQ="
           distributions: sdist bdist_wheel
           skip_upload_docs: true
           skip_cleanup: true
@@ -100,9 +100,9 @@ jobs:
       deploy:
         - provider: pypi
           server: https://test.pypi.org/legacy/
-          user: kdeininger
+          user: __token__
           password:
-            secure: "D5gVZYSdVYYCf0ZtbvmZHXOcdGsJog6kqm51whMyVrle/MGKFCNR/Vfo4kB6UDTItcgLZhYhUEFCxIi1E94eTgunEPj5/0ZkcLI+hO270CGTE6OaLUriyEcWVoQ9MCqZcdUV0QhsgoDRsZ/44IEDORB33hi432GmghAH1lQQ1ouZ8ZSGBivN+bGJoC7UOjXu/zzQXgjYpUlTzGDTUhuZjo4KamKxHGC5llPcnr38ZWrBwPiUZY8W7fxlOo+Ek8wlVbNQmyfuwOE3kUwAb/6QyQS3rKz+Aa7Yd5qgp1V9/9QaijwOkO8hsCeyoazJ1l4AQwuygGMVhT52Te/xM6FmSaAa2w+XFVa43gyEkbb51JCsk/eaarXBN/gHKUb7/zsOgL974fAZHu748lIlNaNrkb2COJ8DN+c7PF7RRljclWhyq3CI9+8ynz3QLCAL49pvRSySMU7ixoqVxRUtqipbF50R+KipbuT+J0q3LR0Jbc0/eaVKJ14zU80CQORy9LCw3291zhr+SmOKQH+E+RqQvYtt0eFaQC/B+bEeGWZYcS+sXodZ306pMyZPaAFMayEDT9yGhLiZNXT6lpFEgjDNaBXEj6Rzui5KfgecpPR00ACTntTdCwFqSXum7qZdGDjUMvKTSdD5i5AlBjzh76KQhCC8N72M/sxnhogayu1taHs="
+            secure: "K4gnV3fYansoUv9NbkWlHfoWIqck7WJ248M9jGacl2lsf/TKVWGpguDcqB2mqp468f/YSlwjD+bwPzBE/nDXlqbc6TfaVOFpZbohykQ8hgwptaMNGEl99+UD5w/FTIzncJT6NxmY1pogiN3CLR7674Qcc/DvY9rZYMMJrGgc7U+kmRhGko7HRY4Vlym5ImVGH2CIiOk2BKPih7w9yvB5fljYbMQQ5GM6GFPtGTL41eMFw6HP1zwf69SM4Fp4NNcTNDcemv9USdHBfcyhiP5Oep/s7I+NAbxtG5BtskrdMECq56btYs2U5hBl7fl3uwxcEhYlCZSncFhwwi/+8nwu4ZXpVxESEcL3FMccpw/ULrsDawZCc7mWu8PDDVxDNa5x3vA415TPaKMpj2jPqkhf7zKiMNUR6uEdZUFbtAlR0VWHtPcpj9gGYSUHTKnCgy8wlFio2446uPy1yQiJyg/+BJmyWtuccX3LHd0FjwKnDeCqnkV5116BzMFz5/GFl+3/RPjntPWoHWKQOuIvVZxvrKBMWuvnJ/NEuA6tO4G0pXHHt0ZhvgRb2wmV78sbkWgNWZUjGPmjJqH4nqMOLWqDYOakNrQW52K1Pv2x3nxoN04ovDvs0tE96/Xfa4uufBFN61M0wURraqJmhzqdivcE8gytnC0A8nhuuihUZ6RLcls="
           distributions: sdist bdist_wheel
           skip_upload_docs: true
           skip_cleanup: true
