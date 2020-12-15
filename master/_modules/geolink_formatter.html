@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>geolink_formatter &mdash; OEREBlex geoLink Formatter  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> OEREBlex geoLink Formatter
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../geolink_formatter.html">Module <em>geolink_formatter</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geolink_formatter_entity.html">Module <em>geolink_formatter.entity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geolink_formatter_format.html">Module <em>geolink_formatter.format</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geolink_formatter_parser.html">Module <em>geolink_formatter.parser</em></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OEREBlex geoLink Formatter</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+
+<img src="../_static/BL_Logo_VGD_AGI_C_r_rgb.png"
+     style="border: none; max-width: 250px; margin-bottom: 25px; float: right" />
+
+<div class="clearfix"></div>
+
+<p>
+    <a href="https://github.com/openoereb/geolink_formatter/blob/master/LICENSE" target="_blank">
+        <img alt="license" src="https://img.shields.io/pypi/l/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
+        <img alt="python version" src="https://img.shields.io/pypi/pyversions/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
+        <img alt="format" src="https://img.shields.io/pypi/format/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
+        <img alt="status" src="https://img.shields.io/pypi/status/geolink_formatter.svg" />
+    </a>
+    <a href="https://github.com/openoereb/geolink_formatter/tree/master" target="_blank">
+        <img alt="build status" src="https://travis-ci.org/openoereb/geolink_formatter.svg?branch=master" />
+    </a>
+    <a href="https://codecov.io/gh/openoereb/geolink_formatter" target="_blank">
+        <img alt="coverage report" src="https://codecov.io/gh/openoereb/geolink_formatter/branch/master/graph/badge.svg" />
+    </a>
+    <a href="https://libraries.io/github/openoereb/geolink_formatter" target="_blank">
+        <img alt="dependencies" src="https://img.shields.io/librariesio/github/openoereb/geolink_formatter.svg" />
+    </a>
+    <a href="https://www.codacy.com/app/openoereb/geolink_formatter?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=openoereb/geolink_formatter&amp;utm_campaign=Badge_Grade" target="_blank">
+        <img alt="dependencies" src="https://api.codacy.com/project/badge/Grade/d2bb03f17bf3438cb295c0b5ea131ac8" />
+    </a>
+</p>
+
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>geolink_formatter</li>
+    
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for geolink_formatter</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">geolink_formatter.entity</span> <span class="kn">import</span> <span class="n">Msg</span>
+<span class="kn">from</span> <span class="nn">geolink_formatter.format</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">from</span> <span class="nn">geolink_formatter.parser</span> <span class="kn">import</span> <span class="n">XML</span>
+
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;1.5.3&#39;</span>
+
+
+<div class="viewcode-block" id="GeoLinkFormatter"><a class="viewcode-back" href="../geolink_formatter.html#geolink_formatter.GeoLinkFormatter">[docs]</a><span class="k">class</span> <span class="nc">GeoLinkFormatter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="n">dtd_validation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Creates a new GeoLinkFormatter instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            host_url (str): URL of the OEREBlex host to resolve relative URLs. The complete URL until but</span>
+<span class="sd">                without the */api* part has to be set, starting with *http://* or *https://*.</span>
+<span class="sd">            version (str): The version of the geoLink schema to be used. Defaults to `1.2.0`.</span>
+<span class="sd">            dtd_validation (bool): Enable/disable validation of document type definition (DTD).</span>
+<span class="sd">                Optional, defaults to False.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_host_url</span> <span class="o">=</span> <span class="n">host_url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">=</span> <span class="n">version</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dtd_validation</span> <span class="o">=</span> <span class="n">dtd_validation</span>
+
+<div class="viewcode-block" id="GeoLinkFormatter.html"><a class="viewcode-back" href="../geolink_formatter.html#geolink_formatter.GeoLinkFormatter.html">[docs]</a>    <span class="k">def</span> <span class="nf">html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the HTML representation of the geoLink XML form the specified source.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            source (str or bytes): The geoLink source. Can be a XML string or an URL to load the XML via</span>
+<span class="sd">                HTTP/HTTPS request.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: An HTML formatted string containing the documents as HTML list.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            TypeError: Raised on invalid source type.</span>
+<span class="sd">            lxml.etree.XMLSyntaxError: Raised on failed validation.</span>
+<span class="sd">            requests.HTTPError: Raised on failed HTTP request.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">parser</span> <span class="o">=</span> <span class="n">XML</span><span class="p">(</span><span class="n">host_url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_host_url</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">,</span> <span class="n">dtd_validation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dtd_validation</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)):</span>
+            <span class="n">http</span> <span class="o">=</span> <span class="s1">&#39;http://&#39;</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="sa">b</span><span class="s1">&#39;http://&#39;</span>
+            <span class="n">https</span> <span class="o">=</span> <span class="s1">&#39;https://&#39;</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="sa">b</span><span class="s1">&#39;https://&#39;</span>
+            <span class="k">if</span> <span class="n">source</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">http</span><span class="p">)</span> <span class="ow">or</span> <span class="n">source</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">https</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">HTML</span><span class="p">()</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="n">source</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">HTML</span><span class="p">()</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">source</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">Msg</span><span class="o">.</span><span class="n">invalid_argument</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">arg</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span>
+                <span class="n">expected</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">),</span>
+                <span class="n">got</span><span class="o">=</span><span class="n">source</span><span class="o">.</span><span class="vm">__class__</span>
+            <span class="p">))</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017, Amt für Geoinformation, Kanton Basel-Landschaft
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+
+    <div style="float: right">
+        <a href="https://github.com/openoereb/geolink_formatter">
+            View on GitHub
+            <img alt="View on GitHub" width="23" src="../_static/GitHub-Mark-32px.png" />
+        </a>
+    </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: master
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="../../v1.5.3/index.html">v1.5.3</a></dd>
+            <dd><a href="../../v1.5.2/index.html">v1.5.2</a></dd>
+            <dd><a href="../../v1.5.1/index.html">v1.5.1</a></dd>
+            <dd><a href="../../v1.5.0/index.html">v1.5.0</a></dd>
+            <dd><a href="../../v1.4.0/index.html">v1.4.0</a></dd>
+            <dd><a href="../../v1.3.1/index.html">v1.3.1</a></dd>
+            <dd><a href="../../v1.3.0/index.html">v1.3.0</a></dd>
+            <dd><a href="../../v1.2.0/index.html">v1.2.0</a></dd>
+            <dd><a href="../../v1.1.2/index.html">v1.1.2</a></dd>
+            <dd><a href="../../v1.1.1/index.html">v1.1.1</a></dd>
+            <dd><a href="../../v1.1.0/index.html">v1.1.0</a></dd>
+            <dd><a href="../../v1.0.0/index.html">v1.0.0</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="geolink_formatter.html">master</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

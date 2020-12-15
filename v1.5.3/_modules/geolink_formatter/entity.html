@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>geolink_formatter.entity &mdash; OEREBlex geoLink Formatter  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/banner.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> OEREBlex geoLink Formatter
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter.html">Module <em>geolink_formatter</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter_entity.html">Module <em>geolink_formatter.entity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter_format.html">Module <em>geolink_formatter.format</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter_parser.html">Module <em>geolink_formatter.parser</em></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OEREBlex geoLink Formatter</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+
+<img src="../../_static/BL_Logo_VGD_AGI_C_r_rgb.png"
+     style="border: none; max-width: 250px; margin-bottom: 25px; float: right" />
+
+<div class="clearfix"></div>
+
+<p>
+    <a href="https://github.com/openoereb/geolink_formatter/blob/master/LICENSE" target="_blank">
+        <img alt="license" src="https://img.shields.io/pypi/l/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
+        <img alt="python version" src="https://img.shields.io/pypi/pyversions/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
+        <img alt="format" src="https://img.shields.io/pypi/format/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
+        <img alt="status" src="https://img.shields.io/pypi/status/geolink_formatter.svg" />
+    </a>
+    <a href="https://github.com/openoereb/geolink_formatter/tree/master" target="_blank">
+        <img alt="build status" src="https://travis-ci.org/openoereb/geolink_formatter.svg?branch=master" />
+    </a>
+    <a href="https://codecov.io/gh/openoereb/geolink_formatter" target="_blank">
+        <img alt="coverage report" src="https://codecov.io/gh/openoereb/geolink_formatter/branch/master/graph/badge.svg" />
+    </a>
+    <a href="https://libraries.io/github/openoereb/geolink_formatter" target="_blank">
+        <img alt="dependencies" src="https://img.shields.io/librariesio/github/openoereb/geolink_formatter.svg" />
+    </a>
+    <a href="https://www.codacy.com/app/openoereb/geolink_formatter?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=openoereb/geolink_formatter&amp;utm_campaign=Badge_Grade" target="_blank">
+        <img alt="dependencies" src="https://api.codacy.com/project/badge/Grade/d2bb03f17bf3438cb295c0b5ea131ac8" />
+    </a>
+</p>
+
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../geolink_formatter.html">geolink_formatter</a> &raquo;</li>
+        
+      <li>geolink_formatter.entity</li>
+    
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for geolink_formatter.entity</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+
+<span class="k">class</span> <span class="nc">Msg</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="n">invalid_argument</span> <span class="o">=</span> <span class="s1">&#39;Invalid argument &quot;</span><span class="si">{arg}</span><span class="s1">&quot;: expected &quot;</span><span class="si">{expected}</span><span class="s1">&quot;, got &quot;</span><span class="si">{got}</span><span class="s1">&quot;&#39;</span>
+    <span class="sd">&quot;&quot;&quot;str: Message for invalid argument type.&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="Document"><a class="viewcode-back" href="../../geolink_formatter_entity.html#geolink_formatter.entity.Document">[docs]</a><span class="k">class</span> <span class="nc">Document</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doctype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">federal_level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">authority</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">authority_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">abbreviation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">subtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decree_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enactment_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">abrogation_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cycle</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Creates a new document instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            files (list[geolink_formatter.entity.File]): The files contained by the document.</span>
+<span class="sd">            id (str): The document identifier.</span>
+<span class="sd">            category (str): The document category.</span>
+<span class="sd">            doctype (str): The internal type of the document.</span>
+<span class="sd">            federal_level (str): The federal level of the document.</span>
+<span class="sd">            authority (str): The name of the authority responsible for the document.</span>
+<span class="sd">            authority_url (str): The URL of the authority&#39;s website.</span>
+<span class="sd">            title (str): The document title.</span>
+<span class="sd">            number (str): The document number.</span>
+<span class="sd">            abbreviation (str): The document abbreviation.</span>
+<span class="sd">            instance (str): The document&#39;s instance.</span>
+<span class="sd">            type (str): The official type of the document.</span>
+<span class="sd">            subtype (str): The subtype of the document.</span>
+<span class="sd">            decree_date (datetime.date): The date of decree.</span>
+<span class="sd">            enactment_date (datetime.date): The date of enactment.</span>
+<span class="sd">            abrogation_date (datetime.date): The date of abrogation.</span>
+<span class="sd">            cycle (str): The document cycle.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            TypeError: Raised on missing argument or invalid argument type.</span>
+<span class="sd">            ValueError: Raised on invalid argument value.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">Msg</span><span class="o">.</span><span class="n">invalid_argument</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">arg</span><span class="o">=</span><span class="s1">&#39;files&#39;</span><span class="p">,</span>
+                <span class="n">expected</span><span class="o">=</span><span class="nb">list</span><span class="p">,</span>
+                <span class="n">got</span><span class="o">=</span><span class="n">files</span><span class="o">.</span><span class="vm">__class__</span>
+            <span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">decree_date</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">decree_date</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">Msg</span><span class="o">.</span><span class="n">invalid_argument</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">arg</span><span class="o">=</span><span class="s1">&#39;decree_date&#39;</span><span class="p">,</span>
+                <span class="n">expected</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+                <span class="n">got</span><span class="o">=</span><span class="n">decree_date</span><span class="o">.</span><span class="vm">__class__</span>
+            <span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">enactment_date</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">enactment_date</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">Msg</span><span class="o">.</span><span class="n">invalid_argument</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">arg</span><span class="o">=</span><span class="s1">&#39;enactment_date&#39;</span><span class="p">,</span>
+                <span class="n">expected</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+                <span class="n">got</span><span class="o">=</span><span class="n">enactment_date</span><span class="o">.</span><span class="vm">__class__</span>
+            <span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">abrogation_date</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">abrogation_date</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">Msg</span><span class="o">.</span><span class="n">invalid_argument</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">arg</span><span class="o">=</span><span class="s1">&#39;decree_date&#39;</span><span class="p">,</span>
+                <span class="n">expected</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+                <span class="n">got</span><span class="o">=</span><span class="n">decree_date</span><span class="o">.</span><span class="vm">__class__</span>
+            <span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_files</span> <span class="o">=</span> <span class="n">files</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_category</span> <span class="o">=</span> <span class="n">category</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_doctype</span> <span class="o">=</span> <span class="n">doctype</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_federal_level</span> <span class="o">=</span> <span class="n">federal_level</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_authority</span> <span class="o">=</span> <span class="n">authority</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_authority_url</span> <span class="o">=</span> <span class="n">authority_url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_number</span> <span class="o">=</span> <span class="n">number</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_abbreviation</span> <span class="o">=</span> <span class="n">abbreviation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="n">instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_subtype</span> <span class="o">=</span> <span class="n">subtype</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_decree_date</span> <span class="o">=</span> <span class="n">decree_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_enactment_date</span> <span class="o">=</span> <span class="n">enactment_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_abrogation_date</span> <span class="o">=</span> <span class="n">abrogation_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cycle</span> <span class="o">=</span> <span class="n">cycle</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list[geolink_formatter.entity.File]: The files contained by the document.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_files</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The document identifier.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_id</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">category</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The document category.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_category</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">doctype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The internal type of the document.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_doctype</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">federal_level</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The federal level of the document.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_federal_level</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">authority</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The name of the authority responsible for the document.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_authority</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">authority_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The URL of the authority&#39;s website.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_authority_url</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The document title.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_title</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The document number (since v1.1.0).&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_number</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">abbreviation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The document abbreviation (since v1.1.0).&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_abbreviation</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">instance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The document&#39;s instance.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The official type of the document.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The subtype of the document.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subtype</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">decree_date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;datetime.date: The date of decree.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decree_date</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">enactment_date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;datetime.date: The date of enactment.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enactment_date</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">abrogation_date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;datetime.date: The date of abrogation (since v1.1.0).&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_abrogation_date</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cycle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The document cycle (v1.0.0 only).&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cycle</span></div>
+
+
+<div class="viewcode-block" id="File"><a class="viewcode-back" href="../../geolink_formatter_entity.html#geolink_formatter.entity.File">[docs]</a><span class="k">class</span> <span class="nc">File</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Creates a new file instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            category (str): The file&#39;s category.</span>
+<span class="sd">            href (str): The URL to access the file.</span>
+<span class="sd">            title (str): The file&#39;s title.</span>
+<span class="sd">            description (str): The file&#39;s description.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_href</span> <span class="o">=</span> <span class="n">href</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_category</span> <span class="o">=</span> <span class="n">category</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_description</span> <span class="o">=</span> <span class="n">description</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The file&#39;s title.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_title</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">href</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The URL to access the file.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_href</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">category</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The file&#39;s category.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_category</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The file&#39;s description.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_description</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017, Amt für Geoinformation, Kanton Basel-Landschaft
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+
+    <div style="float: right">
+        <a href="https://github.com/openoereb/geolink_formatter">
+            View on GitHub
+            <img alt="View on GitHub" width="23" src="../../_static/GitHub-Mark-32px.png" />
+        </a>
+    </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: v1.5.3
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="entity.html">v1.5.3</a></dd>
+            <dd><a href="../../../v1.5.2/index.html">v1.5.2</a></dd>
+            <dd><a href="../../../v1.5.1/index.html">v1.5.1</a></dd>
+            <dd><a href="../../../v1.5.0/index.html">v1.5.0</a></dd>
+            <dd><a href="../../../v1.4.0/index.html">v1.4.0</a></dd>
+            <dd><a href="../../../v1.3.1/index.html">v1.3.1</a></dd>
+            <dd><a href="../../../v1.3.0/index.html">v1.3.0</a></dd>
+            <dd><a href="../../../v1.2.0/index.html">v1.2.0</a></dd>
+            <dd><a href="../../../v1.1.2/index.html">v1.1.2</a></dd>
+            <dd><a href="../../../v1.1.1/index.html">v1.1.1</a></dd>
+            <dd><a href="../../../v1.1.0/index.html">v1.1.0</a></dd>
+            <dd><a href="../../../v1.0.0/index.html">v1.0.0</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../master/index.html">master</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

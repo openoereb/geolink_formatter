@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>geolink_formatter.parser &mdash; OEREBlex geoLink Formatter  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/banner.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> OEREBlex geoLink Formatter
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter.html">Module <em>geolink_formatter</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter_entity.html">Module <em>geolink_formatter.entity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter_format.html">Module <em>geolink_formatter.format</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter_parser.html">Module <em>geolink_formatter.parser</em></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OEREBlex geoLink Formatter</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+
+<img src="../../_static/BL_Logo_VGD_AGI_C_r_rgb.png"
+     style="border: none; max-width: 250px; margin-bottom: 25px; float: right" />
+
+<div class="clearfix"></div>
+
+<p>
+    <a href="https://github.com/openoereb/geolink_formatter/blob/master/LICENSE" target="_blank">
+        <img alt="license" src="https://img.shields.io/pypi/l/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
+        <img alt="python version" src="https://img.shields.io/pypi/pyversions/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
+        <img alt="format" src="https://img.shields.io/pypi/format/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.org/project/geolink_formatter/" target="_blank">
+        <img alt="status" src="https://img.shields.io/pypi/status/geolink_formatter.svg" />
+    </a>
+    <a href="https://github.com/openoereb/geolink_formatter/tree/master" target="_blank">
+        <img alt="build status" src="https://travis-ci.org/openoereb/geolink_formatter.svg?branch=master" />
+    </a>
+    <a href="https://codecov.io/gh/openoereb/geolink_formatter" target="_blank">
+        <img alt="coverage report" src="https://codecov.io/gh/openoereb/geolink_formatter/branch/master/graph/badge.svg" />
+    </a>
+    <a href="https://libraries.io/github/openoereb/geolink_formatter" target="_blank">
+        <img alt="dependencies" src="https://img.shields.io/librariesio/github/openoereb/geolink_formatter.svg" />
+    </a>
+    <a href="https://www.codacy.com/app/openoereb/geolink_formatter?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=openoereb/geolink_formatter&amp;utm_campaign=Badge_Grade" target="_blank">
+        <img alt="dependencies" src="https://api.codacy.com/project/badge/Grade/d2bb03f17bf3438cb295c0b5ea131ac8" />
+    </a>
+</p>
+
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../geolink_formatter.html">geolink_formatter</a> &raquo;</li>
+        
+      <li>geolink_formatter.parser</li>
+    
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for geolink_formatter.parser</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">pkg_resources</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">lxml.etree</span> <span class="kn">import</span> <span class="n">XMLSchema</span><span class="p">,</span> <span class="n">DTD</span><span class="p">,</span> <span class="n">DocumentInvalid</span>
+<span class="kn">from</span> <span class="nn">defusedxml.lxml</span> <span class="kn">import</span> <span class="n">fromstring</span>
+<span class="kn">from</span> <span class="nn">geolink_formatter.entity</span> <span class="kn">import</span> <span class="n">Document</span><span class="p">,</span> <span class="n">File</span>
+
+
+<span class="k">class</span> <span class="nc">SCHEMA</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Provides the available geoLink schema versions.&quot;&quot;&quot;</span>
+
+    <span class="n">V1_0_0</span> <span class="o">=</span> <span class="s1">&#39;1.0.0&#39;</span>
+    <span class="sd">&quot;&quot;&quot;str: geoLink schema version 1.0.0&quot;&quot;&quot;</span>
+
+    <span class="n">V1_1_0</span> <span class="o">=</span> <span class="s1">&#39;1.1.0&#39;</span>
+    <span class="sd">&quot;&quot;&quot;str: geoLink schema version 1.1.0&quot;&quot;&quot;</span>
+
+    <span class="n">V1_1_1</span> <span class="o">=</span> <span class="s1">&#39;1.1.1&#39;</span>
+    <span class="sd">&quot;&quot;&quot;str: geoLink schema version 1.1.1&quot;&quot;&quot;</span>
+
+    <span class="n">V1_2_0</span> <span class="o">=</span> <span class="s1">&#39;1.2.0&#39;</span>
+    <span class="sd">&quot;&quot;&quot;str: geoLink schema version 1.2.0&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="XML"><a class="viewcode-back" href="../../geolink_formatter_parser.html#geolink_formatter.parser.XML">[docs]</a><span class="k">class</span> <span class="nc">XML</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="n">_date_format</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span>
+    <span class="sd">&quot;&quot;&quot;str: Format of date values in XML.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="n">dtd_validation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xsd_validation</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create a new XML parser instance containing the geoLink XSD for validation.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            host_url (str): URL of the OEREBlex host to resolve relative URLs. The complete URL until but</span>
+<span class="sd">                without the */api* part has to be set, starting with *http://* or *https://*.</span>
+<span class="sd">            version (str): The version of the geoLink schema to be used. Defaults to `1.2.0`.</span>
+<span class="sd">            dtd_validation (bool): Enable/disable validation of document type definition (DTD).</span>
+<span class="sd">                Optional, defaults to False.</span>
+<span class="sd">            xsd_validation (bool): Enable/disable validation against XML schema (XSD).</span>
+<span class="sd">                Optional, defaults to True.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_host_url</span> <span class="o">=</span> <span class="n">host_url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">=</span> <span class="n">version</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dtd_validation</span> <span class="o">=</span> <span class="n">dtd_validation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_xsd_validation</span> <span class="o">=</span> <span class="n">xsd_validation</span>
+        <span class="n">xsd</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s1">&#39;geolink_formatter&#39;</span><span class="p">,</span> <span class="s1">&#39;schema/v</span><span class="si">{0}</span><span class="s1">.xsd&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">version</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xsd_validation</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">xsd</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span> <span class="o">=</span> <span class="n">XMLSchema</span><span class="p">(</span><span class="n">fromstring</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">xsd</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span> <span class="o">=</span> <span class="n">XMLSchema</span><span class="p">(</span><span class="n">fromstring</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">host_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;str: The OEREBlex host URL to resolve relative URLs.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host_url</span>
+
+    <span class="k">def</span> <span class="nf">_parse_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xml</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Parses the specified XML string and validates it against the geoLink XSD.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            xml (str or bytes): The XML to be parsed.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            lxml.etree._Element: The root element of the parsed geoLink XML.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            lxml.etree.XMLSyntaxError: Raised on failed validation.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">xml</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">fromstring</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">fromstring</span><span class="p">(</span><span class="n">xml</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-16be&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xsd_validation</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span><span class="o">.</span><span class="n">assertValid</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dtd_validation</span><span class="p">:</span>
+            <span class="n">dtd</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">getroottree</span><span class="p">()</span><span class="o">.</span><span class="n">docinfo</span><span class="o">.</span><span class="n">internalDTD</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dtd</span><span class="p">,</span> <span class="n">DTD</span><span class="p">):</span>
+                <span class="n">dtd</span><span class="o">.</span><span class="n">assertValid</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">DocumentInvalid</span><span class="p">(</span><span class="s1">&#39;Missing DTD in parsed content&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">content</span>
+
+<div class="viewcode-block" id="XML.from_string"><a class="viewcode-back" href="../../geolink_formatter_parser.html#geolink_formatter.parser.XML.from_string">[docs]</a>    <span class="k">def</span> <span class="nf">from_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xml</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Parses XML into internal structure.</span>
+
+<span class="sd">        The specified XML string is gets validated against the geoLink XSD on parsing.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            xml (str or bytes): The XML to be parsed.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list[geolink_formatter.entity.Document]: A list containing the parsed document elements.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            lxml.etree.XMLSyntaxError: Raised on failed validation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_xml</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+        <span class="n">documents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">document_el</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">iter</span><span class="p">(</span><span class="s1">&#39;document&#39;</span><span class="p">):</span>
+            <span class="n">doc_id</span> <span class="o">=</span> <span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+            <span class="n">doctype</span> <span class="o">=</span> <span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;doctype&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Mangle doc_id for notices. While IDs are unique between decrees</span>
+            <span class="c1"># and edicts, this is not the case when adding notices to the mix.</span>
+            <span class="k">if</span> <span class="n">doctype</span> <span class="o">==</span> <span class="s1">&#39;notice&#39;</span><span class="p">:</span>
+                <span class="n">doc_id</span> <span class="o">+=</span> <span class="n">doctype</span>
+
+            <span class="k">if</span> <span class="n">doc_id</span> <span class="ow">and</span> <span class="n">doc_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">doc</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">]:</span>
+                <span class="n">files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">file_el</span> <span class="ow">in</span> <span class="n">document_el</span><span class="o">.</span><span class="n">iter</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">):</span>
+                    <span class="n">href</span> <span class="o">=</span> <span class="n">file_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">host_url</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;http://&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;https://&#39;</span><span class="p">):</span>
+                        <span class="n">href</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="si">{host}{href}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">host_url</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">href</span><span class="p">)</span>
+                    <span class="n">files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">File</span><span class="p">(</span>
+                        <span class="n">title</span><span class="o">=</span><span class="n">file_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+                        <span class="n">description</span><span class="o">=</span><span class="n">file_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">),</span>
+                        <span class="n">href</span><span class="o">=</span><span class="n">href</span><span class="p">,</span>
+                        <span class="n">category</span><span class="o">=</span><span class="n">file_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+                    <span class="p">))</span>
+                <span class="n">enactment_date</span> <span class="o">=</span> <span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;enactment_date&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">enactment_date</span><span class="p">:</span>
+                    <span class="n">enactment_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">enactment_date</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_date_format</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+                <span class="n">decree_date</span> <span class="o">=</span> <span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;decree_date&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">decree_date</span><span class="p">:</span>
+                    <span class="n">decree_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">decree_date</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_date_format</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+                <span class="n">abrogation_date</span> <span class="o">=</span> <span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;abrogation_date&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">abrogation_date</span><span class="p">:</span>
+                    <span class="n">abrogation_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">abrogation_date</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_date_format</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+                <span class="n">documents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Document</span><span class="p">(</span>
+                    <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">,</span>
+                    <span class="nb">id</span><span class="o">=</span><span class="n">doc_id</span><span class="p">,</span>
+                    <span class="n">category</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">),</span>
+                    <span class="n">doctype</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;doctype&#39;</span><span class="p">),</span>
+                    <span class="n">federal_level</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;federal_level&#39;</span><span class="p">),</span>
+                    <span class="n">authority</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;authority&#39;</span><span class="p">),</span>
+                    <span class="n">authority_url</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;authority_url&#39;</span><span class="p">),</span>
+                    <span class="n">title</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+                    <span class="n">number</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">),</span>
+                    <span class="n">abbreviation</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;abbreviation&#39;</span><span class="p">),</span>
+                    <span class="n">instance</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;instance&#39;</span><span class="p">),</span>
+                    <span class="nb">type</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">),</span>
+                    <span class="n">subtype</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subtype&#39;</span><span class="p">),</span>
+                    <span class="n">decree_date</span><span class="o">=</span><span class="n">decree_date</span><span class="p">,</span>
+                    <span class="n">enactment_date</span><span class="o">=</span><span class="n">enactment_date</span><span class="p">,</span>
+                    <span class="n">abrogation_date</span><span class="o">=</span><span class="n">abrogation_date</span><span class="p">,</span>
+                    <span class="n">cycle</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cycle&#39;</span><span class="p">)</span>
+                <span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">documents</span></div>
+
+<div class="viewcode-block" id="XML.from_url"><a class="viewcode-back" href="../../geolink_formatter_parser.html#geolink_formatter.parser.XML.from_url">[docs]</a>    <span class="k">def</span> <span class="nf">from_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Loads the geoLink of the specified URL and parses it into the internal structure.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            url (str): The URL of the geoLink to be parsed.</span>
+<span class="sd">            params (dict): Dictionary or bytes to be sent in the query string for the</span>
+<span class="sd">                :class:`requests.models.Request`.</span>
+<span class="sd">            **kwargs: Optional arguments that ``requests.api.request`` takes.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list[geolink_formatter.entity.Document]: A list containing the parsed document elements.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            lxml.etree.XMLSyntaxError: Raised on failed validation.</span>
+<span class="sd">            requests.HTTPError: Raised on failed HTTP request.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017, Amt für Geoinformation, Kanton Basel-Landschaft
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+
+    <div style="float: right">
+        <a href="https://github.com/openoereb/geolink_formatter">
+            View on GitHub
+            <img alt="View on GitHub" width="23" src="../../_static/GitHub-Mark-32px.png" />
+        </a>
+    </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: v1.4.0
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="../../../v1.5.3/index.html">v1.5.3</a></dd>
+            <dd><a href="../../../v1.5.2/index.html">v1.5.2</a></dd>
+            <dd><a href="../../../v1.5.1/index.html">v1.5.1</a></dd>
+            <dd><a href="../../../v1.5.0/index.html">v1.5.0</a></dd>
+            <dd><a href="parser.html">v1.4.0</a></dd>
+            <dd><a href="../../../v1.3.1/index.html">v1.3.1</a></dd>
+            <dd><a href="../../../v1.3.0/index.html">v1.3.0</a></dd>
+            <dd><a href="../../../v1.2.0/index.html">v1.2.0</a></dd>
+            <dd><a href="../../../v1.1.2/index.html">v1.1.2</a></dd>
+            <dd><a href="../../../v1.1.1/index.html">v1.1.1</a></dd>
+            <dd><a href="../../../v1.1.0/index.html">v1.1.0</a></dd>
+            <dd><a href="../../../v1.0.0/index.html">v1.0.0</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../master/index.html">master</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

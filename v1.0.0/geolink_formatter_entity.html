@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Module geolink_formatter.entity &mdash; Python geoLink Formatter  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/banner.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module geolink_formatter.format" href="geolink_formatter_format.html" />
+    <link rel="prev" title="Module geolink_formatter" href="geolink_formatter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Python geoLink Formatter
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="geolink_formatter.html">Module <em>geolink_formatter</em></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module <em>geolink_formatter.entity</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#file">File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document">Document</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="geolink_formatter_format.html">Module <em>geolink_formatter.format</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="geolink_formatter_parser.html">Module <em>geolink_formatter.parser</em></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python geoLink Formatter</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+
+<img src="_static/BL_Logo_VGD_AGI_C_r_rgb.png"
+     style="border: none; max-width: 250px; margin-bottom: 25px; float: right" />
+
+<div class="clearfix"></div>
+
+<p>
+    <a href="https://gitlab.com/gf-bl/python-geolink-formatter/blob/v1.0.0/LICENSE">
+        <img alt="license" src="https://img.shields.io/pypi/l/geolink_formatter.svg" />
+    </a>
+    <a href="https://gitlab.com/gf-bl/python-geolink-formatter/tree/v1.0.0">
+        <img alt="build status"
+             src="https://gitlab.com/gf-bl/python-geolink-formatter/badges/v1.0.0/build.svg" />
+    </a>
+    <a href="https://gitlab.com/gf-bl/python-geolink-formatter/tree/v1.0.0">
+        <img alt="coverage report"
+             src="https://gitlab.com/gf-bl/python-geolink-formatter/badges/v1.0.0/coverage.svg" />
+    </a>
+    <a href="https://pypi.python.org/pypi/geolink_formatter/1.0.0">
+        <img alt="python version" src="https://img.shields.io/pypi/pyversions/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.python.org/pypi/geolink_formatter/1.0.0">
+        <img alt="format" src="https://img.shields.io/pypi/format/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.python.org/pypi/geolink_formatter/1.0.0">
+        <img alt="status" src="https://img.shields.io/pypi/status/geolink_formatter.svg" />
+    </a>
+</p>
+
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Module <em>geolink_formatter.entity</em></li>
+    
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-geolink_formatter.entity">
+<span id="module-geolink-formatter-entity"></span><h1>Module <em>geolink_formatter.entity</em><a class="headerlink" href="#module-geolink_formatter.entity" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="file">
+<h2>File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="geolink_formatter.entity.File">
+<em class="property">class </em><code class="descclassname">geolink_formatter.entity.</code><code class="descname">File</code><span class="sig-paren">(</span><em>category=None</em>, <em>href=None</em>, <em>title=None</em>, <em>description=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geolink_formatter/entity.html#File"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geolink_formatter.entity.File" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Creates a new file instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>category</strong> (<em>str</em>) &#8211; The file&#8217;s category.</li>
+<li><strong>href</strong> (<em>str</em>) &#8211; The URL to access the file.</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; The file&#8217;s title.</li>
+<li><strong>description</strong> (<em>str</em>) &#8211; The file&#8217;s description.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="geolink_formatter.entity.File.category">
+<code class="descname">category</code><a class="headerlink" href="#geolink_formatter.entity.File.category" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The file&#8217;s category.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.File.description">
+<code class="descname">description</code><a class="headerlink" href="#geolink_formatter.entity.File.description" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The file&#8217;s description.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.File.href">
+<code class="descname">href</code><a class="headerlink" href="#geolink_formatter.entity.File.href" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The URL to access the file.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.File.title">
+<code class="descname">title</code><a class="headerlink" href="#geolink_formatter.entity.File.title" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The file&#8217;s title.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="document">
+<h2>Document<a class="headerlink" href="#document" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="geolink_formatter.entity.Document">
+<em class="property">class </em><code class="descclassname">geolink_formatter.entity.</code><code class="descname">Document</code><span class="sig-paren">(</span><em>files</em>, <em>id=None</em>, <em>category=None</em>, <em>doctype=None</em>, <em>federal_level=None</em>, <em>authority=None</em>, <em>authority_url=None</em>, <em>title=None</em>, <em>number=None</em>, <em>abbreviation=None</em>, <em>instance=None</em>, <em>type=None</em>, <em>subtype=None</em>, <em>decree_date=None</em>, <em>enactment_date=None</em>, <em>abrogation_date=None</em>, <em>cycle=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geolink_formatter/entity.html#Document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geolink_formatter.entity.Document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Creates a new document instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>files</strong> (<em>list</em><em>[</em><a class="reference internal" href="#geolink_formatter.entity.File" title="geolink_formatter.entity.File"><em>geolink_formatter.entity.File</em></a><em>]</em>) &#8211; The files contained by the document.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; The document identifier.</li>
+<li><strong>category</strong> (<em>str</em>) &#8211; The document category.</li>
+<li><strong>doctype</strong> (<em>str</em>) &#8211; The internal type of the document.</li>
+<li><strong>federal_level</strong> (<em>str</em>) &#8211; The federal level of the document.</li>
+<li><strong>authority</strong> (<em>str</em>) &#8211; The name of the authority responsible for the document.</li>
+<li><strong>authority_url</strong> (<em>str</em>) &#8211; The URL of the authority&#8217;s website.</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; The document title.</li>
+<li><strong>number</strong> (<em>str</em>) &#8211; The document number.</li>
+<li><strong>abbreviation</strong> (<em>str</em>) &#8211; The document abbreviation.</li>
+<li><strong>instance</strong> (<em>str</em>) &#8211; The document&#8217;s instance.</li>
+<li><strong>type</strong> (<em>str</em>) &#8211; The official type of the document.</li>
+<li><strong>subtype</strong> (<em>str</em>) &#8211; The subtype of the document.</li>
+<li><strong>decree_date</strong> (<em>datetime.date</em>) &#8211; The date of decree.</li>
+<li><strong>enactment_date</strong> (<em>datetime.date</em>) &#8211; The date of enactment.</li>
+<li><strong>abrogation_date</strong> (<em>datetime.date</em>) &#8211; The date of abrogation.</li>
+<li><strong>cycle</strong> (<em>str</em>) &#8211; The document cycle.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code> &#8211; Raised on missing argument or invalid argument type.</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> &#8211; Raised on invalid argument value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.abbreviation">
+<code class="descname">abbreviation</code><a class="headerlink" href="#geolink_formatter.entity.Document.abbreviation" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The document abbreviation (since v1.1.0).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.abrogation_date">
+<code class="descname">abrogation_date</code><a class="headerlink" href="#geolink_formatter.entity.Document.abrogation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>datetime.date</em> &#8211; The date of abrogation (since v1.1.0).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.authority">
+<code class="descname">authority</code><a class="headerlink" href="#geolink_formatter.entity.Document.authority" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The name of the authority responsible for the document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.authority_url">
+<code class="descname">authority_url</code><a class="headerlink" href="#geolink_formatter.entity.Document.authority_url" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The URL of the authority&#8217;s website.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.category">
+<code class="descname">category</code><a class="headerlink" href="#geolink_formatter.entity.Document.category" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The document category.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.cycle">
+<code class="descname">cycle</code><a class="headerlink" href="#geolink_formatter.entity.Document.cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The document cycle (v1.0.0 only).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.decree_date">
+<code class="descname">decree_date</code><a class="headerlink" href="#geolink_formatter.entity.Document.decree_date" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>datetime.date</em> &#8211; The date of decree.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.doctype">
+<code class="descname">doctype</code><a class="headerlink" href="#geolink_formatter.entity.Document.doctype" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The internal type of the document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.enactment_date">
+<code class="descname">enactment_date</code><a class="headerlink" href="#geolink_formatter.entity.Document.enactment_date" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>datetime.date</em> &#8211; The date of enactment.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.federal_level">
+<code class="descname">federal_level</code><a class="headerlink" href="#geolink_formatter.entity.Document.federal_level" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The federal level of the document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.files">
+<code class="descname">files</code><a class="headerlink" href="#geolink_formatter.entity.Document.files" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list[geolink_formatter.entity.File]</em> &#8211; The files contained by the document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.id">
+<code class="descname">id</code><a class="headerlink" href="#geolink_formatter.entity.Document.id" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The document identifier.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.instance">
+<code class="descname">instance</code><a class="headerlink" href="#geolink_formatter.entity.Document.instance" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The document&#8217;s instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.number">
+<code class="descname">number</code><a class="headerlink" href="#geolink_formatter.entity.Document.number" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The document number (since v1.1.0).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.subtype">
+<code class="descname">subtype</code><a class="headerlink" href="#geolink_formatter.entity.Document.subtype" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The subtype of the document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.title">
+<code class="descname">title</code><a class="headerlink" href="#geolink_formatter.entity.Document.title" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The document title.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.type">
+<code class="descname">type</code><a class="headerlink" href="#geolink_formatter.entity.Document.type" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The official type of the document.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="geolink_formatter_format.html" class="btn btn-neutral float-right" title="Module geolink_formatter.format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="geolink_formatter.html" class="btn btn-neutral float-left" title="Module geolink_formatter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017, Amt für Geoinformation, Kanton Basel-Landschaft
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+    <div style="float: right">
+        <a href="https://gitlab.com/gf-bl/python-geolink-formatter/tree/v1.0.0">
+            Fork me on <img alt="Fork me on GitLab" width="23"
+                 src="_static/logo-gitlab.svg"
+            /> GitLab
+        </a>
+    </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: v1.0.0
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="../v1.5.3/geolink_formatter_entity.html">v1.5.3</a></dd>
+            <dd><a href="../v1.5.2/geolink_formatter_entity.html">v1.5.2</a></dd>
+            <dd><a href="../v1.5.1/geolink_formatter_entity.html">v1.5.1</a></dd>
+            <dd><a href="../v1.5.0/geolink_formatter_entity.html">v1.5.0</a></dd>
+            <dd><a href="../v1.4.0/geolink_formatter_entity.html">v1.4.0</a></dd>
+            <dd><a href="../v1.3.1/geolink_formatter_entity.html">v1.3.1</a></dd>
+            <dd><a href="../v1.3.0/geolink_formatter_entity.html">v1.3.0</a></dd>
+            <dd><a href="../v1.2.0/geolink_formatter_entity.html">v1.2.0</a></dd>
+            <dd><a href="../v1.1.2/geolink_formatter_entity.html">v1.1.2</a></dd>
+            <dd><a href="../v1.1.1/geolink_formatter_entity.html">v1.1.1</a></dd>
+            <dd><a href="../v1.1.0/geolink_formatter_entity.html">v1.1.0</a></dd>
+            <dd><a href="geolink_formatter_entity.html">v1.0.0</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../master/geolink_formatter_entity.html">master</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

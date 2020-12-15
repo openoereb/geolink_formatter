@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>geolink_formatter.format &mdash; Python geoLink Formatter  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/banner.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Python geoLink Formatter
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter.html">Module <em>geolink_formatter</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter_entity.html">Module <em>geolink_formatter.entity</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter_format.html">Module <em>geolink_formatter.format</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geolink_formatter_parser.html">Module <em>geolink_formatter.parser</em></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Python geoLink Formatter</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+
+<img src="../../_static/BL_Logo_VGD_AGI_C_r_rgb.png"
+     style="border: none; max-width: 250px; margin-bottom: 25px; float: right" />
+
+<div class="clearfix"></div>
+
+<p>
+    <a href="https://gitlab.com/gf-bl/python-geolink-formatter/blob/v1.3.1/LICENSE">
+        <img alt="license" src="https://img.shields.io/pypi/l/geolink_formatter.svg" />
+    </a>
+    <a href="https://gitlab.com/gf-bl/python-geolink-formatter/tree/v1.3.1">
+        <img alt="build status"
+             src="https://gitlab.com/gf-bl/python-geolink-formatter/badges/v1.3.1/build.svg" />
+    </a>
+    <a href="https://gitlab.com/gf-bl/python-geolink-formatter/tree/v1.3.1">
+        <img alt="coverage report"
+             src="https://gitlab.com/gf-bl/python-geolink-formatter/badges/v1.3.1/coverage.svg" />
+    </a>
+    <a href="https://pypi.python.org/pypi/geolink_formatter/1.3.1">
+        <img alt="python version" src="https://img.shields.io/pypi/pyversions/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.python.org/pypi/geolink_formatter/1.3.1">
+        <img alt="format" src="https://img.shields.io/pypi/format/geolink_formatter.svg" />
+    </a>
+    <a href="https://pypi.python.org/pypi/geolink_formatter/1.3.1">
+        <img alt="status" src="https://img.shields.io/pypi/status/geolink_formatter.svg" />
+    </a>
+</p>
+
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../geolink_formatter.html">geolink_formatter</a> &raquo;</li>
+        
+      <li>geolink_formatter.format</li>
+    
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for geolink_formatter.format</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+
+<div class="viewcode-block" id="HTML"><a class="viewcode-back" href="../../geolink_formatter_format.html#geolink_formatter.format.HTML">[docs]</a><span class="k">class</span> <span class="nc">HTML</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Creates a new HTML formatter.&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="HTML.format"><a class="viewcode-back" href="../../geolink_formatter_format.html#geolink_formatter.format.HTML.format">[docs]</a>    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">documents</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Formats a list of :obj:`geolink_formatter.entity.Document` instances as HTML list.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            documents (list[geolink_formatter.entity.Document]): The list of documents to be formatted.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: An HTML formatted string containing the documents as HTML list.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">u</span><span class="s1">&#39;&lt;ul class=&quot;geolink-formatter&quot;&gt;</span><span class="si">{documents}</span><span class="s1">&lt;/ul&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">documents</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">cls</span><span class="o">.</span><span class="n">__format_document__</span><span class="p">(</span><span class="n">document</span><span class="p">)</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">])</span>
+        <span class="p">)</span></div>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">__format_document__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Formats a :obj:`geolink_formatter.entity.Document` instance as HTML list item.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            document (geolink_formatter.entity.Document): The document to be formatted.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The document formatted as HTML list item.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">document</span><span class="o">.</span><span class="n">enactment_date</span><span class="p">:</span>
+            <span class="n">enactment_date</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;(</span><span class="si">{0}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">enactment_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y&#39;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">enactment_date</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">document</span><span class="o">.</span><span class="n">abrogation_date</span><span class="p">:</span>
+            <span class="n">files</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;&#39;</span>
+            <span class="n">strike_start</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;&lt;strike&gt;&#39;</span>
+            <span class="n">strike_end</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;&lt;/strike&gt;&#39;</span>
+            <span class="n">abrogation_date</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;(</span><span class="si">{0}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">abrogation_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y&#39;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">files</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__format_files__</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">files</span><span class="p">)</span>
+            <span class="n">strike_start</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;&#39;</span>
+            <span class="n">strike_end</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;&#39;</span>
+            <span class="n">abrogation_date</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;&#39;</span>
+        <span class="n">subtype</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39; (</span><span class="si">{0}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">subtype</span><span class="p">)</span> <span class="k">if</span> <span class="n">document</span><span class="o">.</span><span class="n">subtype</span> <span class="k">else</span> <span class="sa">u</span><span class="s1">&#39;&#39;</span>
+        <span class="k">return</span> <span class="sa">u</span><span class="s1">&#39;&lt;li class=&quot;geolink-formatter-document&quot;&gt;&#39;</span> \
+               <span class="sa">u</span><span class="s1">&#39;</span><span class="si">{strike_start}{type}{title}</span><span class="s1"> </span><span class="si">{enactment_date}{strike_end}</span><span class="s1"> </span><span class="si">{abrogation_date}{files}</span><span class="s1">&#39;</span> \
+               <span class="sa">u</span><span class="s1">&#39;&lt;/li&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                   <span class="nb">type</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;</span><span class="si">{0}{1}</span><span class="s1">: &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">type</span> <span class="ow">or</span> <span class="sa">u</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">subtype</span><span class="p">)</span>
+                   <span class="k">if</span> <span class="n">document</span><span class="o">.</span><span class="n">type</span> <span class="ow">or</span> <span class="n">document</span><span class="o">.</span><span class="n">subtype</span> <span class="k">else</span> <span class="sa">u</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="n">document</span><span class="o">.</span><span class="n">title</span><span class="p">,</span>
+                   <span class="n">enactment_date</span><span class="o">=</span><span class="n">enactment_date</span><span class="p">,</span>
+                   <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">,</span>
+                   <span class="n">strike_start</span><span class="o">=</span><span class="n">strike_start</span><span class="p">,</span>
+                   <span class="n">strike_end</span><span class="o">=</span><span class="n">strike_end</span><span class="p">,</span>
+                   <span class="n">abrogation_date</span><span class="o">=</span><span class="n">abrogation_date</span>
+               <span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">__format_files__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">files</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Formats a list of :obj:`geolink_formatter.entity.File` instances as HTML list.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            files (list[geolink_formatter.entity.File]): The list of files to be formatted.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The files formatted as HTML list.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">u</span><span class="s1">&#39;&lt;ul class=&quot;geolink-formatter&quot;&gt;</span><span class="si">{files}</span><span class="s1">&lt;/ul&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">files</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">cls</span><span class="o">.</span><span class="n">__format_file__</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">])</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="sa">u</span><span class="s1">&#39;&#39;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">__format_file__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Formats a :obj:`geolink_formatter.entity.File` instance as HTML list item.</span>
+
+<span class="sd">        The name displayed is the description, falling back on the title</span>
+<span class="sd">        (containing the filename) if no description is present.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file (geolink_formatter.entity.File): The file to be formatted.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The file formatted as HTML list item.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">description</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">title</span><span class="p">:</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">title</span>
+
+        <span class="k">return</span> <span class="sa">u</span><span class="s1">&#39;&lt;li class=&quot;geolink-formatter-file&quot;&gt;&lt;a href=&quot;</span><span class="si">{href}</span><span class="s1">&quot; target=&quot;_blank&quot;&gt;</span><span class="si">{title}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+            <span class="n">href</span><span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="n">href</span>
+        <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017, Amt für Geoinformation, Kanton Basel-Landschaft
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+    <div style="float: right">
+        <a href="https://gitlab.com/gf-bl/python-geolink-formatter/tree/v1.3.1">
+            Fork me on <img alt="Fork me on GitLab" width="23"
+                 src="../../_static/logo-gitlab.svg"
+            /> GitLab
+        </a>
+    </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: v1.3.1
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="../../../v1.5.3/index.html">v1.5.3</a></dd>
+            <dd><a href="../../../v1.5.2/index.html">v1.5.2</a></dd>
+            <dd><a href="../../../v1.5.1/index.html">v1.5.1</a></dd>
+            <dd><a href="../../../v1.5.0/index.html">v1.5.0</a></dd>
+            <dd><a href="../../../v1.4.0/index.html">v1.4.0</a></dd>
+            <dd><a href="format.html">v1.3.1</a></dd>
+            <dd><a href="../../../v1.3.0/index.html">v1.3.0</a></dd>
+            <dd><a href="../../../v1.2.0/index.html">v1.2.0</a></dd>
+            <dd><a href="../../../v1.1.2/index.html">v1.1.2</a></dd>
+            <dd><a href="../../../v1.1.1/index.html">v1.1.1</a></dd>
+            <dd><a href="../../../v1.1.0/index.html">v1.1.0</a></dd>
+            <dd><a href="../../../v1.0.0/index.html">v1.0.0</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../../master/index.html">master</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
