@@ -1,0 +1,109 @@
+name: CI/CD
+
+on:
+  push:
+  release:
+    types:
+      - published
+
+jobs:
+
+  test:
+    name: Test Python
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        python-version:
+          - 2.7
+          - 3.5
+          - 3.6
+          - 3.7
+          - 3.8
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run checks for Python ${{ matrix.python-version }}
+        env:
+          CI: true
+        run: |
+          python -V
+          pip install -r requirements.txt
+          git --no-pager diff --check `git log --oneline | tail -1 | cut --fields=1 --delimiter=' '`
+          flake8
+          py.test -vv --cov-config .coveragerc --cov geolink_formatter tests
+      - name: Send coverage
+        run: |
+          bash <(curl -s https://codecov.io/bash)
+
+  deploy-dev:
+    name: Deploy to PyPI Test
+    needs:
+      - test
+    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+      - name: Download math result for job 1
+        uses: actions/download-artifact@v1
+        with:
+          name: static
+      - name: Build packages
+        run: |
+          pip install wheel -r requirements.txt
+          python setup.py --test clean check sdist bdist_wheel
+      - name: Upload to PyPI Test
+        uses: pypa/gh-action-pypi-publish@v1.3.1
+        with:
+          password: ${{ secrets.TEST_PYPI_TOKEN }}
+          repository_url: https://test.pypi.org/legacy/
+
+  deploy-tag:
+    name: Deploy to PyPI
+    needs:
+      - test
+    if: ${{ startsWith(github.ref, 'refs/tags') }}
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+      - name: Download math result for job 1
+        uses: actions/download-artifact@v1
+        with:
+          name: static
+      - name: Build packages
+        run: |
+          pip install wheel -r requirements.txt
+          python setup.py clean check sdist bdist_wheel
+      - name: Upload to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.3.1
+        with:
+          password: ${{ secrets.PYPI_TOKEN }}
+
+  deploy-doc:
+    name: Deploy docs to GitHub Pages
+    needs:
+      - test
+    if: ${{ startsWith(github.ref, 'refs/tags') }}
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+      - name: Build docs
+        run: |
+          python -V
+          pip install -r requirements.txt
+          sphinx-versioning build doc/source doc/build/html
+          touch doc/build/html/.nojekyll
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs/build/html
