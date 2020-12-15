@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.5.4
+-----
+
+Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
+
+- Use GitHub Actions instead of Travis
+
 1.5.3
 -----
 
