@@ -10,5 +10,5 @@ sphinx_rtd_theme==0.5.0
 sphinxcontrib-versioning==2.2.1
 lxml==4.6.2
 defusedxml==0.5.0
-requests==2.25.0
+requests==2.25.1
 -e .
