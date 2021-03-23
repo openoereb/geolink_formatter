@@ -1,6 +1,14 @@
 Changelog
 =========
 
+2.0.0
+-----
+
+Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
+
+- Drop support for Python 2
+- Dependency updates
+
 1.5.4
 -----
 
