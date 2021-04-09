@@ -25,7 +25,7 @@ class SCHEMA(object):
     """str: geoLink schema version 1.2.0"""
 
     V1_2_1 = '1.2.1'
-    """str: geoLink schema version 1.2.0"""
+    """str: geoLink schema version 1.2.1"""
 
 
 class XML(object):
