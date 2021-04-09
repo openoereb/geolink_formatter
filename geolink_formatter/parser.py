@@ -24,13 +24,16 @@ class SCHEMA(object):
     V1_2_0 = '1.2.0'
     """str: geoLink schema version 1.2.0"""
 
+    V1_2_1 = '1.2.1'
+    """str: geoLink schema version 1.2.0"""
+
 
 class XML(object):
 
     _date_format = '%Y-%m-%d'
     """str: Format of date values in XML."""
 
-    def __init__(self, host_url=None, version='1.2.0', dtd_validation=False, xsd_validation=True):
+    def __init__(self, host_url=None, version='1.2.1', dtd_validation=False, xsd_validation=True):
         """Create a new XML parser instance containing the geoLink XSD for validation.
 
         Args:
@@ -152,7 +155,8 @@ class XML(object):
                     decree_date=decree_date,
                     enactment_date=enactment_date,
                     abrogation_date=abrogation_date,
-                    cycle=document_el.attrib.get('cycle')
+                    cycle=document_el.attrib.get('cycle'),
+                    municipality=document_el.attrib.get('municipality')
                 ))
 
         return documents

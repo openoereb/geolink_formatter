@@ -4,15 +4,16 @@ Changelog
 2.0.0
 -----
 
-Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0, v1.2.1 (default)
 
+- Add support for GEO-Link API version 1.2.1 (new attribute "municipality")
 - Drop support for Python 2
 - Dependency updates
 
 1.5.4
 -----
 
-Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
 
 - Use GitHub Actions instead of Travis
 - Dependency updates
@@ -20,14 +21,14 @@ Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
 1.5.3
 -----
 
-Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
 
 - Fix decoding error for schema version 1.2.0
 
 1.5.2
 -----
 
-Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
 
 - Parse schema only if validation is enabled
 - Dependency updates
@@ -35,7 +36,7 @@ Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
 1.5.1
 -----
 
-Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
 
 - Add missing enumeration values for federal level in schema
 
@@ -43,9 +44,9 @@ Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
 1.5.0
 -----
 
-Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
 
-- Add support for geoLink schema version 1.2.0
+- Add support for GEO-Link API version 1.2.0
 - New document attribute 'language'
 - New doctype 'notice'
 - Files now have descriptions as well as titles, using the description for
@@ -55,7 +56,7 @@ Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0 (default)
 1.4.0
 -----
 
-Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1 (default)
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1 (default)
 
 - Add test for arbitrary URL parameters
 - Add enumeration value "Bezirk" for attribute "federal_level"
@@ -66,7 +67,7 @@ Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1 (default)
 1.3.2
 -----
 
-Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1 (default)
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1 (default)
 
 - Move repository to GitHub openoereb
 - Use defusedxml for XML parsing
@@ -76,31 +77,31 @@ Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1 (default)
 1.3.1
 -----
 
-Supported geoLink schema versions: v1.0.0, v1.1.0, v1.1.1 (default)
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1 (default)
 
-- Add support for geoLink schema version 1.1.1
+- Add support for GEO-Link API version 1.1.1
 
 
 1.3.0
 -----
 
-Supported geoLink schema versions: v1.0.0, v1.1.0 (default)
+Supported GEO-Link API versions: v1.0.0, v1.1.0 (default)
 
-- Add support for multiple geoLink schema versions
+- Add support for multiple GEO-Link API versions
 
 
 1.2.0
 -----
 
-Supported geoLink schema versions: 20171108 (v1.1.0)
+Supported GEO-Link API versions: 20171108 (v1.1.0)
 
-- Use new geoLink schema
+- Use new GEO-Link API
 
 
 1.1.2
 -----
 
-Supported geoLink schema version: 20170214 (v1.0.0)
+Supported GEO-Link API version: 20170214 (v1.0.0)
 
 - All attributes are optional, as defined in the schema
 
@@ -108,7 +109,7 @@ Supported geoLink schema version: 20170214 (v1.0.0)
 1.1.1
 -----
 
-Supported geoLink schema version: 20170214 (v1.0.0)
+Supported GEO-Link API version: 20170214 (v1.0.0)
 
 - Allow documents with empty file list
 
@@ -116,7 +117,7 @@ Supported geoLink schema version: 20170214 (v1.0.0)
 1.1.0
 -----
 
-Supported geoLink schema version: 20170214 (v1.0.0)
+Supported GEO-Link API version: 20170214 (v1.0.0)
 
 - Add support for Python 3
 
@@ -124,6 +125,6 @@ Supported geoLink schema version: 20170214 (v1.0.0)
 1.0.0
 -----
 
-Supported geoLink schema version: 20170214 (v1.0.0)
+Supported GEO-Link API version: 20170214 (v1.0.0)
 
 - Initial version
