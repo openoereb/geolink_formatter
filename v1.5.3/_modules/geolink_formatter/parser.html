@@ -226,13 +226,16 @@
     <span class="n">V1_2_0</span> <span class="o">=</span> <span class="s1">&#39;1.2.0&#39;</span>
     <span class="sd">&quot;&quot;&quot;str: geoLink schema version 1.2.0&quot;&quot;&quot;</span>
 
+    <span class="n">V1_2_1</span> <span class="o">=</span> <span class="s1">&#39;1.2.1&#39;</span>
+    <span class="sd">&quot;&quot;&quot;str: geoLink schema version 1.2.1&quot;&quot;&quot;</span>
+
 
 <div class="viewcode-block" id="XML"><a class="viewcode-back" href="../../geolink_formatter_parser.html#geolink_formatter.parser.XML">[docs]</a><span class="k">class</span> <span class="nc">XML</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="n">_date_format</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span>
     <span class="sd">&quot;&quot;&quot;str: Format of date values in XML.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.2.0&#39;</span><span class="p">,</span> <span class="n">dtd_validation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xsd_validation</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.2.1&#39;</span><span class="p">,</span> <span class="n">dtd_validation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xsd_validation</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a new XML parser instance containing the geoLink XSD for validation.</span>
 
 <span class="sd">        Args:</span>
@@ -354,7 +357,8 @@
                     <span class="n">decree_date</span><span class="o">=</span><span class="n">decree_date</span><span class="p">,</span>
                     <span class="n">enactment_date</span><span class="o">=</span><span class="n">enactment_date</span><span class="p">,</span>
                     <span class="n">abrogation_date</span><span class="o">=</span><span class="n">abrogation_date</span><span class="p">,</span>
-                    <span class="n">cycle</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cycle&#39;</span><span class="p">)</span>
+                    <span class="n">cycle</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cycle&#39;</span><span class="p">),</span>
+                    <span class="n">municipality</span><span class="o">=</span><span class="n">document_el</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;municipality&#39;</span><span class="p">)</span>
                 <span class="p">))</span>
 
         <span class="k">return</span> <span class="n">documents</span></div>
@@ -431,6 +435,7 @@
     <div class="rst-other-versions">
         <dl>
             <dt>Tags</dt>
+            <dd><a href="../../../v2.0.0/index.html">v2.0.0</a></dd>
             <dd><a href="../../../v1.5.4/index.html">v1.5.4</a></dd>
             <dd><a href="parser.html">v1.5.3</a></dd>
             <dd><a href="../../../v1.5.2/index.html">v1.5.2</a></dd>
