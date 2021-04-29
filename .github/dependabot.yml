@@ -1,0 +1,18 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: monthly
+  open-pull-requests-limit: 10
+  reviewers:
+  - kdeininger
+  labels:
+  - dependencies
+  ignore:
+  - dependency-name: pytest
+    versions:
+    - ">= 6.a, < 7"
+  - dependency-name: sphinx
+    versions:
+    - ">= 3.a, < 4"
