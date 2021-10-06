@@ -12,7 +12,7 @@ class Document(object):
     def __init__(self, files, id=None, category=None, doctype=None, federal_level=None, authority=None,
                  authority_url=None, title=None, number=None, abbreviation=None, instance=None, type=None,
                  subtype=None, decree_date=None, enactment_date=None, abrogation_date=None, cycle=None,
-                 municipality=None):
+                 municipality=None, index=None):
         """Creates a new document instance.
 
         Args:
@@ -34,6 +34,7 @@ class Document(object):
             abrogation_date (datetime.date): The date of abrogation.
             cycle (str): The document cycle.
             municipality (str): The municipality concerned by this document.
+            index (int): The document's index for sorting.
 
         Raises:
             TypeError: Raised on missing argument or invalid argument type.
@@ -87,6 +88,7 @@ class Document(object):
         self._abrogation_date = abrogation_date
         self._cycle = cycle
         self._municipality = municipality
+        self._index = None if index is None else int(index)
 
     @property
     def files(self):
@@ -177,6 +179,11 @@ class Document(object):
     def municipality(self):
         """str: The municipality concerned by this document (since v1.2.1)."""
         return self._municipality
+
+    @property
+    def index(self):
+        """int: The document's index for sorting (since v1.2.2)."""
+        return self._index
 
 
 class File(object):

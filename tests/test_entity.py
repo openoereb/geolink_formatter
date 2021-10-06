@@ -31,7 +31,7 @@ def test_document():
                  enactment_date=date, federal_level='testlevel', authority='Authority',
                  authority_url='http://my.link.to/authority', type='testtype', subtype='testsubtype',
                  decree_date=date, instance='INST', number='123', abbreviation='abbr', abrogation_date=date,
-                 cycle='cycle')
+                 cycle='cycle', municipality='Test Municipality', index=1)
     assert isinstance(d, Document)
     assert d.id == '1'
     assert d.title == 'Test'
@@ -50,6 +50,8 @@ def test_document():
     assert d.abbreviation == 'abbr'
     assert d.abrogation_date == date
     assert d.cycle == 'cycle'
+    assert d.municipality == 'Test Municipality'
+    assert d.index == 1
 
 
 def test_document_empty():
@@ -72,6 +74,8 @@ def test_document_empty():
     assert d.abbreviation is None
     assert d.abrogation_date is None
     assert d.cycle is None
+    assert d.municipality is None
+    assert d.index is None
 
 
 def test_document_invalid_decree_date():
