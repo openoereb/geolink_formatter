@@ -3,7 +3,6 @@ import datetime
 
 import pkg_resources
 import requests
-import sys
 from lxml.etree import XMLSchema, DTD, DocumentInvalid
 from defusedxml.lxml import fromstring
 from geolink_formatter.entity import Document, File
@@ -27,13 +26,16 @@ class SCHEMA(object):
     V1_2_1 = '1.2.1'
     """str: geoLink schema version 1.2.1"""
 
+    V1_2_2 = '1.2.2'
+    """str: geoLink schema version 1.2.2"""
+
 
 class XML(object):
 
     _date_format = '%Y-%m-%d'
     """str: Format of date values in XML."""
 
-    def __init__(self, host_url=None, version='1.2.1', dtd_validation=False, xsd_validation=True):
+    def __init__(self, host_url=None, version='1.2.2', dtd_validation=False, xsd_validation=True):
         """Create a new XML parser instance containing the geoLink XSD for validation.
 
         Args:
@@ -52,12 +54,8 @@ class XML(object):
         self._xsd_validation = xsd_validation
         xsd = pkg_resources.resource_filename('geolink_formatter', 'schema/v{0}.xsd'.format(version))
         if self._xsd_validation:
-            if sys.version_info.major > 2:
-                with open(xsd, encoding='utf-8') as f:
-                    self._schema = XMLSchema(fromstring(f.read()))
-            else:
-                with open(xsd) as f:
-                    self._schema = XMLSchema(fromstring(f.read()))
+            with open(xsd, encoding='utf-8') as f:
+                self._schema = XMLSchema(fromstring(f.read()))
 
     @property
     def host_url(self):
@@ -156,7 +154,8 @@ class XML(object):
                     enactment_date=enactment_date,
                     abrogation_date=abrogation_date,
                     cycle=document_el.attrib.get('cycle'),
-                    municipality=document_el.attrib.get('municipality')
+                    municipality=document_el.attrib.get('municipality'),
+                    index=document_el.attrib.get('index')
                 ))
 
         return documents
