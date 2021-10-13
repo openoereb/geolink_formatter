@@ -214,7 +214,7 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doctype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">federal_level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">authority</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">authority_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">abbreviation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">subtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decree_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enactment_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">abrogation_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cycle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">municipality</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+                 <span class="n">municipality</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a new document instance.</span>
 
 <span class="sd">        Args:</span>
@@ -236,6 +236,7 @@
 <span class="sd">            abrogation_date (datetime.date): The date of abrogation.</span>
 <span class="sd">            cycle (str): The document cycle.</span>
 <span class="sd">            municipality (str): The municipality concerned by this document.</span>
+<span class="sd">            index (int): The document&#39;s index for sorting.</span>
 
 <span class="sd">        Raises:</span>
 <span class="sd">            TypeError: Raised on missing argument or invalid argument type.</span>
@@ -289,6 +290,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_abrogation_date</span> <span class="o">=</span> <span class="n">abrogation_date</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cycle</span> <span class="o">=</span> <span class="n">cycle</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_municipality</span> <span class="o">=</span> <span class="n">municipality</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -378,7 +380,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">municipality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;str: The municipality concerned by this document (since v1.2.1).&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_municipality</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_municipality</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;int: The document&#39;s index for sorting (since v1.2.2).&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span></div>
 
 
 <div class="viewcode-block" id="File"><a class="viewcode-back" href="../../geolink_formatter_entity.html#geolink_formatter.entity.File">[docs]</a><span class="k">class</span> <span class="nc">File</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -467,6 +474,7 @@
     <div class="rst-other-versions">
         <dl>
             <dt>Tags</dt>
+            <dd><a href="../../../v2.0.1/index.html">v2.0.1</a></dd>
             <dd><a href="../../../v2.0.0/index.html">v2.0.0</a></dd>
             <dd><a href="../../../v1.5.4/index.html">v1.5.4</a></dd>
             <dd><a href="../../../v1.5.3/index.html">v1.5.3</a></dd>

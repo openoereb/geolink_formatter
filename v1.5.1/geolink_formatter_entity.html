@@ -257,7 +257,7 @@
 <h2>Document<a class="headerlink" href="#document" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="geolink_formatter.entity.Document">
-<em class="property">class </em><code class="descclassname">geolink_formatter.entity.</code><code class="descname">Document</code><span class="sig-paren">(</span><em>files</em>, <em>id=None</em>, <em>category=None</em>, <em>doctype=None</em>, <em>federal_level=None</em>, <em>authority=None</em>, <em>authority_url=None</em>, <em>title=None</em>, <em>number=None</em>, <em>abbreviation=None</em>, <em>instance=None</em>, <em>type=None</em>, <em>subtype=None</em>, <em>decree_date=None</em>, <em>enactment_date=None</em>, <em>abrogation_date=None</em>, <em>cycle=None</em>, <em>municipality=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geolink_formatter/entity.html#Document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geolink_formatter.entity.Document" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">geolink_formatter.entity.</code><code class="descname">Document</code><span class="sig-paren">(</span><em>files</em>, <em>id=None</em>, <em>category=None</em>, <em>doctype=None</em>, <em>federal_level=None</em>, <em>authority=None</em>, <em>authority_url=None</em>, <em>title=None</em>, <em>number=None</em>, <em>abbreviation=None</em>, <em>instance=None</em>, <em>type=None</em>, <em>subtype=None</em>, <em>decree_date=None</em>, <em>enactment_date=None</em>, <em>abrogation_date=None</em>, <em>cycle=None</em>, <em>municipality=None</em>, <em>index=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geolink_formatter/entity.html#Document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geolink_formatter.entity.Document" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Creates a new document instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -283,6 +283,7 @@
 <li><strong>abrogation_date</strong> (<em>datetime.date</em>) &#8211; The date of abrogation.</li>
 <li><strong>cycle</strong> (<em>str</em>) &#8211; The document cycle.</li>
 <li><strong>municipality</strong> (<em>str</em>) &#8211; The municipality concerned by this document.</li>
+<li><strong>index</strong> (<em>int</em>) &#8211; The document&#8217;s index for sorting.</li>
 </ul>
 </td>
 </tr>
@@ -364,6 +365,12 @@
 <dt id="geolink_formatter.entity.Document.id">
 <code class="descname">id</code><a class="headerlink" href="#geolink_formatter.entity.Document.id" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>str</em> &#8211; The document identifier.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolink_formatter.entity.Document.index">
+<code class="descname">index</code><a class="headerlink" href="#geolink_formatter.entity.Document.index" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> &#8211; The document&#8217;s index for sorting (since v1.2.2).</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -460,6 +467,7 @@
     <div class="rst-other-versions">
         <dl>
             <dt>Tags</dt>
+            <dd><a href="../v2.0.1/geolink_formatter_entity.html">v2.0.1</a></dd>
             <dd><a href="../v2.0.0/geolink_formatter_entity.html">v2.0.0</a></dd>
             <dd><a href="../v1.5.4/geolink_formatter_entity.html">v1.5.4</a></dd>
             <dd><a href="../v1.5.3/geolink_formatter_entity.html">v1.5.3</a></dd>
