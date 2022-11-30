@@ -230,6 +230,18 @@ def test_schema_version_1_2_2():
     assert documents[-1].index == 3
 
 
+def test_schema_version_1_2_2_prepublink():
+    with requests_mock.mock() as m:
+        with open('tests/resources/geolink_v1.2.2_prepublink.xml', 'rb') as f:
+            m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        documents = XML(version=SCHEMA.V1_2_2).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
+    assert len(documents) == 5
+    assert documents[0].index is None
+    assert documents[-3].index == 1
+    assert documents[-2].index == 2
+    assert documents[-1].index == 3
+
+
 def test_default_version_with_locale():
     with requests_mock.mock() as m:
         with open('tests/resources/geolink_v1.2.1.xml', 'rb') as f:

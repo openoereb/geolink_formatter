@@ -136,6 +136,15 @@ class XML(object):
                 abrogation_date = document_el.attrib.get('abrogation_date')
                 if abrogation_date:
                     abrogation_date = datetime.datetime.strptime(abrogation_date, self._date_format).date()
+                status_start_date = document_el.attrib.get('status_start_date')
+                if status_start_date:
+                    status_start_date = datetime.datetime.strptime(status_start_date, self._date_format)\
+                                                         .date()
+                status_end_date = document_el.attrib.get('status_end_date')
+                if status_end_date:
+                    status_end_date = datetime.datetime.strptime(status_end_date, self._date_format)\
+                                                        .date()
+
                 documents.append(Document(
                     files=files,
                     id=doc_id,
@@ -155,7 +164,10 @@ class XML(object):
                     abrogation_date=abrogation_date,
                     cycle=document_el.attrib.get('cycle'),
                     municipality=document_el.attrib.get('municipality'),
-                    index=document_el.attrib.get('index')
+                    index=document_el.attrib.get('index'),
+                    status=document_el.attrib.get('status'),
+                    status_start_date=status_start_date,
+                    status_end_date=status_end_date
                 ))
 
         return documents
