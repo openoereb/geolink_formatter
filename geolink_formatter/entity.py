@@ -68,7 +68,21 @@ class Document(object):
 
         if abrogation_date and not isinstance(abrogation_date, datetime.date):
             raise TypeError(Msg.invalid_argument.format(
-                arg='decree_date',
+                arg='abrogation_date',
+                expected=datetime.date,
+                got=decree_date.__class__
+            ))
+
+        if status_start_date and not isinstance(status_start_date, datetime.date):
+            raise TypeError(Msg.invalid_argument.format(
+                arg='status_start_date',
+                expected=datetime.date,
+                got=decree_date.__class__
+            ))
+
+        if status_end_date and not isinstance(status_end_date, datetime.date):
+            raise TypeError(Msg.invalid_argument.format(
+                arg='status_end_date',
                 expected=datetime.date,
                 got=decree_date.__class__
             ))
