@@ -7,6 +7,18 @@
         <file category="additional" href="/api/attachments/4738" title="2918-P-3.pdf" description="Plan 3"></file>
         <file category="additional" href="/api/attachments/4739" title="2918-S-1.pdf" description=""></file>
     </document>
+    <document authority="Bauverwaltung Gemeinde" authority_url="http%3A%2F%2Fwww.zihlschlacht-sitterdorf.ch"
+              category="main" doctype="decree" enactment_date="2001-03-27"
+              federal_level="Gemeinde" id="1500" instance="DBU" subtype="Gestaltungsplan"
+              title="Tiefkühllager" type="Sondernutzungsplan" decree_date="2001-03-15" number="1A"
+              abbreviation="abbr" municipality="Testgemeinde">
+        <file category="main" href="/api/attachments/4735" title="2918-E-1.pdf" description="2918-E-1.pdf"></file>
+        <file category="additional" href="/api/attachments/4736" title="2918-P-1.pdf" description="Plan 1"></file>
+        <file category="additional" href="/api/attachments/4737" title="2918-P-2.pdf" description="Plan 2"></file>
+        <file category="additional" href="/api/attachments/4738" title="2918-P-3.pdf" description="Plan 3"></file>
+        <file category="additional" href="/api/attachments/4739" title="2918-S-1.pdf" description=""></file>
+
+    </document>
     <document authority="Staatskanzlei Kanton Thurgau" authority_url="http%3A%2F%2Fwww.staatskanzlei.tg.ch"
               category="related" decree_date="2011-12-21" doctype="edict" enactment_date="2017-04-01"
               federal_level="Kanton" id="4782" title="Planungs- und Baugesetz">

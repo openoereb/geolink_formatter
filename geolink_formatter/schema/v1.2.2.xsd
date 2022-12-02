@@ -88,6 +88,7 @@
         <xs:attribute name="abrogation_date" type="xs:string" />
         <xs:attribute name="approval_date" type="xs:string" />
         <xs:attribute name="publication_date" type="xs:string" />
+        <xs:attribute name="municipality" type="xs:string" />
         <xs:attribute name="index" type="xs:integer" />
     </xs:complexType>
     <xs:complexType name="prepub_document">
@@ -100,6 +101,7 @@
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="edict" />
+                            <xs:enumeration value="decree" />
                             <xs:enumeration value="notice" />
                             <xs:enumeration value="prepublication" />
                         </xs:restriction>
@@ -120,7 +122,6 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
-                <xs:attribute name="municipality" type="xs:string" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
