@@ -1,4 +1,6 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
+           xmlns:vc='http://www.w3.org/2007/XMLSchema-versioning'
+           vc:minVersion='1.1'>
     <xs:element name="geolinks">
         <xs:complexType>
             <xs:choice minOccurs="1" maxOccurs="unbounded">
@@ -9,7 +11,10 @@
     <xs:element name="prepublinks">
         <xs:complexType>
             <xs:choice minOccurs="1" maxOccurs="unbounded">
-                <xs:element name="document" type="prepub_document"></xs:element>
+                <xs:element name="document">
+                    <xs:alternative test="@doctype = 'prepublication'" type="prepublink_prepublication_document"/>
+                    <xs:alternative type="prepublink_other_document"/>
+                </xs:element>
             </xs:choice>
         </xs:complexType>
     </xs:element>
@@ -32,14 +37,6 @@
             </xs:element>
         </xs:sequence>
         <xs:attribute name="id" type="xs:string" />
-        <xs:attribute name="category">
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="main" />
-                    <xs:enumeration value="related" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
         <xs:attribute name="federal_level">
             <xs:simpleType>
                 <xs:restriction base="xs:string">
@@ -83,15 +80,11 @@
         <xs:attribute name="instance" type="xs:string" />
         <xs:attribute name="type" type="xs:string" />
         <xs:attribute name="subtype" type="xs:string" />
-        <xs:attribute name="decree_date" type="xs:string" />
-        <xs:attribute name="enactment_date" type="xs:string" />
-        <xs:attribute name="abrogation_date" type="xs:string" />
         <xs:attribute name="approval_date" type="xs:string" />
         <xs:attribute name="publication_date" type="xs:string" />
-        <xs:attribute name="municipality" type="xs:string" />
         <xs:attribute name="index" type="xs:integer" />
     </xs:complexType>
-    <xs:complexType name="prepub_document">
+    <xs:complexType name="prepublink_prepublication_document">
         <xs:complexContent>
             <xs:extension base="document_base">
                 <xs:attribute name="status" type="xs:string" />
@@ -100,10 +93,34 @@
                 <xs:attribute name="doctype">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
+                            <xs:enumeration value="prepublication" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="prepublink_other_document">
+        <xs:complexContent>
+            <xs:extension base="document_base">
+                <xs:attribute name="municipality" type="xs:string" />
+                <xs:attribute name="category">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="main" />
+                            <xs:enumeration value="related" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="decree_date" type="xs:string" />
+                <xs:attribute name="enactment_date" type="xs:string" />
+                <xs:attribute name="abrogation_date" type="xs:string" />
+                <xs:attribute name="doctype">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
                             <xs:enumeration value="edict" />
                             <xs:enumeration value="decree" />
                             <xs:enumeration value="notice" />
-                            <xs:enumeration value="prepublication" />
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
@@ -113,6 +130,18 @@
     <xs:complexType name="geolink_document">
         <xs:complexContent>
             <xs:extension base="document_base">
+                <xs:attribute name="category">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="main" />
+                            <xs:enumeration value="related" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="municipality" type="xs:string" />
+                <xs:attribute name="decree_date" type="xs:string" />
+                <xs:attribute name="enactment_date" type="xs:string" />
+                <xs:attribute name="abrogation_date" type="xs:string" />
                 <xs:attribute name="doctype">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">

@@ -1,4 +1,6 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
+           xmlns:vc='http://www.w3.org/2007/XMLSchema-versioning'
+           vc:minVersion='1.1'>
     <xs:element name="geolinks">
         <xs:complexType>
             <xs:choice minOccurs="1" maxOccurs="unbounded">

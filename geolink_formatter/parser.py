@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import datetime
-
 import pkg_resources
 import requests
-from lxml.etree import XMLSchema, DTD, DocumentInvalid
+from lxml.etree import DTD, DocumentInvalid
+from xmlschema import XMLSchema11
 from defusedxml.lxml import fromstring
 from geolink_formatter.entity import Document, File
 
@@ -55,7 +55,7 @@ class XML(object):
         xsd = pkg_resources.resource_filename('geolink_formatter', 'schema/v{0}.xsd'.format(version))
         if self._xsd_validation:
             with open(xsd, encoding='utf-8') as f:
-                self._schema = XMLSchema(fromstring(f.read()))
+                self._schema = XMLSchema11(f.read())
 
     @property
     def host_url(self):
@@ -80,7 +80,7 @@ class XML(object):
         else:
             content = fromstring(xml.encode('utf-16be'))
         if self._xsd_validation:
-            self._schema.assertValid(content)
+            self._schema.validate(content)
         if self._dtd_validation:
             dtd = content.getroottree().docinfo.internalDTD
             if isinstance(dtd, DTD):
