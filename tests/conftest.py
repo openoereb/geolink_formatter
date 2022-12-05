@@ -52,6 +52,19 @@ def document_without_file():
 
 
 @pytest.fixture()
+def documents_no_doctype():
+    return [
+        Document(
+            id='1',
+            title='Document with file',
+            files=[File(description='Test file', title='test.pdf',
+                        href='http://www.example.com/test.pdf', category='main')],
+            enactment_date=datetime.date(2017, 1, 15)
+        )
+    ]
+
+
+@pytest.fixture()
 def document_archived():
     return [
         Document(

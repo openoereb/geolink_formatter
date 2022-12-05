@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from geolink_formatter.format import HTML
+import pytest
 
 
 def test_format_with_file(documents):
@@ -57,3 +58,9 @@ def test_format_archived_prepublink(prepublink_document_archived):
                    '<strike>Archived document (15.01.2017)</strike> (01.01.2019)' \
                    '</li>' \
                    '</ul>'
+
+
+def test_format_no_doctype(documents_no_doctype):
+    with pytest.raises(RuntimeError):
+        formatter = HTML()
+        formatter.format(documents_no_doctype)
