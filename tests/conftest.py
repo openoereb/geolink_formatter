@@ -24,6 +24,20 @@ def documents():
 
 
 @pytest.fixture()
+def prepublink_documents():
+    return [
+        Document(
+            id='1',
+            title='Document with file',
+            doctype='prepublication',
+            files=[File(description='Test file', title='test.pdf',
+                        href='http://www.example.com/test.pdf', category='main')],
+            status_start_date=datetime.date(2017, 1, 15)
+        )
+    ]
+
+
+@pytest.fixture()
 def document_without_file():
     return [
         Document(
@@ -49,6 +63,21 @@ def document_archived():
                         href='http://www.example.com/test.pdf', category='main')],
             enactment_date=datetime.date(2017, 1, 15),
             abrogation_date=datetime.date(2019, 1, 1)
+        )
+    ]
+
+
+@pytest.fixture()
+def prepublink_document_archived():
+    return [
+        Document(
+            id='1',
+            title='Archived document',
+            doctype='prepublication',
+            files=[File(description='Test file', title='test.pdf',
+                        href='http://www.example.com/test.pdf', category='main')],
+            status_start_date=datetime.date(2017, 1, 15),
+            status_end_date=datetime.date(2019, 1, 1)
         )
     ]
 
