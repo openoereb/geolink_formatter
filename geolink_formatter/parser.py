@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import datetime
-
 import pkg_resources
 import requests
-from lxml.etree import XMLSchema, DTD, DocumentInvalid
+from lxml.etree import DTD, DocumentInvalid
+from xmlschema import XMLSchema11
 from defusedxml.lxml import fromstring
 from geolink_formatter.entity import Document, File
 
@@ -55,7 +55,7 @@ class XML(object):
         xsd = pkg_resources.resource_filename('geolink_formatter', 'schema/v{0}.xsd'.format(version))
         if self._xsd_validation:
             with open(xsd, encoding='utf-8') as f:
-                self._schema = XMLSchema(fromstring(f.read()))
+                self._schema = XMLSchema11(f.read())
 
     @property
     def host_url(self):
@@ -80,7 +80,7 @@ class XML(object):
         else:
             content = fromstring(xml.encode('utf-16be'))
         if self._xsd_validation:
-            self._schema.assertValid(content)
+            self._schema.validate(content)
         if self._dtd_validation:
             dtd = content.getroottree().docinfo.internalDTD
             if isinstance(dtd, DTD):
@@ -136,6 +136,15 @@ class XML(object):
                 abrogation_date = document_el.attrib.get('abrogation_date')
                 if abrogation_date:
                     abrogation_date = datetime.datetime.strptime(abrogation_date, self._date_format).date()
+                status_start_date = document_el.attrib.get('status_start_date')
+                if status_start_date:
+                    status_start_date = datetime.datetime.strptime(status_start_date, self._date_format)\
+                                                         .date()
+                status_end_date = document_el.attrib.get('status_end_date')
+                if status_end_date:
+                    status_end_date = datetime.datetime.strptime(status_end_date, self._date_format)\
+                                                        .date()
+
                 documents.append(Document(
                     files=files,
                     id=doc_id,
@@ -155,7 +164,10 @@ class XML(object):
                     abrogation_date=abrogation_date,
                     cycle=document_el.attrib.get('cycle'),
                     municipality=document_el.attrib.get('municipality'),
-                    index=document_el.attrib.get('index')
+                    index=document_el.attrib.get('index'),
+                    status=document_el.attrib.get('status'),
+                    status_start_date=status_start_date,
+                    status_end_date=status_end_date
                 ))
 
         return documents

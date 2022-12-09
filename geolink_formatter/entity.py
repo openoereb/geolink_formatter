@@ -12,7 +12,7 @@ class Document(object):
     def __init__(self, files, id=None, category=None, doctype=None, federal_level=None, authority=None,
                  authority_url=None, title=None, number=None, abbreviation=None, instance=None, type=None,
                  subtype=None, decree_date=None, enactment_date=None, abrogation_date=None, cycle=None,
-                 municipality=None, index=None):
+                 municipality=None, index=None, status=None, status_start_date=None, status_end_date=None):
         """Creates a new document instance.
 
         Args:
@@ -35,6 +35,9 @@ class Document(object):
             cycle (str): The document cycle.
             municipality (str): The municipality concerned by this document.
             index (int): The document's index for sorting.
+            status (str): The status of the prebublication.
+            status_start_date (datetime.date): Start date of the status.
+            status_end_date (datetime.date): End date of the status.
 
         Raises:
             TypeError: Raised on missing argument or invalid argument type.
@@ -65,7 +68,21 @@ class Document(object):
 
         if abrogation_date and not isinstance(abrogation_date, datetime.date):
             raise TypeError(Msg.invalid_argument.format(
-                arg='decree_date',
+                arg='abrogation_date',
+                expected=datetime.date,
+                got=decree_date.__class__
+            ))
+
+        if status_start_date and not isinstance(status_start_date, datetime.date):
+            raise TypeError(Msg.invalid_argument.format(
+                arg='status_start_date',
+                expected=datetime.date,
+                got=decree_date.__class__
+            ))
+
+        if status_end_date and not isinstance(status_end_date, datetime.date):
+            raise TypeError(Msg.invalid_argument.format(
+                arg='status_end_date',
                 expected=datetime.date,
                 got=decree_date.__class__
             ))
@@ -89,6 +106,9 @@ class Document(object):
         self._cycle = cycle
         self._municipality = municipality
         self._index = None if index is None else int(index)
+        self._status = status
+        self._status_start_date = status_start_date
+        self._status_end_date = status_end_date
 
     @property
     def files(self):
@@ -184,6 +204,21 @@ class Document(object):
     def index(self):
         """int: The document's index for sorting (since v1.2.2)."""
         return self._index
+
+    @property
+    def status(self):
+        """str: The status of the prepublicaation (since v1.2.2)."""
+        return self._status
+
+    @property
+    def status_start_date(self):
+        """datetime.date: Start date of the status (since v1.2.2)."""
+        return self._status_start_date
+
+    @property
+    def status_end_date(self):
+        """datetime.date: End date of the status (since v1.2.2)."""
+        return self._status_end_date
 
 
 class File(object):

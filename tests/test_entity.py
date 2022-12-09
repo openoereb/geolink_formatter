@@ -31,7 +31,8 @@ def test_document():
                  enactment_date=date, federal_level='testlevel', authority='Authority',
                  authority_url='http://my.link.to/authority', type='testtype', subtype='testsubtype',
                  decree_date=date, instance='INST', number='123', abbreviation='abbr', abrogation_date=date,
-                 cycle='cycle', municipality='Test Municipality', index=1)
+                 cycle='cycle', municipality='Test Municipality', index=1, status='neuer Status',
+                 status_start_date=date, status_end_date=date)
     assert isinstance(d, Document)
     assert d.id == '1'
     assert d.title == 'Test'
@@ -52,6 +53,9 @@ def test_document():
     assert d.cycle == 'cycle'
     assert d.municipality == 'Test Municipality'
     assert d.index == 1
+    assert d.status == 'neuer Status'
+    assert d.status_start_date == date
+    assert d.status_end_date == date
 
 
 def test_document_empty():
@@ -76,6 +80,9 @@ def test_document_empty():
     assert d.cycle is None
     assert d.municipality is None
     assert d.index is None
+    assert d.status is None
+    assert d.status_start_date is None
+    assert d.status_end_date is None
 
 
 def test_document_invalid_decree_date():
@@ -91,6 +98,16 @@ def test_document_invalid_enactment_date():
 def test_document_invalid_abrogation_date():
     with pytest.raises(TypeError):
         Document([], abrogation_date='invalid')
+
+
+def test_document_invalid_status_start_date():
+    with pytest.raises(TypeError):
+        Document([], status_start_date='invalid')
+
+
+def test_document_invalid_status_end_date():
+    with pytest.raises(TypeError):
+        Document([], status_end_date='invalid')
 
 
 def test_document_invalid_files():

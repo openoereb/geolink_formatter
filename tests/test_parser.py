@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import pytest
 import requests_mock
-from lxml.etree import _Element, DocumentInvalid
+from lxml.etree import DocumentInvalid, _Element
+import xmlschema
 from requests import RequestException
 
 from geolink_formatter.parser import XML, SCHEMA
@@ -49,7 +50,7 @@ def test_xml_from_string_invalid():
     xml = """<?xml version="1.0" encoding="utf-8"?>
     <invalidTag></invalidTag>
     """
-    with pytest.raises(DocumentInvalid):
+    with pytest.raises(xmlschema.XMLSchemaValidationError):
         parser = XML()
         parser.from_string(xml)
 
@@ -152,7 +153,7 @@ def test_xml_from_url(mock_request):
 
 def test_wrong_schema_version(mock_request):
     with mock_request():
-        with pytest.raises(DocumentInvalid):
+        with pytest.raises(xmlschema.XMLSchemaValidationError):
             XML(version=SCHEMA.V1_0_0).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
 
 
@@ -228,6 +229,34 @@ def test_schema_version_1_2_2():
     assert documents[-3].index == 1
     assert documents[-2].index == 2
     assert documents[-1].index == 3
+
+
+def test_schema_version_1_2_2_prepublink():
+    with requests_mock.mock() as m:
+        with open('tests/resources/prepublink_v1.2.2.xml', 'rb') as f:
+            m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        documents = XML(version=SCHEMA.V1_2_2).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
+    assert len(documents) == 6
+    assert documents[0].index is None
+    assert documents[-3].index == 1
+    assert documents[-2].index == 2
+    assert documents[-1].index == 3
+
+
+def test_schema_version_1_2_2_faulty_prepublink():
+    with pytest.raises(xmlschema.XMLSchemaValidationError):
+        with requests_mock.mock() as m:
+            with open('tests/resources/prepublink_v1.2.2_error_enactment_date.xml', 'rb') as f:
+                m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+            XML(version=SCHEMA.V1_2_2).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
+
+
+def test_schema_version_1_2_2_faulty_geolink():
+    with pytest.raises(xmlschema.XMLSchemaValidationError):
+        with requests_mock.mock() as m:
+            with open('tests/resources/geolink_v1.2.2_error_status.xml', 'rb') as f:
+                m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+            XML(version=SCHEMA.V1_2_2).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
 
 
 def test_default_version_with_locale():
