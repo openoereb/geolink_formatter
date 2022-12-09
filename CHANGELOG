@@ -1,8 +1,16 @@
 Changelog
 =========
 
-2.0.1 (current dev)
--------------------
+2.0.2
+-----
+
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0, v1.2.1, v1.2.2 (default)
+
+- Add support for prepublinks
+- Utilize xsd 1.1 for xml file validation
+
+2.0.1
+-----
 
 Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0, v1.2.1, v1.2.2 (default)
 
