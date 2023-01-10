@@ -28,10 +28,6 @@ test: .venv/requirements.timestamp
 check: git-attributes lint test
 
 
-.PHONY: tox
-tox: .venv/requirements.timestamp git-attributes
-	.venv/bin/tox --recreate --skip-missing-interpreters
-
 .PHONY: clean
 clean:
 	rm -rf .venv

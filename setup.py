@@ -31,6 +31,7 @@ setup(name='geolink_formatter',
           "Programming Language :: Python :: 3.8",
           "Programming Language :: Python :: 3.9",
           "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
           "Topic :: Scientific/Engineering :: GIS",
           "Topic :: Software Development :: Libraries :: Python Modules"
       ],
