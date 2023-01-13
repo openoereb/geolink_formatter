@@ -2,9 +2,8 @@
 import datetime
 import pkg_resources
 import requests
-from lxml.etree import DTD, DocumentInvalid
+from lxml.etree import DTD, DocumentInvalid, fromstring
 from xmlschema import XMLSchema11
-from defusedxml.lxml import fromstring
 from geolink_formatter.entity import Document, File
 
 
