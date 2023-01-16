@@ -30,6 +30,9 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+from geolink_formatter import __version__
+
+
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.todo',
@@ -61,7 +64,7 @@ author = u'Karsten Deininger'
 # built documents.
 #
 # The short X.Y version.
-version = u''
+version = u'{0}'.format(__version__)
 # The full version, including alpha/beta/rc tags.
 release = u''
 
@@ -166,11 +169,6 @@ texinfo_documents = [
 # Set autoclass content
 autoclass_content = 'both'
 
-
-# SCV configuration
-scv_greatest_tag = True
-scv_sort = ('semver',)
-scv_whitelist_branches = ('master', )
 
 # Napoleon configuration
 napoleon_numpy_docstring = False
