@@ -4,7 +4,7 @@ pytest==7.2.1
 pytest-cov==4.0.0
 flake8==6.0.0
 requests-mock==1.10.0
-Sphinx<6
+Sphinx<7
 sphinx_rtd_theme==1.1.1
 lxml==4.9.2
 requests==2.28.2
