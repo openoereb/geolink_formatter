@@ -17,7 +17,7 @@ requires = [
 ]
 
 setup(name='geolink_formatter',
-      version='2.0.3',
+      version='2.0.4',
       description='OEREBlex geoLink Formatter',
       license='BSD',
       long_description='{readme}\n\n{changelog}'.format(readme=readme, changelog=changelog),
@@ -27,7 +27,6 @@ setup(name='geolink_formatter',
           "License :: OSI Approved :: BSD License",
           "Natural Language :: English",
           "Operating System :: OS Independent",
-          "Programming Language :: Python :: 3.7",
           "Programming Language :: Python :: 3.8",
           "Programming Language :: Python :: 3.9",
           "Programming Language :: Python :: 3.10",
