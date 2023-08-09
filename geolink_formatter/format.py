@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import date
 
 
 class HTML(object):
@@ -37,7 +38,7 @@ class HTML(object):
                 published_from = u'({0})'.format(document.enactment_date.strftime('%d.%m.%Y'))
             else:
                 published_from = u''
-            if document.abrogation_date:
+            if document.abrogation_date and document.abrogation_date < date.today():
                 files = u''
                 strike_start = u'<strike>'
                 strike_end = u'</strike>'
