@@ -17,27 +17,27 @@ class Document(object):
 
         Args:
             files (list[geolink_formatter.entity.File]): The files contained by the document.
-            id (str): The document identifier.
-            category (str): The document category.
-            doctype (str): The internal type of the document.
-            federal_level (str): The federal level of the document.
-            authority (str): The name of the authority responsible for the document.
-            authority_url (str): The URL of the authority's website.
-            title (str): The document title.
-            number (str): The document number.
-            abbreviation (str): The document abbreviation.
-            instance (str): The document's instance.
-            type (str): The official type of the document.
-            subtype (str): The subtype of the document.
-            decree_date (datetime.date): The date of decree.
-            enactment_date (datetime.date): The date of enactment.
-            abrogation_date (datetime.date): The date of abrogation.
-            cycle (str): The document cycle.
-            municipality (str): The municipality concerned by this document.
-            index (int): The document's index for sorting.
-            status (str): The status of the prebublication.
-            status_start_date (datetime.date): Start date of the status.
-            status_end_date (datetime.date): End date of the status.
+            id (str or None): The document identifier.
+            category (str or None): The document category.
+            doctype (str or None): The internal type of the document.
+            federal_level (str or None): The federal level of the document.
+            authority (str or None): The name of the authority responsible for the document.
+            authority_url (str or None): The URL of the authority's website.
+            title (str or None): The document title.
+            number (str or None): The document number.
+            abbreviation (str or None): The document abbreviation.
+            instance (str or None): The document's instance.
+            type (str or None): The official type of the document.
+            subtype (str or None): The subtype of the document.
+            decree_date (datetime.date or None): The date of decree.
+            enactment_date (datetime.date or None): The date of enactment.
+            abrogation_date (datetime.date or None): The date of abrogation.
+            cycle (str or None): The document cycle.
+            municipality (str or None): The municipality concerned by this document.
+            index (int or None): The document's index for sorting.
+            status (str or None): The status of the prebublication.
+            status_start_date (datetime.date or None): Start date of the status.
+            status_end_date (datetime.date or None): End date of the status.
 
         Raises:
             TypeError: Raised on missing argument or invalid argument type.
@@ -226,10 +226,10 @@ class File(object):
         """Creates a new file instance.
 
         Args:
-            category (str): The file's category.
-            href (str): The URL to access the file.
-            title (str): The file's title.
-            description (str): The file's description.
+            category (str or None): The file's category.
+            href (str or None): The URL to access the file.
+            title (str or None): The file's title.
+            description (str or None): The file's description.
 
         """
 
