@@ -40,7 +40,7 @@ class XML(object):
     _date_format = '%Y-%m-%d'
     """str: Format of date values in XML."""
 
-    def __init__(self, host_url=None, version='1.2.2', dtd_validation=False, xsd_validation=True):
+    def __init__(self, host_url=None, version='1.2.4', dtd_validation=False, xsd_validation=True):
         """Create a new XML parser instance containing the geoLink XSD for validation.
 
         Args:
