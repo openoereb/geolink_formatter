@@ -1,4 +1,5 @@
 ---
 engines:
-  pylintpython3:
-    max-line-length: 110
+  pylint:
+    enabled: true
+    python_version: 3
