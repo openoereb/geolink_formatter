@@ -1,0 +1,11 @@
+engines:
+  pylintpython3:
+    enabled: true
+    python_version: 3
+  bandit:
+    enabled: true
+    exclude_paths:
+      - "tests/**"
+
+exclude_paths:
+  - 'tests/**'
