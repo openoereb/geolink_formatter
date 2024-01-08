@@ -1,3 +1,8 @@
 assert_used:
   skips:
   - "tests/test_*.py"
+
+# Do not check paths including `/tests/`:
+# they use `assert`, leading to B101 false positives.
+exclude_dirs:
+    - '/tests/'
