@@ -300,6 +300,9 @@ def test_schema_version_1_2_3_faulty_geolink():
 
 
 def test_schema_version_1_2_4():
+    """
+    test of schema version 1.2.4
+    """
     with requests_mock.mock() as mock_m:
         with open('tests/resources/geolink_v1.2.4.xml', 'rb') as f:
             mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
@@ -312,6 +315,9 @@ def test_schema_version_1_2_4():
 
 
 def test_schema_version_1_2_4_prepublink():
+    """
+    test of schema version 1.2.4: prepublink
+    """
     with requests_mock.mock() as mock_m:
         with open('tests/resources/prepublink_v1.2.4.xml', 'rb') as f:
             mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
@@ -324,6 +330,9 @@ def test_schema_version_1_2_4_prepublink():
 
 
 def test_schema_version_1_2_4_faulty_prepublink():
+    """
+    test of schema version 1.2.4: faulty prepublink
+    """
     with pytest.raises(xmlschema.XMLSchemaValidationError):
         with requests_mock.mock() as mock_m:
             with open('tests/resources/prepublink_v1.2.4_error_enactment_date.xml', 'rb') as f:
@@ -332,6 +341,9 @@ def test_schema_version_1_2_4_faulty_prepublink():
 
 
 def test_schema_version_1_2_4_faulty_geolink():
+    """
+    test of schema version 1.2.4: faulty geolink
+    """
     with pytest.raises(xmlschema.XMLSchemaValidationError):
         with requests_mock.mock() as mock_m:
             with open('tests/resources/geolink_v1.2.4_error_status.xml', 'rb') as f:
