@@ -1,0 +1,4 @@
+---
+engines:
+  pylintpython3:
+    max-line-length: 110
