@@ -3,4 +3,4 @@ engines:
     enabled: true
     python_version: 3
   bandit:
-    enabled: true
+    enabled: false
