@@ -1,5 +1,5 @@
 ---
 engines:
-  pylint:
+  pylintpython3:
     enabled: true
     python_version: 3
