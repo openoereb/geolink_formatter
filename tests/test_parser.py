@@ -159,8 +159,8 @@ def test_wrong_schema_version(mock_request):
 
 def test_schema_version_1_0_0():
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/geolink_v1.0.0.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/geolink_v1.0.0.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_0_0).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert documents[0].cycle == 'cycle'
 
@@ -168,8 +168,8 @@ def test_schema_version_1_0_0():
 def test_schema_version_1_1_0():
     fmt = '%Y-%m-%d'
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/geolink_v1.1.0.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/geolink_v1.1.0.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_1_0).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert documents[0].number == '1A'
     assert documents[0].abbreviation == 'abbr'
@@ -178,8 +178,8 @@ def test_schema_version_1_1_0():
 
 def test_schema_version_1_1_1():
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/geolink_v1.1.1.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/geolink_v1.1.1.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_1_1).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert documents[0].number == '1A'
     assert documents[0].abbreviation == 'abbr'
@@ -189,8 +189,8 @@ def test_schema_version_1_1_1():
 def test_schema_version_1_1_1_with_bezirk():
     fmt = '%Y-%m-%d'
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/geolink_v1.1.1_bezirk.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/geolink_v1.1.1_bezirk.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_1_1).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert documents[0].number == '1A'
     assert documents[0].abbreviation == 'abbr'
@@ -200,8 +200,8 @@ def test_schema_version_1_1_1_with_bezirk():
 
 def test_schema_version_1_2_0():
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/geolink_v1.2.0.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/geolink_v1.2.0.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_2_0).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert len(documents) == 5
     assert documents[-1].doctype == 'notice'
@@ -211,8 +211,8 @@ def test_schema_version_1_2_0():
 
 def test_schema_version_1_2_1():
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/geolink_v1.2.1.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/geolink_v1.2.1.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_2_1).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert len(documents) == 5
     assert documents[0].municipality == 'Testgemeinde'
@@ -221,8 +221,8 @@ def test_schema_version_1_2_1():
 
 def test_schema_version_1_2_2():
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/geolink_v1.2.2.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/geolink_v1.2.2.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_2_2).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert len(documents) == 5
     assert documents[0].index is None
@@ -233,8 +233,8 @@ def test_schema_version_1_2_2():
 
 def test_schema_version_1_2_2_prepublink():
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/prepublink_v1.2.2.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/prepublink_v1.2.2.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_2_2).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert len(documents) == 6
     assert documents[0].index is None
@@ -246,23 +246,23 @@ def test_schema_version_1_2_2_prepublink():
 def test_schema_version_1_2_2_faulty_prepublink():
     with pytest.raises(xmlschema.XMLSchemaValidationError):
         with requests_mock.mock() as mock_m:
-            with open('tests/resources/prepublink_v1.2.2_error_enactment_date.xml', 'rb') as f:
-                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+            with open('tests/resources/prepublink_v1.2.2_error_enactment_date.xml', 'rb') as file_f:
+                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
             XML(version=SCHEMA.V1_2_2).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
 
 
 def test_schema_version_1_2_2_faulty_geolink():
     with pytest.raises(xmlschema.XMLSchemaValidationError):
         with requests_mock.mock() as mock_m:
-            with open('tests/resources/geolink_v1.2.2_error_status.xml', 'rb') as f:
-                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+            with open('tests/resources/geolink_v1.2.2_error_status.xml', 'rb') as file_f:
+                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
             XML(version=SCHEMA.V1_2_2).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
 
 
 def test_schema_version_1_2_3():
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/geolink_v1.2.3.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/geolink_v1.2.3.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_2_3).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert len(documents) == 5
     assert documents[0].index is None
@@ -273,8 +273,8 @@ def test_schema_version_1_2_3():
 
 def test_schema_version_1_2_3_prepublink():
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/prepublink_v1.2.3.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/prepublink_v1.2.3.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_2_3).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert len(documents) == 6
     assert documents[0].index is None
@@ -286,16 +286,16 @@ def test_schema_version_1_2_3_prepublink():
 def test_schema_version_1_2_3_faulty_prepublink():
     with pytest.raises(xmlschema.XMLSchemaValidationError):
         with requests_mock.mock() as mock_m:
-            with open('tests/resources/prepublink_v1.2.3_error_enactment_date.xml', 'rb') as f:
-                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+            with open('tests/resources/prepublink_v1.2.3_error_enactment_date.xml', 'rb') as file_f:
+                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
             XML(version=SCHEMA.V1_2_3).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
 
 
 def test_schema_version_1_2_3_faulty_geolink():
     with pytest.raises(xmlschema.XMLSchemaValidationError):
         with requests_mock.mock() as mock_m:
-            with open('tests/resources/geolink_v1.2.3_error_status.xml', 'rb') as f:
-                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+            with open('tests/resources/geolink_v1.2.3_error_status.xml', 'rb') as file_f:
+                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
             XML(version=SCHEMA.V1_2_3).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
 
 
@@ -304,8 +304,8 @@ def test_schema_version_1_2_4():
     test of schema version 1.2.4
     """
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/geolink_v1.2.4.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/geolink_v1.2.4.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_2_4).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert len(documents) == 5
     assert documents[0].index is None
@@ -319,8 +319,8 @@ def test_schema_version_1_2_4_prepublink():
     test of schema version 1.2.4: prepublink
     """
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/prepublink_v1.2.4.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+        with open('tests/resources/prepublink_v1.2.4.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
         documents = XML(version=SCHEMA.V1_2_4).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
     assert len(documents) == 6
     assert documents[0].index is None
@@ -335,8 +335,8 @@ def test_schema_version_1_2_4_faulty_prepublink():
     """
     with pytest.raises(xmlschema.XMLSchemaValidationError):
         with requests_mock.mock() as mock_m:
-            with open('tests/resources/prepublink_v1.2.4_error_enactment_date.xml', 'rb') as f:
-                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+            with open('tests/resources/prepublink_v1.2.4_error_enactment_date.xml', 'rb') as file_f:
+                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
             XML(version=SCHEMA.V1_2_4).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
 
 
@@ -346,15 +346,15 @@ def test_schema_version_1_2_4_faulty_geolink():
     """
     with pytest.raises(xmlschema.XMLSchemaValidationError):
         with requests_mock.mock() as mock_m:
-            with open('tests/resources/geolink_v1.2.4_error_status.xml', 'rb') as f:
-                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=f.read())
+            with open('tests/resources/geolink_v1.2.4_error_status.xml', 'rb') as file_f:
+                mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
             XML(version=SCHEMA.V1_2_4).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
 
 
 def test_default_version_with_locale():
     with requests_mock.mock() as mock_m:
-        with open('tests/resources/geolink_v1.2.1.xml', 'rb') as f:
-            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml?locale=fr', content=f.read())
+        with open('tests/resources/geolink_v1.2.1.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml?locale=fr', content=file_f.read())
         documents = XML().from_url('http://oereblex.test.com/api/geolinks/1500.xml', {'locale': 'fr'})
     assert documents[0].number == '1A'
     assert documents[0].abbreviation == 'abbr'
