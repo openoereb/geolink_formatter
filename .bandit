@@ -1,4 +1,0 @@
-# FILE: .bandit
-[bandit]
-exclude = tests
-skips = B101
