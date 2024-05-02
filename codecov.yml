@@ -1,3 +1,9 @@
+coverage:
+  status:
+    project:
+      default:
+        threshold: 1%
+    patch: no
 comment:
   layout: "diff"
   behavior: default
