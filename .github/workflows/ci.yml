@@ -33,6 +33,10 @@ jobs:
         uses: codecov/codecov-action@v4.2.0
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          name: Python ${{ matrix.python-version }}
+          fail_ci_if_error: true
+          verbose: true
 
   deploy-dev:
     name: Deploy to PyPI Test
