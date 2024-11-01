@@ -30,7 +30,7 @@ jobs:
           flake8
           py.test -vv --cov-config .coveragerc --cov geolink_formatter tests
       - name: Send coverage for Python ${{ matrix.python-version }}
-        uses: codecov/codecov-action@v4.5.0
+        uses: codecov/codecov-action@v4.6.0
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
