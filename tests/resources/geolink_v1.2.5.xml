@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<geolinks language='de'>
+    <document authority='Gemeindeverwaltung' authority_url='https://www.domleschg.ch'
+        category='main' doctype='decree' enactment_date='2012-06-22' federal_level='Gemeinde'
+        id='400' language='de' municipality='Domleschg' number='12.GDEf1'
+        subtype='Domleschg (Paspels) 3634' title='Quartierplan Radiend'
+        type='Nutzungsplanung - Quartierplanverfahren'>
+        <file category='main' description='3634_B_QP_Radiend_Platzhalter.pdf'
+            href='/api/attachments/1123' title='3634_B_QP_Radiend_Platzhalter.pdf'></file>
+        <file category='additional' description='' href='/api/attachments/6027'
+            title='PlatzhalterFehlendeDokumente.pdf'></file>
+
+    </document>
+    <document authority='Gemeindeverwaltung' authority_url='https://www.domleschg.ch'
+        category='related' doctype='decree' enactment_date='2006-09-19' federal_level='Gemeinde'
+        id='390' language='de' municipality='Domleschg' number='3634.(1)' title='Baugesetz Paspels'>
+        <file category='main' description='3634_V_Paspels_BauG.pdf' href='/api/attachments/17740'
+            title='3634_V_Paspels_BauG.pdf'></file>
+
+    </document>
+    <document abbreviation='KRG' authority='Standeskanzlei' authority_url='http://www.staka.gr.ch'
+        category='related' decree_date='2004-12-06' doctype='edict' enactment_date='2019-04-01'
+        federal_level='Kanton' id='17' index='1000' language='de' number='801.100'
+        title='Raumplanungsgesetz für den Kanton Graubünden'>
+        <file category='main' description='801.100.pdf'
+            href='https://www.gr-lex.gr.ch/frontend/versions/pdf_file_with_annex/3045?locale=de'
+            title='801.100.pdf'></file>
+
+    </document>
+    <document abbreviation='KRVO' authority='Standeskanzlei' authority_url='http://www.staka.gr.ch'
+        category='related' decree_date='2005-05-24' doctype='edict' enactment_date='2023-09-01'
+        federal_level='Kanton' id='18' index='1000' language='de' number='801.110'
+        title='Raumplanungsverordnung für den Kanton Graubünden'>
+        <file category='main' description='801.110.pdf'
+            href='https://www.gr-lex.gr.ch/frontend/versions/pdf_file_with_annex/3335?locale=de'
+            title='801.110.pdf'></file>
+
+    </document>
+    <document abbreviation='' authority='Standeskanzlei' authority_url='http://www.staka.gr.ch'
+        category='related' decree_date='1997-05-06' doctype='edict' enactment_date='2007-01-01'
+        federal_level='Kanton' id='34' index='1000' language='de' number='801.500'
+        title='Richtlinien für die Gefahrenzonenplanung'>
+        <file category='main' description='801.500.pdf'
+            href='https://www.gr-lex.gr.ch/frontend/versions/pdf_file_with_annex/2417?locale=de'
+            title='801.500.pdf'></file>
+
+    </document>
+    <document abbreviation='Kantonales Umweltschutzgesetz, KUSG' authority='Standeskanzlei'
+        authority_url='http://www.staka.gr.ch' category='related' decree_date='2001-12-02'
+        doctype='edict' enactment_date='2020-04-01' federal_level='Kanton' id='19' index='1000'
+        language='de' number='820.100'
+        title='Einführungsgesetz zum Bundesgesetz über den Umweltschutz'>
+        <file category='main' description='820.100.pdf'
+            href='https://www.gr-lex.gr.ch/frontend/versions/pdf_file_with_annex/3025?locale=de'
+            title='820.100.pdf'></file>
+
+    </document>
+    <document abbreviation='KWaG' authority='Standeskanzlei' authority_url='http://www.staka.gr.ch'
+        category='related' decree_date='2012-06-11' doctype='edict' enactment_date='2021-01-01'
+        federal_level='Kanton' id='23' index='1000' language='de' number='920.100'
+        title='Kantonales Waldgesetz'>
+        <file category='main' description='920.100.pdf'
+            href='https://www.gr-lex.gr.ch/frontend/versions/pdf_file_with_annex/3117?locale=de'
+            title='920.100.pdf'></file>
+
+    </document>
+    <document abbreviation='KWaV' authority='Standeskanzlei' authority_url='http://www.staka.gr.ch'
+        category='related' decree_date='2012-12-03' doctype='edict' enactment_date='2021-01-01'
+        federal_level='Kanton' id='24' index='1000' language='de' number='920.110'
+        title='Kantonale Waldverordnung'>
+        <file category='main' description='920.110.pdf'
+            href='https://www.gr-lex.gr.ch/frontend/versions/pdf_file_with_annex/3118?locale=de'
+            title='920.110.pdf'></file>
+
+    </document>
+    <document abbreviation='Raumplanungsgesetz, RPG' authority='Bundeskanzlei'
+        authority_url='https://www.bk.admin.ch/' category='related' doctype='edict'
+        enactment_date='2019-01-01' federal_level='Bund' id='5' index='10' language='de'
+        number='SR 700' title='Bundesgesetz über die Raumplanung'>
+        <file category='main' description='700.de.pdf' href='https://www.lexfind.ch/tolv/247302/de'
+            title='700.de.pdf'></file>
+
+    </document>
+    <document abbreviation='LSV' authority='Bundeskanzlei' authority_url='https://www.bk.admin.ch/'
+        category='related' doctype='edict' enactment_date='2024-11-01' federal_level='Bund' id='11'
+        index='620' language='de' number='SR 814.41' title='Lärmschutz-Verordnung'>
+        <file category='main' description='814.41.de.pdf'
+            href='https://www.lexfind.ch/tolv/247358/de' title='814.41.de.pdf'></file>
+
+    </document>
+    <document abbreviation='Waldgesetz, WaG' authority='Bundeskanzlei'
+        authority_url='https://www.bk.admin.ch/' category='related' doctype='edict'
+        enactment_date='2022-01-01' federal_level='Bund' id='13' index='710' language='de'
+        number='SR 921.0' title='Bundesgesetz über den Wald'>
+        <file category='main' description='921.0.de.pdf'
+            href='https://www.lexfind.ch/tolv/246994/de' title='921.0.de.pdf'></file>
+
+    </document>
+    <document abbreviation='Waldverordnung, WaV' authority='Bundeskanzlei'
+        authority_url='https://www.bk.admin.ch/' category='related' doctype='edict'
+        enactment_date='2021-07-01' federal_level='Bund' id='14' index='720' language='de'
+        number='SR 921.01' title='Verordnung über den Wald'>
+        <file category='main' description='921.01.de.pdf'
+            href='https://www.lexfind.ch/tolv/207456/de' title='921.01.de.pdf'></file>
+
+    </document>
+</geolinks>

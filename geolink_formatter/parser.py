@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import datetime
-import pkg_resources
+from importlib import resources
 import requests
 from lxml.etree import DTD, DocumentInvalid, fromstring
 from xmlschema import XMLSchema11
@@ -32,7 +32,10 @@ class SCHEMA(object):
     """str: geoLink schema version 1.2.3"""
 
     V1_2_4 = '1.2.4'
-    """str: geoLink schema version 1.2.3"""
+    """str: geoLink schema version 1.2.4"""
+
+    V1_2_5 = '1.2.5'
+    """str: geoLink schema version 1.2.5"""
 
 
 class XML(object):
@@ -40,7 +43,7 @@ class XML(object):
     _date_format = '%Y-%m-%d'
     """str: Format of date values in XML."""
 
-    def __init__(self, host_url=None, version='1.2.4', dtd_validation=False, xsd_validation=True):
+    def __init__(self, host_url=None, version='1.2.5', dtd_validation=False, xsd_validation=True):
         """Create a new XML parser instance containing the geoLink XSD for validation.
 
         Args:
@@ -57,9 +60,9 @@ class XML(object):
         self._version = version
         self._dtd_validation = dtd_validation
         self._xsd_validation = xsd_validation
-        xsd = pkg_resources.resource_filename('geolink_formatter', 'schema/v{0}.xsd'.format(version))
+        xsd = resources.files('geolink_formatter') / 'schema' / 'v{0}.xsd'.format(version)
         if self._xsd_validation:
-            with open(xsd, encoding='utf-8') as f:
+            with xsd.open(mode='r', encoding='utf-8') as f:
                 self._schema = XMLSchema11(f.read())
 
     @property
@@ -94,6 +97,123 @@ class XML(object):
                 raise DocumentInvalid('Missing DTD in parsed content')
         return content
 
+    def _process_single_document(self, document_el, language_link):
+        """
+        Processes a single document element.
+
+        Args:
+            document_el (lxml.etree._Element): element 'document'
+            language_link (str): language of the documents set
+
+        Returns:
+            geolink_formatter.entity.Document: document
+
+        """
+        doc_id = document_el.attrib.get('id')
+        doctype = document_el.attrib.get('doctype')
+
+        # Mangle doc_id for notices. While IDs are unique between decrees
+        # and edicts, this is not the case when adding notices to the mix.
+        if doctype == 'notice':
+            doc_id += doctype
+
+        files = list()
+        for file_el in document_el.iter('file'):
+            href = file_el.attrib.get('href')
+            if self.host_url and not href.startswith(u'http://') and not href.startswith(u'https://'):
+                href = u'{host}{href}'.format(host=self.host_url, href=href)
+            files.append(File(
+                title=file_el.attrib.get('title'),
+                description=file_el.attrib.get('description'),
+                href=href,
+                category=file_el.attrib.get('category')
+            ))
+        enactment_date = document_el.attrib.get('enactment_date')
+        if enactment_date:
+            enactment_date = datetime.datetime.strptime(enactment_date, self._date_format).date()
+        decree_date = document_el.attrib.get('decree_date')
+        if decree_date:
+            decree_date = datetime.datetime.strptime(decree_date, self._date_format).date()
+        abrogation_date = document_el.attrib.get('abrogation_date')
+        if abrogation_date:
+            abrogation_date = datetime.datetime.strptime(abrogation_date, self._date_format).date()
+        status_start_date = document_el.attrib.get('status_start_date')
+        if status_start_date:
+            status_start_date = datetime.datetime.strptime(status_start_date, self._date_format)\
+                                                    .date()
+        status_end_date = document_el.attrib.get('status_end_date')
+        if status_end_date:
+            status_end_date = datetime.datetime\
+                .strptime(status_end_date, self._date_format).date()
+
+        document = Document(
+            files=files,
+            id=doc_id,
+            category=document_el.attrib.get('category'),
+            doctype=document_el.attrib.get('doctype'),
+            federal_level=document_el.attrib.get('federal_level'),
+            authority=document_el.attrib.get('authority'),
+            authority_url=document_el.attrib.get('authority_url'),
+            title=document_el.attrib.get('title'),
+            number=document_el.attrib.get('number'),
+            abbreviation=document_el.attrib.get('abbreviation'),
+            instance=document_el.attrib.get('instance'),
+            type=document_el.attrib.get('type'),
+            subtype=document_el.attrib.get('subtype'),
+            decree_date=decree_date,
+            enactment_date=enactment_date,
+            abrogation_date=abrogation_date,
+            cycle=document_el.attrib.get('cycle'),
+            municipality=document_el.attrib.get('municipality'),
+            index=document_el.attrib.get('index'),
+            status=document_el.attrib.get('status'),
+            status_start_date=status_start_date,
+            status_end_date=status_end_date,
+            language=document_el.attrib.get('language'),
+            language_link=language_link
+        )
+
+        assert isinstance(document, Document)
+        assert document.id is not None
+
+        return document
+
+    def _process_geolinks_prepublinks(self, geolink_prepublink_el):
+        """
+        Processes a 'geolinks' or 'prepublinks' element.
+
+        Args:
+            geolink_prepublink_el (lxml.etree._Element): element 'geolinks' or 'prepublinks'
+
+        Return:
+            list[geolink_formatter.entity.Document]: list of documents
+        """
+        language_link = geolink_prepublink_el.get('language')
+
+        documents = list()
+        for document_el in geolink_prepublink_el.iter('document'):
+            documents.append(self._process_single_document(document_el, language_link))
+        return documents
+
+    def _filter_duplicated_documents(self, documents):
+        """
+        Filters duplicated documents.
+
+        Args:
+            documents (list[geolink_formatter.entity.Document]): list of documents
+
+        Returns:
+            list[geolink_formatter.entity.Document]: filtered list of documents
+        """
+        documents_filtered = list()
+        for document in documents:
+            if (
+                [document.id, document.language_link] not in
+                [[doc.id, doc.language_link] for doc in documents_filtered]
+            ):
+                documents_filtered.append(document)
+        return documents_filtered
+
     def from_string(self, xml):
         """Parses XML into internal structure.
 
@@ -111,70 +231,17 @@ class XML(object):
         root = self._parse_xml(xml)
         documents = list()
 
-        for document_el in root.iter('document'):
-            doc_id = document_el.attrib.get('id')
-            doctype = document_el.attrib.get('doctype')
+        # evaluate root element's tag
+        if root.tag == 'multilang_geolinks':
+            for el in root.iter('geolinks', 'prepublinks'):
+                documents.extend(self._process_geolinks_prepublinks(el))
+        elif root.tag in ['geolinks', 'prepublinks']:
+            documents.extend(self._process_geolinks_prepublinks(root))
+        else:
+            raise RuntimeError('Unexpected tag name: {}'.format(root.tag))
 
-            # Mangle doc_id for notices. While IDs are unique between decrees
-            # and edicts, this is not the case when adding notices to the mix.
-            if doctype == 'notice':
-                doc_id += doctype
-
-            if doc_id and doc_id not in [doc.id for doc in documents]:
-                files = list()
-                for file_el in document_el.iter('file'):
-                    href = file_el.attrib.get('href')
-                    if self.host_url and not href.startswith(u'http://') and not href.startswith(u'https://'):
-                        href = u'{host}{href}'.format(host=self.host_url, href=href)
-                    files.append(File(
-                        title=file_el.attrib.get('title'),
-                        description=file_el.attrib.get('description'),
-                        href=href,
-                        category=file_el.attrib.get('category')
-                    ))
-                enactment_date = document_el.attrib.get('enactment_date')
-                if enactment_date:
-                    enactment_date = datetime.datetime.strptime(enactment_date, self._date_format).date()
-                decree_date = document_el.attrib.get('decree_date')
-                if decree_date:
-                    decree_date = datetime.datetime.strptime(decree_date, self._date_format).date()
-                abrogation_date = document_el.attrib.get('abrogation_date')
-                if abrogation_date:
-                    abrogation_date = datetime.datetime.strptime(abrogation_date, self._date_format).date()
-                status_start_date = document_el.attrib.get('status_start_date')
-                if status_start_date:
-                    status_start_date = datetime.datetime.strptime(status_start_date, self._date_format)\
-                                                         .date()
-                status_end_date = document_el.attrib.get('status_end_date')
-                if status_end_date:
-                    status_end_date = datetime.datetime.strptime(status_end_date, self._date_format)\
-                                                        .date()
-
-                documents.append(Document(
-                    files=files,
-                    id=doc_id,
-                    category=document_el.attrib.get('category'),
-                    doctype=document_el.attrib.get('doctype'),
-                    federal_level=document_el.attrib.get('federal_level'),
-                    authority=document_el.attrib.get('authority'),
-                    authority_url=document_el.attrib.get('authority_url'),
-                    title=document_el.attrib.get('title'),
-                    number=document_el.attrib.get('number'),
-                    abbreviation=document_el.attrib.get('abbreviation'),
-                    instance=document_el.attrib.get('instance'),
-                    type=document_el.attrib.get('type'),
-                    subtype=document_el.attrib.get('subtype'),
-                    decree_date=decree_date,
-                    enactment_date=enactment_date,
-                    abrogation_date=abrogation_date,
-                    cycle=document_el.attrib.get('cycle'),
-                    municipality=document_el.attrib.get('municipality'),
-                    index=document_el.attrib.get('index'),
-                    status=document_el.attrib.get('status'),
-                    status_start_date=status_start_date,
-                    status_end_date=status_end_date
-                ))
-
+        # filter documents (remove duplicates)
+        documents = self._filter_duplicated_documents(documents)
         return documents
 
     def from_url(self, url, params=None, **kwargs):
