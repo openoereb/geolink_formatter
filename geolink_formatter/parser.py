@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import datetime
-from importlib import resources
 import requests
+import importlib
 from lxml.etree import DTD, DocumentInvalid, fromstring
 from xmlschema import XMLSchema11
 from geolink_formatter.entity import Document, File
+from geolink_formatter.utils import filter_duplicated_documents
 
 
 class SCHEMA(object):
@@ -60,10 +61,10 @@ class XML(object):
         self._version = version
         self._dtd_validation = dtd_validation
         self._xsd_validation = xsd_validation
-        xsd = resources.files('geolink_formatter') / 'schema' / 'v{0}.xsd'.format(version)
+        xsd = importlib.resources.files('geolink_formatter') / 'schema' / f'v{version}.xsd'
         if self._xsd_validation:
-            with xsd.open(mode='r', encoding='utf-8') as f:
-                self._schema = XMLSchema11(f.read())
+            with xsd.open(mode='r', encoding='utf-8') as xsd_f:
+                self._schema = XMLSchema11(xsd_f.read())
 
     @property
     def host_url(self):
@@ -117,11 +118,11 @@ class XML(object):
         if doctype == 'notice':
             doc_id += doctype
 
-        files = list()
+        files = []
         for file_el in document_el.iter('file'):
             href = file_el.attrib.get('href')
-            if self.host_url and not href.startswith(u'http://') and not href.startswith(u'https://'):
-                href = u'{host}{href}'.format(host=self.host_url, href=href)
+            if self.host_url and not href.startswith(u'http://') and not href.startswith('https://'):
+                href = f'{self.host_url}{href}'
             files.append(File(
                 title=file_el.attrib.get('title'),
                 description=file_el.attrib.get('description'),
@@ -173,9 +174,6 @@ class XML(object):
             language_link=language_link
         )
 
-        assert isinstance(document, Document)
-        assert document.id is not None
-
         return document
 
     def _process_geolinks_prepublinks(self, geolink_prepublink_el):
@@ -190,29 +188,10 @@ class XML(object):
         """
         language_link = geolink_prepublink_el.get('language')
 
-        documents = list()
+        documents = []
         for document_el in geolink_prepublink_el.iter('document'):
             documents.append(self._process_single_document(document_el, language_link))
         return documents
-
-    def _filter_duplicated_documents(self, documents):
-        """
-        Filters duplicated documents.
-
-        Args:
-            documents (list[geolink_formatter.entity.Document]): list of documents
-
-        Returns:
-            list[geolink_formatter.entity.Document]: filtered list of documents
-        """
-        documents_filtered = list()
-        for document in documents:
-            if (
-                [document.id, document.language_link] not in
-                [[doc.id, doc.language_link] for doc in documents_filtered]
-            ):
-                documents_filtered.append(document)
-        return documents_filtered
 
     def from_string(self, xml):
         """Parses XML into internal structure.
@@ -229,19 +208,20 @@ class XML(object):
             lxml.etree.XMLSyntaxError: Raised on failed validation.
         """
         root = self._parse_xml(xml)
-        documents = list()
+        documents = []
 
         # evaluate root element's tag
         if root.tag == 'multilang_geolinks':
-            for el in root.iter('geolinks', 'prepublinks'):
-                documents.extend(self._process_geolinks_prepublinks(el))
+            for elem in root.iter('geolinks', 'prepublinks'):
+                documents.extend(self._process_geolinks_prepublinks(elem))
         elif root.tag in ['geolinks', 'prepublinks']:
             documents.extend(self._process_geolinks_prepublinks(root))
         else:
-            raise RuntimeError('Unexpected tag name: {}'.format(root.tag))
+            raise RuntimeError(f'Unexpected tag name: {root.tag}')
 
         # filter documents (remove duplicates)
-        documents = self._filter_duplicated_documents(documents)
+        documents = filter_duplicated_documents(documents)
+
         return documents
 
     def from_url(self, url, params=None, **kwargs):
