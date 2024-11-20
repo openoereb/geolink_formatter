@@ -13,7 +13,7 @@ class Document(object):
                  authority_url=None, title=None, number=None, abbreviation=None, instance=None, type=None,
                  subtype=None, decree_date=None, enactment_date=None, abrogation_date=None, cycle=None,
                  municipality=None, index=None, status=None, status_start_date=None, status_end_date=None,
-                 language=None, language_link=None):
+                 language_document=None, language_link=None):
         """Creates a new document instance.
 
         Args:
@@ -39,7 +39,7 @@ class Document(object):
             status (str or None): The status of the prebublication.
             status_start_date (datetime.date or None): Start date of the status.
             status_end_date (datetime.date or None): End date of the status.
-            language (str or None): Language of the document.
+            language_document (str or None): Language of the document.
             language_link (str or None): Language of the geolink/prepublink collection.
 
         Raises:
@@ -112,7 +112,7 @@ class Document(object):
         self._status = status
         self._status_start_date = status_start_date
         self._status_end_date = status_end_date
-        self._language = language
+        self._language_document = language_document
         self._language_link = language_link
 
     @property
@@ -226,9 +226,9 @@ class Document(object):
         return self._status_end_date
 
     @property
-    def language(self):
+    def language_document(self):
         """str: Language of the document (since v1.2.5)."""
-        return self._language
+        return self._language_document
 
     @property
     def language_link(self):

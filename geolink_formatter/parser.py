@@ -169,7 +169,7 @@ class XML(object):
             status=document_el.attrib.get('status'),
             status_start_date=status_start_date,
             status_end_date=status_end_date,
-            language=document_el.attrib.get('language'),
+            language_document=document_el.attrib.get('language'),
             language_link=language_link
         )
 
