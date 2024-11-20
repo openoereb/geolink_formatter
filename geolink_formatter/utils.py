@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+""" Provides additional methods usable for parsing the xml document from the geolink api. """
+
 
 def filter_duplicated_documents(documents):
     """
@@ -10,7 +12,7 @@ def filter_duplicated_documents(documents):
     Returns:
         list[geolink_formatter.entity.Document]: filtered list of documents
     """
-    documents_filtered = list()
+    documents_filtered = []
     for document in documents:
         if (
                 [document.id, document.language_link]

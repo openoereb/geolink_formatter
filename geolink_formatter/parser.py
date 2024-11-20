@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+""" Provides classes for parsing the xml document from the geolink api.  """
+from importlib import resources as impresources
 import datetime
 import requests
-import importlib
 from lxml.etree import DTD, DocumentInvalid, fromstring
 from xmlschema import XMLSchema11
 from geolink_formatter.entity import Document, File
@@ -61,7 +62,7 @@ class XML(object):
         self._version = version
         self._dtd_validation = dtd_validation
         self._xsd_validation = xsd_validation
-        xsd = importlib.resources.files('geolink_formatter') / 'schema' / f'v{version}.xsd'
+        xsd = impresources.files('geolink_formatter') / 'schema' / f'v{version}.xsd'
         if self._xsd_validation:
             with xsd.open(mode='r', encoding='utf-8') as xsd_f:
                 self._schema = XMLSchema11(xsd_f.read())
@@ -121,7 +122,7 @@ class XML(object):
         files = []
         for file_el in document_el.iter('file'):
             href = file_el.attrib.get('href')
-            if self.host_url and not href.startswith(u'http://') and not href.startswith('https://'):
+            if self.host_url and not href.startswith('http://') and not href.startswith('https://'):
                 href = f'{self.host_url}{href}'
             files.append(File(
                 title=file_el.attrib.get('title'),

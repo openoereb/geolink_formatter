@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+""" Provides the Msg, Document and File classes. """
 import datetime
 
 
