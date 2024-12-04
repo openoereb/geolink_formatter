@@ -212,7 +212,7 @@ class XML(object):
         documents = []
 
         # evaluate root element's tag
-        if root.tag == 'multilang_geolinks':
+        if root.tag in ['multilang_geolinks', 'multilang_prepublinks']:
             for elem in root.iter('geolinks', 'prepublinks'):
                 documents.extend(self._process_geolinks_prepublinks(elem))
         elif root.tag in ['geolinks', 'prepublinks']:

@@ -375,11 +375,13 @@ def test_schema_version_1_2_5():
     assert documents[-3].id == '11'
     assert documents[-2].id == '13'
     assert documents[-1].id == '14'
+    assert documents[0].language_document == 'de'
+    assert documents[0].language_link == 'de'
 
 
 def test_schema_version_1_2_5_ml():
     """
-    test of schema version 1.2.5
+    test of schema version 1.2.5 multilang
     """
     with requests_mock.mock() as mock_m:
         with open('tests/resources/geolink_v1.2.5_ml.xml', 'rb') as file_f:
@@ -398,6 +400,54 @@ def test_schema_version_1_2_5_ml():
     assert documents[-3].id == '11'
     assert documents[-2].id == '13'
     assert documents[-1].id == '14'
+    assert documents[0].language_document == 'de'
+    assert documents[0].language_link == 'de'
+    assert documents[2].language_document == 'de'
+    assert documents[2].language_link == 'de'
+    assert documents[12].language_document == 'de'
+    assert documents[12].language_link == 'rm'
+    assert documents[14].language_document == 'rm'
+    assert documents[14].language_link == 'rm'
+    assert documents[24].language_document == 'de'
+    assert documents[24].language_link == 'it'
+    assert documents[26].language_document == 'it'
+    assert documents[26].language_link == 'it'
+
+
+def test_schema_version_1_2_5_prepublink():
+    """
+    test of schema version 1.2.5: prepublink
+    """
+    with requests_mock.mock() as mock_m:
+        with open('tests/resources/prepublink_v1.2.5.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/prepubs/1500.xml', content=file_f.read())
+        documents = XML(version=SCHEMA.V1_2_5).from_url('http://oereblex.test.com/api/prepubs/1500.xml')
+    assert len(documents) == 5
+    assert documents[0].index is None
+    assert documents[1].index is None
+    assert documents[-3].index == 731
+    assert documents[-2].index == 741
+    assert documents[-1].index == 10
+    assert documents[0].language_document == 'de'
+    assert documents[0].language_link == 'de'
+
+
+def test_schema_version_1_2_5_prepublink_ml():
+    """
+    test of schema version 1.2.5: prepublink multilang
+    """
+    with requests_mock.mock() as mock_m:
+        with open('tests/resources/prepublink_v1.2.5_ml.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/prepubs/1500.xml', content=file_f.read())
+        documents = XML(version=SCHEMA.V1_2_5).from_url('http://oereblex.test.com/api/prepubs/1500.xml')
+    assert len(documents) == 5
+    assert documents[0].index is None
+    assert documents[1].index is None
+    assert documents[-3].index == 731
+    assert documents[-2].index == 741
+    assert documents[-1].index == 10
+    assert documents[0].language_document == 'de'
+    assert documents[0].language_link == 'de'
 
 
 def test_default_version_with_locale():
