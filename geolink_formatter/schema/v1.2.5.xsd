@@ -1,0 +1,113 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="multilang_geolinks">
+    <xs:complexType>
+      <xs:choice minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="geolinks" type="base_links" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="geolinks" type="base_links" />
+
+  <xs:element name="multilang_prepublinks">
+    <xs:complexType>
+      <xs:choice minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="prepublinks" type="base_links" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="prepublinks" type="base_links" />
+
+  <xs:complexType name="base_links">
+    <xs:sequence>
+      <xs:element name="document" type="full_document" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="language" type="language" />
+  </xs:complexType>
+
+  <xs:complexType name="full_document">
+    <xs:complexContent>
+      <xs:extension base="base_document">
+        <xs:attributeGroup ref="geolink_document" />
+        <xs:attributeGroup ref="prepublink_document" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:attributeGroup name="geolink_document">
+    <xs:attribute name="abrogation_date" type="xs:date" />
+    <xs:attribute name="approval_date" type="xs:date" />
+    <xs:attribute name="decree_date" type="xs:date" />
+    <xs:attribute name="enactment_date" type="xs:date" />
+    <xs:attribute name="publication_date" type="xs:date" />
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="prepublink_document">
+    <xs:attribute name="status" type="xs:string" />
+    <xs:attribute name="status_end_date" type="xs:date" />
+    <xs:attribute name="status_start_date" type="xs:date" />
+  </xs:attributeGroup>
+
+  <xs:complexType name="base_document">
+    <xs:sequence>
+      <xs:element name="file" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="category">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="main" />
+                <xs:enumeration value="additional" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="href" type="xs:string" />
+          <xs:attribute name="title" type="xs:string" />
+          <xs:attribute name="description" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="abbreviation" type="xs:string" />
+    <xs:attribute name="authority" type="xs:string" />
+    <xs:attribute name="authority_url" type="xs:string" />
+    <xs:attribute name="category">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="main" />
+          <xs:enumeration value="related" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="cycle" type="xs:string" />
+    <xs:attribute name="doctype">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="edict" />
+          <xs:enumeration value="decree" />
+          <xs:enumeration value="notice" />
+          <xs:enumeration value="prepublication" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="federal_level" type="xs:string" />
+    <xs:attribute name="id" type="xs:string" />
+    <xs:attribute name="index" type="xs:integer" />
+    <xs:attribute name="instance" type="xs:string" />
+    <xs:attribute name="language" type="language" />
+    <xs:attribute name="municipality" type="xs:string" />
+    <xs:attribute name="number" type="xs:string" />
+    <xs:attribute name="subtype" type="xs:string" />
+    <xs:attribute name="title" type="xs:string" />
+    <xs:attribute name="type" type="xs:string" />
+  </xs:complexType>
+
+  <xs:simpleType name="language">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="de" />
+      <xs:enumeration value="fr" />
+      <xs:enumeration value="it" />
+      <xs:enumeration value="rm" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

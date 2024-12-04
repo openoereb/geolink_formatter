@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+""" Provides class HTML for rendering the xml document from the geolink api as html. """
 from datetime import date
 
 

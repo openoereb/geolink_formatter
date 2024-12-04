@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 import pytest
 import requests_mock
-from lxml.etree import DocumentInvalid, _Element
 import xmlschema
+from unittest.mock import patch
+from lxml.etree import DocumentInvalid, _Element, Element, SubElement
 from requests import RequestException
 
 from geolink_formatter.parser import XML, SCHEMA
+from geolink_formatter.entity import Document
 
 
 def test_xml_init():
@@ -351,6 +353,103 @@ def test_schema_version_1_2_4_faulty_geolink():
             XML(version=SCHEMA.V1_2_4).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
 
 
+def test_schema_version_1_2_5():
+    """
+    test of schema version 1.2.5
+    """
+    with requests_mock.mock() as mock_m:
+        with open('tests/resources/geolink_v1.2.5.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
+        documents = XML(version=SCHEMA.V1_2_5).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
+    assert len(documents) == 12
+    assert documents[0].index is None
+    assert documents[0].id == '400'
+    assert documents[-11].id == '390'
+    assert documents[-10].id == '17'
+    assert documents[-9].id == '18'
+    assert documents[-8].id == '34'
+    assert documents[-7].id == '19'
+    assert documents[-6].id == '23'
+    assert documents[-5].id == '24'
+    assert documents[-4].id == '5'
+    assert documents[-3].id == '11'
+    assert documents[-2].id == '13'
+    assert documents[-1].id == '14'
+    assert documents[0].language_document == 'de'
+    assert documents[0].language_link == 'de'
+
+
+def test_schema_version_1_2_5_ml():
+    """
+    test of schema version 1.2.5 multilang
+    """
+    with requests_mock.mock() as mock_m:
+        with open('tests/resources/geolink_v1.2.5_ml.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/geolinks/1500.xml', content=file_f.read())
+        documents = XML(version=SCHEMA.V1_2_5).from_url('http://oereblex.test.com/api/geolinks/1500.xml')
+    assert len(documents) == 36
+    assert documents[0].id == '400'
+    assert documents[-11].id == '390'
+    assert documents[-10].id == '17'
+    assert documents[-9].id == '18'
+    assert documents[-8].id == '34'
+    assert documents[-7].id == '19'
+    assert documents[-6].id == '23'
+    assert documents[-5].id == '24'
+    assert documents[-4].id == '5'
+    assert documents[-3].id == '11'
+    assert documents[-2].id == '13'
+    assert documents[-1].id == '14'
+    assert documents[0].language_document == 'de'
+    assert documents[0].language_link == 'de'
+    assert documents[2].language_document == 'de'
+    assert documents[2].language_link == 'de'
+    assert documents[12].language_document == 'de'
+    assert documents[12].language_link == 'rm'
+    assert documents[14].language_document == 'rm'
+    assert documents[14].language_link == 'rm'
+    assert documents[24].language_document == 'de'
+    assert documents[24].language_link == 'it'
+    assert documents[26].language_document == 'it'
+    assert documents[26].language_link == 'it'
+
+
+def test_schema_version_1_2_5_prepublink():
+    """
+    test of schema version 1.2.5: prepublink
+    """
+    with requests_mock.mock() as mock_m:
+        with open('tests/resources/prepublink_v1.2.5.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/prepubs/1500.xml', content=file_f.read())
+        documents = XML(version=SCHEMA.V1_2_5).from_url('http://oereblex.test.com/api/prepubs/1500.xml')
+    assert len(documents) == 5
+    assert documents[0].index is None
+    assert documents[1].index is None
+    assert documents[-3].index == 731
+    assert documents[-2].index == 741
+    assert documents[-1].index == 10
+    assert documents[0].language_document == 'de'
+    assert documents[0].language_link == 'de'
+
+
+def test_schema_version_1_2_5_prepublink_ml():
+    """
+    test of schema version 1.2.5: prepublink multilang
+    """
+    with requests_mock.mock() as mock_m:
+        with open('tests/resources/prepublink_v1.2.5_ml.xml', 'rb') as file_f:
+            mock_m.get('http://oereblex.test.com/api/prepubs/1500.xml', content=file_f.read())
+        documents = XML(version=SCHEMA.V1_2_5).from_url('http://oereblex.test.com/api/prepubs/1500.xml')
+    assert len(documents) == 5
+    assert documents[0].index is None
+    assert documents[1].index is None
+    assert documents[-3].index == 731
+    assert documents[-2].index == 741
+    assert documents[-1].index == 10
+    assert documents[0].language_document == 'de'
+    assert documents[0].language_link == 'de'
+
+
 def test_default_version_with_locale():
     with requests_mock.mock() as mock_m:
         with open('tests/resources/geolink_v1.2.1.xml', 'rb') as file_f:
@@ -377,3 +476,66 @@ def test_dtd_validation_invalid():
             <root></root>
             """
         )
+
+
+@pytest.fixture()
+def provide_geolinks_el():
+    geolinks_el = Element('geolinks', attrib={'language': 'de'})
+    SubElement(geolinks_el, 'document', attrib={'id': '1'})
+    SubElement(geolinks_el, 'document', attrib={'id': '2'})
+    yield geolinks_el
+
+
+def test_process_geolinks_prepublinks(provide_geolinks_el):
+    with patch.object(
+        XML,
+        '_process_single_document',
+        return_value=Document([], id=1, language_link='de')
+    ):
+        result = XML()._process_geolinks_prepublinks(provide_geolinks_el)
+        assert all([isinstance(x, Document) for x in result])
+        assert len(result) == 2
+
+
+@pytest.fixture()
+def provide_document_el():
+    document_el = Element(
+        'document',
+        attrib={
+            'language': 'de',
+            'authority': 'Gemeindeverwaltung',
+            'authority_url': 'https://www.domleschg.ch',
+            'category': 'main',
+            'doctype': 'decree',
+            'enactment_date': '2012-06-22',
+            'federal_level': 'Gemeinde',
+            'id': '400',
+            'language': 'de',
+            'municipality': 'Domleschg',
+            'number': '12.GDEf1',
+            'subtype': 'Domleschg (Paspels) 3634',
+            'title': 'Quartierplan Radiend',
+            'type': 'Nutzungsplanung - Quartierplanverfahren'
+        }
+    )
+    SubElement(document_el, 'file', attrib={
+        'category': 'main',
+        'description': '3634_B_QP_Radiend_Platzhalter.pdf',
+        'href': '/api/attachments/1123',
+        'title': '3634_B_QP_Radiend_Platzhalter.pdf'
+    })
+    SubElement(document_el, 'file', attrib={
+        'category': 'additional',
+        'description': '',
+        'href': '/api/attachments/6027',
+        'title': 'PlatzhalterFehlendeDokumente.pdf'
+    })
+
+    yield document_el
+
+
+def test_process_single_document(provide_document_el):
+    document = XML()._process_single_document(provide_document_el, language_link='de')
+    assert document.id == '400'
+    assert document.language_link == 'de'
+    assert document.files[1].title == 'PlatzhalterFehlendeDokumente.pdf'

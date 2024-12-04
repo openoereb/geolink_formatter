@@ -1,0 +1,43 @@
+<prepublinks language="de">
+    <document authority="Gemeindeverwaltung" authority_url="https://www.binningen.ch"
+        category="main" doctype="prepublication" federal_level="Gemeinde" id="8087"
+        instance="Gemeinde" language="de" municipality="Binningen"
+        status="RBG (1) beschlossen, Genehmigungsantrag ausstehend" status_start_date="2024-08-26"
+        subtype="Zonenplan" title="11/ZPS/2/x_Zone mit Quartierplanpflicht Spiesshöfli"
+        type="Nutzungsplan">
+        <file category="main" description="20240826_ERB_Binningen.pdf" href="/api/attachments/19090"
+            title="20240826_ERB_Binningen.pdf" />
+    </document>
+    <document authority="Gemeindeverwaltung" authority_url="https://www.binningen.ch"
+        category="related" decree_date="2013-09-17" doctype="decree" enactment_date="2013-09-17"
+        federal_level="Gemeinde" id="1254" language="de" municipality="Binningen"
+        number="11/ZRS/2/0" title="Zonenreglement Siedlung">
+        <file category="main" description="11_ZRS_02_00_N_G_2013_1521_oereb.pdf"
+            href="/api/attachments/18516" title="11_ZRS_02_00_N_G_2013_1521_oereb.pdf" />
+    </document>
+    <document abbreviation="RBG" authority="Landeskanzlei;BUD GSK"
+        authority_url="https://www.baselland.ch/politik-und-behorden/besondere-behoerden/bv-bb/landeskanzlei;https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/generalsekretariat"
+        category="related" decree_date="1998-01-08" doctype="edict" enactment_date="2024-01-01"
+        federal_level="Kanton" id="3" index="731" language="de" number="400"
+        title="Raumplanungs- und Baugesetz">
+        <file category="main" description="400.pdf"
+            href="https://bl.clex.ch/frontend/versions/pdf_file_with_annex/3813?locale=de"
+            title="400.pdf" />
+    </document>
+    <document abbreviation="RBV" authority="Landeskanzlei"
+        authority_url="https://www.baselland.ch/politik-und-behorden/besondere-behoerden/bv-bb/landeskanzlei"
+        category="related" decree_date="1998-10-27" doctype="edict" enactment_date="2024-01-01"
+        federal_level="Kanton" id="16" index="741" language="de" number="400.11"
+        title="Verordnung zum Raumplanungs- und Baugesetz">
+        <file category="main" description="400.11.pdf"
+            href="https://bl.clex.ch/frontend/versions/pdf_file_with_annex/3836?locale=de"
+            title="400.11.pdf" />
+    </document>
+    <document abbreviation="Raumplanungsgesetz, RPG" authority="Bundeskanzlei"
+        authority_url="https://www.bk.admin.ch/bk/de/home.html" category="related" doctype="edict"
+        enactment_date="2019-01-01" federal_level="Bund" id="1" index="10" language="de"
+        number="700" title="Bundesgesetz über die Raumplanung">
+        <file category="main" description="700.de.pdf" href="https://www.lexfind.ch/tolv/247302/de"
+            title="700.de.pdf" />
+    </document>
+</prepublinks>
