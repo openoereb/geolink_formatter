@@ -4,6 +4,9 @@ Change log
 unreleased
 ----------
 
+2.0.6
+-----
+
 Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0, v1.2.1, v1.2.2, v1.2.3, v1.2.4, v1.2.5 (default)
 
 - Drop support for Python 3.8
