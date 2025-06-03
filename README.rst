@@ -19,8 +19,8 @@ https://openoereb.github.io/geolink_formatter/
    :target: https://pypi.org/project/geolink_formatter/
 .. |status| image:: https://img.shields.io/pypi/status/geolink_formatter.svg
    :target: https://pypi.org/project/geolink_formatter/
-.. |build status| image:: https://travis-ci.org/openoereb/geolink_formatter.svg?branch=master
-   :target: https://travis-ci.org/openoereb/geolink_formatter
+.. |build status| image:: https://github.com/openoereb/geolink_formatter/workflows/CI/CD/badge.svg
+   :target: https://github.com/openoereb/geolink_formatter/actions?query=workflow%3ACI%2FCD
 .. |coverage report| image:: https://codecov.io/gh/openoereb/geolink_formatter/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/openoereb/geolink_formatter
 .. |dependencies| image:: https://img.shields.io/librariesio/github/openoereb/geolink_formatter.svg
