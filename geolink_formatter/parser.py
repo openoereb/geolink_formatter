@@ -39,13 +39,16 @@ class SCHEMA(object):
     V1_2_5 = '1.2.5'
     """str: geoLink schema version 1.2.5"""
 
+    V1_2_6 = '1.2.6'
+    """str: geoLink schema version 1.2.6"""
+
 
 class XML(object):
 
     _date_format = '%Y-%m-%d'
     """str: Format of date values in XML."""
 
-    def __init__(self, host_url=None, version='1.2.5', dtd_validation=False, xsd_validation=True):
+    def __init__(self, host_url=None, version='1.2.6', dtd_validation=False, xsd_validation=True):
         """Create a new XML parser instance containing the geoLink XSD for validation.
 
         Args:
