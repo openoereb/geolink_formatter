@@ -1,6 +1,6 @@
 py>=1.11.0
 pluggy==1.6.0
-pytest==8.3.5
+pytest==8.4.1
 pytest-cov==6.1.1
 flake8==7.3.0
 requests-mock==1.12.1
