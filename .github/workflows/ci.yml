@@ -108,7 +108,7 @@ jobs:
           sphinx-build -b html doc/source/ doc/build/html/
           touch doc/build/html/.nojekyll
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: docs
           path: doc/build/html/
@@ -126,7 +126,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Download artifacts
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: docs
       - name: Deploy
