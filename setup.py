@@ -10,7 +10,7 @@ with open(os.path.join(here, 'CHANGELOG')) as f:
     changelog = f.read()
 
 requires = [
-    'lxml>=6.0.2',
+    'lxml>=6.1.0',
     'defusedxml',
     'requests',
     'xmlschema'
