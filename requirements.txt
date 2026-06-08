@@ -7,7 +7,7 @@ requests-mock==1.12.1
 Sphinx<10
 sphinx_rtd_theme==3.1.0
 lxml==6.1.1
-requests==2.33.1
+requests==2.34.2
 xmlschema==4.3.1
 jinja2==3.1.6
 click<8.5
