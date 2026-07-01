@@ -8,7 +8,7 @@ Sphinx<10
 sphinx_rtd_theme==3.1.0
 lxml==6.1.1
 requests==2.34.2
-xmlschema==4.3.1
+xmlschema==4.3.2
 jinja2==3.1.6
 click<8.5
 setuptools==82.0.1
