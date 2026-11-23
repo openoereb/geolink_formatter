@@ -4,6 +4,15 @@ Change log
 unreleased
 ----------
 
+2.0.8
+-----
+
+Supported GEO-Link API versions: v1.0.0, v1.1.0, v1.1.1, v1.2.0, v1.2.1, v1.2.2, v1.2.3, v1.2.4, v1.2.5, v1.2.6 (default)
+
+- Support for Python 3.9, Python 3.10 dropped
+- Python packages py, pluggy, click removed in file requirements.txt
+- Dependencies updated
+
 2.0.7
 -----
 
